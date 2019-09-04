@@ -26,6 +26,7 @@ public class NotificationAdapter$MyViewHolder_ViewBinding implements Unbinder {
     target.mCardViewnotification = Utils.findOptionalViewAsType(source, R.id.card_view_notification, "field 'mCardViewnotification'", CardView.class);
     target.mTxtnotificationStatus = Utils.findOptionalViewAsType(source, R.id.txt_notification_status, "field 'mTxtnotificationStatus'", TextView.class);
     target.mCircleNotificationStatus = Utils.findOptionalViewAsType(source, R.id.circleImg_profile, "field 'mCircleNotificationStatus'", CircleImageView.class);
+    target.mTimeTxt = Utils.findOptionalViewAsType(source, R.id.time_txt, "field 'mTimeTxt'", TextView.class);
   }
 
   @Override
@@ -39,5 +40,6 @@ public class NotificationAdapter$MyViewHolder_ViewBinding implements Unbinder {
     target.mCardViewnotification = null;
     target.mTxtnotificationStatus = null;
     target.mCircleNotificationStatus = null;
+    target.mTimeTxt = null;
   }
 }

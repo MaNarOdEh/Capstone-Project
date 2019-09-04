@@ -51,6 +51,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         TextView mTxtnotificationStatus;
         @BindView(R.id.circleImg_profile)@Nullable()
         CircleImageView mCircleNotificationStatus;
+        @BindView(R.id.time_txt)@Nullable()
+        TextView mTimeTxt;
 
         OnNotificationClicked onNotificationClicked;
 

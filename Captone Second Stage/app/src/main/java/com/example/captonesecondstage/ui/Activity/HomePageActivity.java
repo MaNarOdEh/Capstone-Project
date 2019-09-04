@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.example.captonesecondstage.R;
+import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
 import com.example.captonesecondstage.ui.Fragments.LogInFragment;
 import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
@@ -49,7 +50,7 @@ public class HomePageActivity extends AppCompatActivity {
     }
     public void showFavouriteFragments(){
         FragmentManager fragmentManager=getSupportFragmentManager();
-        SettingsFragment fragment=new SettingsFragment();
+        FavoriteFragments fragment=new FavoriteFragments();
         fragmentManager.beginTransaction().addToBackStack("favourite").replace(R.id.frame_container,fragment).commit();
     }
 

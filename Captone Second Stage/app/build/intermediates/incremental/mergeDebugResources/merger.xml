@@ -5473,7 +5473,7 @@
         <item>Student</item>
         <item>Teacher</item>
         <item>Parents</item>
-    </string-array><string name="notification">Notification</string><string name="setting">setting</string><string name="favourite">favourite</string><string name="home">home</string><string name="description_profile">My Name Manar Odeh,I can teach in my spare time at times that suit you. I have good programming experience and I like building stuff</string><string name="request_teach_the_student">Request Teach the student</string><string name="notification_example">Manar Odeh Visit Your Profile!</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </string-array><string name="notification">Notification</string><string name="setting">setting</string><string name="favourite">Favourite</string><string name="home">home</string><string name="description_profile">My Name Manar Odeh,I can teach in my spare time at times that suit you. I have good programming experience and I like building stuff</string><string name="request_teach_the_student">Request Teach the student</string><string name="notification_example">Manar Odeh Visit Your Profile!</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

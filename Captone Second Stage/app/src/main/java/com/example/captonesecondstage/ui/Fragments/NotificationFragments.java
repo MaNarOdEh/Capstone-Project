@@ -43,6 +43,7 @@ public class NotificationFragments extends Fragment implements NotificationAdapt
 
         initializeEvent();
         setNotificationAdapter();
+
         return root;
     }
 

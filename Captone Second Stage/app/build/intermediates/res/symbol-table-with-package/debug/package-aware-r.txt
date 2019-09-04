@@ -1648,6 +1648,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id random_suggestion_profile
+id recycle_Favorite
 id recycle_courses
 id recycle_notification
 id remember_cb
@@ -1729,6 +1730,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id time_txt
 id title
 id titleDividerNoCustom
 id title_template

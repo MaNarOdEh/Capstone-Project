@@ -34,6 +34,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     EditText mSearchEdit;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
