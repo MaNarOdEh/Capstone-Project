@@ -8,18 +8,15 @@
     tools:context=".ui.MainActivity"
     android:fillViewport="true"
     android:background="@drawable/background">
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
         <FrameLayout
-            android:id="@+id/login_frame"
+            android:id="@+id/loginSignUp_frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <FrameLayout
-            android:id="@+id/signUp_frame"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </ScrollView>

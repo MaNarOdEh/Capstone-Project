@@ -2,13 +2,15 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.Fragments.LogInFragment"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp">
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="35dp"
+  >
 
     <TextView
         android:layout_width="match_parent"
@@ -20,62 +22,145 @@
         android:fontFamily="sans-serif"
         android:textStyle="bold"
         android:layout_marginTop="150dp"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="50dp"
+        />
 
     <EditText
+        android:id="@+id/user_name_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/user_name_or_email"
         android:maxLines="1"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/user"
+        android:drawableTint="@color/colorApp"
+        android:drawablePadding="15dp"/>
     <EditText
+        android:id="@+id/password_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/password"
         android:maxLines="1"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/lock"
+        android:drawableTint="@color/colorApp"
+        android:drawablePadding="15dp"/>
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
        android:layout_margin="10dp">
        <CheckBox
+           android:id="@+id/remember_cb"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
-           android:text="@string/remember_me"/>
+           android:text="@string/remember_me"
+           android:textSize="13sp"/>
        <Button
+           android:id="@+id/forget_password_btn"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
            android:background="@android:color/transparent"
            android:text="@string/forget_password"
            android:textAllCaps="false"
-           android:textColor="@color/colorApp"/>
+           android:textColor="@color/colorApp"
+           android:textSize="13sp"/>
    </LinearLayout>
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/login_btn"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="login"
         android:layout_gravity="center"
-        android:background="@color/colorApp"
+        android:background="@drawable/rounded_btn"
         android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorApp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="or login with"
+        android:text="@string/or_login_with"
         android:gravity="center"
         />
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New User? Create An Account?"
+        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        >
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gmail_floatBtn"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            app:fabCustomSize="40dp"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:borderWidth="0dp"
+            android:backgroundTint="#D44638"
+            android:scaleType="center"
+            android:src="@drawable/gmail"
+            android:tint="@android:color/white"
+            app:maxImageSize="20dp"
+
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/face_floatBtn"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            app:fabCustomSize="40dp"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:borderWidth="0dp"
+            android:backgroundTint="#3c5a99"
+            android:scaleType="center"
+            android:src="@drawable/facebook_logo"
+            android:tint="@android:color/white"
+            app:maxImageSize="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_user_create_an_account"
+            android:layout_gravity="center"
+            android:gravity="center"
+         />
+        <TextView
+            android:id="@+id/create_account_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account"
+            android:textColor="@color/colorApp"
+            android:textStyle="bold"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
 </LinearLayout>

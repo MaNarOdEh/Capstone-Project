@@ -1,4 +1,4 @@
-#Wed Sep 04 01:21:24 EEST 2019
+#Wed Sep 04 11:25:56 EEST 2019
 base.0=G\:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

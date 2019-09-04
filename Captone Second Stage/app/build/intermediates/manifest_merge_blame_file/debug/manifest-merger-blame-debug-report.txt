@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\72b2b92ec4ab73ff21fb9bc348de3b22\core-1.0.1\AndroidManifest.xml:22:18-86
+13-->[androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d23ca375c576c4f77f42c729153a7f8a\core-1.1.0-rc02\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
 15-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:7:9-43
