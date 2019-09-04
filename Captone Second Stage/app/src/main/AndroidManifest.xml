@@ -13,7 +13,9 @@
         android:roundIcon="@drawable/professor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Activity.HomePageActivity"></activity>
+        <activity android:name=".ui.Activity.ProfileStudent_ParentsActivity"></activity>
+        <activity android:name=".ui.Activity.ProfileTeacherActivity" />
+        <activity android:name=".ui.Activity.HomePageActivity" />
         <activity android:name=".ui.Activity.LogInSignUpActivity" />
         <activity
             android:name=".ui.Activity.MainActivity"

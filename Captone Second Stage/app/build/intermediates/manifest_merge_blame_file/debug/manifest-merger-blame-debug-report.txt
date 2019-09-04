@@ -21,7 +21,7 @@
 13-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:7:22-64
 14
 15    <application
-15-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:9:5-27:19
+15-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:9:5-29:19
 16        android:allowBackup="true"
 16-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:10:9-35
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -35,32 +35,37 @@
 21-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:13:9-48
 22        android:supportsRtl="true"
 22-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:14:9-35
-23        android:testOnly="true"
-24        android:theme="@style/AppTheme" >
-24-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:15:9-40
-25        <activity android:name="com.example.captonesecondstage.ui.Activity.HomePageActivity" />
-25-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:9-75
-25-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:19-63
-26        <activity android:name="com.example.captonesecondstage.ui.Activity.LogInSignUpActivity" />
-26-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:9-69
-26-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:19-66
-27        <activity
-27-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-26:20
-28            android:name="com.example.captonesecondstage.ui.Activity.MainActivity"
-28-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:13-53
-29            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
-29-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:13-87
-30            <intent-filter>
-30-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:13-25:29
-31                <action android:name="android.intent.action.MAIN" />
-31-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:17-69
-31-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:25-66
-32
-33                <category android:name="android.intent.category.LAUNCHER" />
-33-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:24:17-77
-33-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:24:27-74
-34            </intent-filter>
-35        </activity>
-36    </application>
-37
-38</manifest>
+23        android:theme="@style/AppTheme" >
+23-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:15:9-40
+24        <activity android:name="com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity" />
+24-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:9-89
+24-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:19-77
+25        <activity android:name="com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity" />
+25-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:9-72
+25-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:19-69
+26        <activity android:name="com.example.captonesecondstage.ui.Activity.HomePageActivity" />
+26-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-66
+26-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:19-63
+27        <activity android:name="com.example.captonesecondstage.ui.Activity.LogInSignUpActivity" />
+27-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:9-69
+27-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:19-66
+28        <activity
+28-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:9-28:20
+29            android:name="com.example.captonesecondstage.ui.Activity.MainActivity"
+29-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:13-53
+30            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
+30-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:13-87
+31            <intent-filter>
+31-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:13-27:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:24:17-69
+32-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:24:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:17-77
+34-->G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:27-74
+35            </intent-filter>
+36        </activity>
+37    </application>
+38
+39</manifest>
