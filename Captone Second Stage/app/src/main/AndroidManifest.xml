@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.captonesecondstage">
-
     <!-- Permission -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -14,8 +13,10 @@
         android:roundIcon="@drawable/professor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.LogInSignUpActivity"></activity>
-        <activity android:name=".ui.MainActivity"
+        <activity android:name=".ui.Activity.HomePageActivity"></activity>
+        <activity android:name=".ui.Activity.LogInSignUpActivity" />
+        <activity
+            android:name=".ui.Activity.MainActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.captonesecondstage.ui;
+package com.example.captonesecondstage.ui.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
-      //  showLoginFragment();
-        showContinueSignUpFragment();
+
+        showLoginFragment();
 
     }
     public void showLoginFragment(){

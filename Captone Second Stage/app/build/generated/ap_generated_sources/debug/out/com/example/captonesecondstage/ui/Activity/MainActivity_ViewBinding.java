@@ -1,5 +1,5 @@
 // Generated code from Butter Knife. Do not modify!
-package com.example.captonesecondstage.ui;
+package com.example.captonesecondstage.ui.Activity;
 
 import android.view.View;
 import android.widget.ScrollView;

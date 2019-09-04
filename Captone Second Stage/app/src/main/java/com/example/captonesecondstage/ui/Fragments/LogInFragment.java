@@ -1,5 +1,6 @@
 package com.example.captonesecondstage.ui.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,7 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.captonesecondstage.R;
-import com.example.captonesecondstage.ui.MainActivity;
+import com.example.captonesecondstage.ui.Activity.HomePageActivity;
+import com.example.captonesecondstage.ui.Activity.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import butterknife.BindView;
@@ -48,6 +50,12 @@ public class LogInFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).showSignUpFragment();
+            }
+        });
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               startActivity(new Intent(getActivity(), HomePageActivity.class));
             }
         });
     }

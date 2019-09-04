@@ -18,6 +18,19 @@
     <string name="login_instead">LogIn instead?</string>
     <string name="already_have_account">Already have account</string>
     <string name="continue_signup">Continue SignUp</string>
+    <string name="manar_odeh">MaNar OdEh</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="description">Description</string>
+    <string name="courses">courses</string>
+    <string name="signup">SignUp</string>
+    <string name="input_your_email">Input your Email</string>
+    <string name="_0597853325">0597853325</string>
+    <string name="java_c_arabic_turkish">Java,C++,Arabic,turkish</string>
+    <string name="setting">setting</string>
+    <string name="home">home</string>
+    <string name="notification">notification</string>
+    <string name="favourite">favourite</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>
