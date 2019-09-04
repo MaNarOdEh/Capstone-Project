@@ -61,15 +61,19 @@ public class HomePageActivity extends AppCompatActivity {
                switch (id){
                    case R.id.navigation_home:
                        showSearchPageFragments();
+//                       mNavigationBottomContainer.setSelectedItemId(R.id.navigation_home);
                        break;
                    case R.id.navigation_favourite:
                        showFavouriteFragments();
+  //                     mNavigationBottomContainer.setSelectedItemId(R.id.navigation_favourite);
                        break;
                    case R.id.navigation_settings:
                        showSettingsFragments();
+    //                   mNavigationBottomContainer.setSelectedItemId(R.id.navigation_settings);
                        break;
                    case R.id.navigation_notification:
                        showNotificationFragments();
+      //                 mNavigationBottomContainer.setSelectedItemId(R.id.navigation_notification);
                        break;
                }
 

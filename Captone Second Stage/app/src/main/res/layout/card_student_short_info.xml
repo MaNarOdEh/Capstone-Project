@@ -50,20 +50,27 @@
                     />
 
             </LinearLayout>
-            <Button
-                android:id="@+id/btn_show_profile"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rounded_btn"
-                android:backgroundTint="@color/colorApp"
-                android:text="Show Profile"
-                android:textAllCaps="false"
-                android:textColor="@color/colorWhite"
-                android:textSize="11sp"
-                android:gravity="center"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="20dp"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right">
+                <Button
+                    android:id="@+id/btn_show_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rounded_btn"
+                    android:backgroundTint="@color/colorApp"
+                    android:text="Show Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    />
+            </LinearLayout>
+
 
         </LinearLayout>
             <TextView
