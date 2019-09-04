@@ -25,7 +25,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.captonesecondstage.ui.LogInSignUpActivity" />
-        <activity android:name="com.example.captonesecondstage.ui.MainActivity" >
+        <activity
+            android:name="com.example.captonesecondstage.ui.MainActivity"
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

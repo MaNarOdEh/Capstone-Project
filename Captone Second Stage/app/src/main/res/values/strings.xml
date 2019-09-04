@@ -18,4 +18,9 @@
     <string name="login_instead">LogIn instead?</string>
     <string name="already_have_account">Already have account</string>
     <string name="continue_signup">Continue SignUp</string>
+    <string-array name="user_type">
+        <item>Student</item>
+        <item>Teacher</item>
+        <item>Parents</item>
+    </string-array>
 </resources>

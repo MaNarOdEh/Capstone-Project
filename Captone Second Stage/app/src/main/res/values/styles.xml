@@ -12,7 +12,7 @@
 
     <style name="PopupTheme" parent="Theme.AppCompat.Light">
         <item name="android:background">@color/colorApp</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 </resources>

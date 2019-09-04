@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\5488c81610655eccbe4589ddb707dc5f\material-1.1.0-alpha09\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a8c03165c69018fbda4f77f1eb58f4bb\appcompat-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -11,6 +11,7 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\pc corner\.gradle
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\abc680e55824c418c024460e31034ed4\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f394ee478b4ec1dcbbf5ae71b3314faa\coordinatorlayout-1.1.0-beta01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ccc4f60e4549c263b614feec2a027fa2\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0ba63abb86f498920538dfcd0a627f47\circleimageview-3.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\b202d3419c41aa624ef22afb90d80c3f\butterknife-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ba2af06f417607d7ef1ca9f201a0d139\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\80b2360a587be5f7a2d6fa8510bd68ae\transition-1.0.1\AndroidManifest.xml:17:1-22:12
@@ -43,20 +44,20 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\pc corner\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\891cd0459073c2d15605e856504f6800\lifecycle-runtime-2.1.0-rc01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\5605b450c72b709e5cfce6bb23012bb6\lifecycle-viewmodel-2.1.0-rc01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\e660add08636fe4b89ec7c2a833386d6\savedstate-1.0.0-rc01\AndroidManifest.xml:17:1-24:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:11-69
@@ -73,11 +74,13 @@ ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifes
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:8:22-64
 application
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:10:5-25:19
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:10:5-26:19
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\5488c81610655eccbe4589ddb707dc5f\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\5488c81610655eccbe4589ddb707dc5f\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0ba63abb86f498920538dfcd0a627f47\circleimageview-3.0.1\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0ba63abb86f498920538dfcd0a627f47\circleimageview-3.0.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d23ca375c576c4f77f42c729153a7f8a\core-1.1.0-rc02\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d23ca375c576c4f77f42c729153a7f8a\core-1.1.0-rc02\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\27939d3477d3ba4eecbd3f5ec43360d9\versionedparcelable-1.1.0-rc01\AndroidManifest.xml:24:5-25:19
@@ -101,19 +104,21 @@ ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifes
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:19-57
 activity#com.example.captonesecondstage.ui.MainActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-24:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-25:20
+	android:configChanges
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:13-87
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:19-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:13-23:29
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:27-74
 uses-sdk
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
@@ -132,6 +137,8 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] C:\Users
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f394ee478b4ec1dcbbf5ae71b3314faa\coordinatorlayout-1.1.0-beta01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ccc4f60e4549c263b614feec2a027fa2\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ccc4f60e4549c263b614feec2a027fa2\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0ba63abb86f498920538dfcd0a627f47\circleimageview-3.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0ba63abb86f498920538dfcd0a627f47\circleimageview-3.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\b202d3419c41aa624ef22afb90d80c3f\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\b202d3419c41aa624ef22afb90d80c3f\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ba2af06f417607d7ef1ca9f201a0d139\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44

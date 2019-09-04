@@ -46,6 +46,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array user_type
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -190,6 +191,10 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -762,6 +767,7 @@ color colorAccent
 color colorApp
 color colorPrimary
 color colorPrimaryDark
+color colorWhite
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1339,6 +1345,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable facebook_logo
 drawable gmail
+drawable hastag
+drawable home_address
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
@@ -1350,6 +1358,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable language
 drawable lock
 drawable mail
 drawable mtrl_dialog_background
@@ -1375,10 +1384,13 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable professor
+drawable profile
 drawable rounded_btn
+drawable telephone
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable upload_photo
 drawable user
 id ALT
 id BOTTOM_END
@@ -1444,11 +1456,13 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id address_et
 id alertTitle
 id all
 id always
 id async
 id auto
+id autoCompleteTv_courses
 id barrier
 id beginning
 id blocking
@@ -1482,6 +1496,7 @@ id cut
 id date_picker_actions
 id decor_content_parent
 id default_activity_button
+id description_et
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1523,6 +1538,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_upload
 id info
 id invisible
 id italic
@@ -1536,6 +1552,7 @@ id listMode
 id list_item
 id loginSignUp_frame
 id login_btn
+id main_scrollView
 id masked
 id media_actions
 id message
@@ -1588,6 +1605,7 @@ id password_toggle
 id peekHeight
 id percent
 id pin
+id profile_image
 id progress_circular
 id progress_horizontal
 id radio
@@ -1682,6 +1700,9 @@ id up
 id useLogo
 id user_email_et
 id user_name_et
+id user_name_tv
+id user_phone_et
+id user_type_spinner
 id view_offset_helper
 id visible
 id withText
@@ -1765,6 +1786,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_continue_sign_up
 layout fragment_log_in
 layout fragment_sign_up
 layout mtrl_alert_dialog
@@ -2619,6 +2641,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha

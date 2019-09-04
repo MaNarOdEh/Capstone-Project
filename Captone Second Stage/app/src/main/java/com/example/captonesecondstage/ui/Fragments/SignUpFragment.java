@@ -49,6 +49,12 @@ public class SignUpFragment extends Fragment {
                 ((MainActivity)getActivity()).showLoginFragment();
             }
         });
+        mSignUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).showContinueSignUpFragment();
+            }
+        });
 
     }
 
