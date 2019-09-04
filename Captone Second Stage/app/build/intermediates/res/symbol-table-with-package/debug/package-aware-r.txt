@@ -1954,6 +1954,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string about_us
 string address
 string already_have_account
 string app_name
@@ -2028,6 +2029,11 @@ string setting
 string signup
 string status_bar_notification_info_overflow
 string techapp
+string update_courses
+string update_email
+string update_password
+string update_phone_number
+string update_user_name
 string user_name
 string user_name_or_email
 style AlertDialog_AppCompat

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -69,13 +71,16 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         mBtnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String phone = "0597853325";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
             }
         });
         mBtnSMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String number = "0597853325";  // The number on which you want to send SMS
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)));
             }
         });
         mBtnSendRequest.setOnClickListener(new View.OnClickListener() {

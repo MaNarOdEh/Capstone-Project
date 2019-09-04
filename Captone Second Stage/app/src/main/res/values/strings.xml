@@ -40,6 +40,7 @@
     <string name="update_courses">Update Courses</string>
     <string name="update_phone_number">Update Phone Number</string>
     <string name="update_password">Update Password</string>
+    <string name="about_us">About Us</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

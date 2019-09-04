@@ -5473,7 +5473,7 @@
         <item>Student</item>
         <item>Teacher</item>
         <item>Parents</item>
-    </string-array><string name="techapp">TechApp</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </string-array><string name="techapp">TechApp</string><string name="update_courses">Update Courses</string><string name="update_phone_number">Update Phone Number</string><string name="update_user_name">Update User Name</string><string name="update_email">Update Email</string><string name="update_password">Update Password</string><string name="about_us">About Us</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
