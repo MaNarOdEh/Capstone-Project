@@ -5,4 +5,6 @@
     <color name="colorAccent">#1fc19b</color>
     <color name="colorApp">#4C9483</color>
     <color name="colorWhite">@android:color/white</color>
+    <color name="colorBlue">@android:color/holo_blue_light</color>
+    <color name="colorIcons">#FF9900</color>
 </resources>

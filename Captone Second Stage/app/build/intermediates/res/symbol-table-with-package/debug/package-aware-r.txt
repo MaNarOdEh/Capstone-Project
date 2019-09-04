@@ -765,6 +765,8 @@ color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
 color colorApp
+color colorBlue
+color colorIcons
 color colorPrimary
 color colorPrimaryDark
 color colorWhite
@@ -1337,6 +1339,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_border
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1390,6 +1393,7 @@ drawable professor
 drawable profile
 drawable rounded_btn
 drawable settings
+drawable sky
 drawable star
 drawable telephone
 drawable test_custom_background
@@ -1407,6 +1411,7 @@ id SHIFT
 id SYM
 id TOP_END
 id TOP_START
+id aboutUs_txt
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1461,6 +1466,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_fav_img
 id address_et
 id alertTitle
 id all
@@ -1472,6 +1478,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_call
+id btn_sms
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1485,6 +1493,7 @@ id checked
 id chip
 id chip_group
 id chronometer
+id circleImg_profile
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1494,6 +1503,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id courses_name_txt
 id create_account_tv
 id custom
 id customPanel
@@ -1591,6 +1601,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id name_txt
 id navigation_bottom_container
 id navigation_favourite
 id navigation_header_container
@@ -1616,11 +1627,13 @@ id password_ed
 id password_toggle
 id peekHeight
 id percent
+id phone_txt
 id pin
 id profile_image
 id progress_circular
 id progress_horizontal
 id radio
+id recycle_courses
 id remember_cb
 id right
 id right_icon
@@ -1668,6 +1681,11 @@ id src_atop
 id src_in
 id src_over
 id standard
+id star_img_f
+id star_img_fifth
+id star_img_fourth
+id star_img_s
+id star_img_t
 id start
 id status_bar_latest_event_content
 id stretch
@@ -1783,6 +1801,9 @@ layout abc_tooltip
 layout activity_home_page
 layout activity_log_in_sign_up
 layout activity_main
+layout activity_profile_student__parents
+layout activity_profile_teacher
+layout card_material
 layout card_teacher_short_info
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1802,7 +1823,11 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout forget_password_dialog
 layout fragment_continue_sign_up
+layout fragment_favorite_fragments
 layout fragment_log_in
+layout fragment_notification_fragments
+layout fragment_search_page_framgents
+layout fragment_settings
 layout fragment_sign_up
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -1909,6 +1934,7 @@ string courses
 string create_account
 string create_an_account
 string description
+string description_profile
 string email
 string error_icon_content_description
 string exposed_dropdown_menu_content_description

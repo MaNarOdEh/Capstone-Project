@@ -312,12 +312,12 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
@@ -414,6 +414,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_calendar_vertical.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\layout\\mtrl_calendar_vertical.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_border.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\button_border.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
@@ -864,12 +868,20 @@
         "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\home_address.png"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notification_fragments.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\fragment_notification_fragments.xml"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sky.jpg.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\sky.jpg"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
@@ -1110,6 +1122,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_list_divider_material.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile_teacher.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\activity_profile_teacher.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -1576,6 +1592,10 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\color\\design_icon_tint.xml"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_favorite_fragments.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\fragment_favorite_fragments.xml"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -1682,6 +1702,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_navigation_item_background_color.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\color\\mtrl_navigation_item_background_color.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search_page_framgents.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\fragment_search_page_framgents.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -1842,6 +1866,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile_student__parents.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\activity_profile_student__parents.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\animator_design_fab_hide_motion_spec.xml.flat",
@@ -2166,6 +2194,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\d23ca375c576c4f77f42c729153a7f8a\\core-1.1.0-rc02\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_settings.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -2522,5 +2554,9 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_toolbar_elevation.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\layout\\test_toolbar_elevation.xml"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_material.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\card_material.xml"
     }
 ]

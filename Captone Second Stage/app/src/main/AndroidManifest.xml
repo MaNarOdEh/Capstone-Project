@@ -13,18 +13,22 @@
         android:roundIcon="@drawable/professor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Activity.ProfileStudent_ParentsActivity"></activity>
-        <activity android:name=".ui.Activity.ProfileTeacherActivity" />
-        <activity android:name=".ui.Activity.HomePageActivity" />
-        <activity android:name=".ui.Activity.LogInSignUpActivity" />
-        <activity
-            android:name=".ui.Activity.MainActivity"
+        <activity android:name=".ui.Activity.ProfileStudent_ParentsActivity"
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
+        <activity android:name=".ui.Activity.ProfileTeacherActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.Activity.HomePageActivity"
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
+        <activity android:name=".ui.Activity.LogInSignUpActivity"
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
+        <activity
+            android:name=".ui.Activity.MainActivity"
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation">
         </activity>
     </application>
 
