@@ -11,7 +11,6 @@
     android:layout_marginLeft="35dp"
     android:layout_marginRight="35dp"
   >
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,8 +20,9 @@
         android:textSize="20sp"
         android:fontFamily="sans-serif"
         android:textStyle="bold"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="130dp"
         android:layout_marginBottom="50dp"
+        android:textColor="@color/colorApp"
         />
 
     <EditText
