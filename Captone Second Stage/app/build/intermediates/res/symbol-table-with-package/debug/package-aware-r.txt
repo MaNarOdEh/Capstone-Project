@@ -1365,6 +1365,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable language
 drawable lock
+drawable magnifier
 drawable mail
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1817,6 +1818,7 @@ layout activity_profile_student__parents
 layout activity_profile_teacher
 layout card_material
 layout card_notification
+layout card_student_short_info
 layout card_teacher_short_info
 layout custom_dialog
 layout design_bottom_navigation_item

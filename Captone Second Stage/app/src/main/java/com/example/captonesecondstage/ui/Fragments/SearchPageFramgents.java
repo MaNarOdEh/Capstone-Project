@@ -14,9 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileAdapter;
+import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapter;
+import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
+import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.R;
+import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
 
 import java.util.ArrayList;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchPageFramgents extends Fragment implements ProfileAdapter.OnProfileClicked{
+public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapter.OnProfileClicked, ProfileStudentAdapter.OnProfileStudentClicked {
     @BindView(R.id.random_suggestion_profile)@Nullable()
     RecyclerView mRandomSuggestionProfile;
     @BindView(R.id.search_edit)@Nullable()
@@ -52,15 +55,24 @@ public class SearchPageFramgents extends Fragment implements ProfileAdapter.OnPr
         mRandomSuggestionProfile.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        ArrayList<Teachers> myDataset=new ArrayList<>();
+       /* ArrayList<Teachers> myDataset=new ArrayList<>();
         myDataset.add(new Teachers());
         myDataset.add(new Teachers());
         myDataset.add(new Teachers());
         myDataset.add(new Teachers());
         myDataset.add(new Teachers());
         myDataset.add(new Teachers());
+         ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(myDataset,this);*/
         // specify an adapter (see also next example)
-        ProfileAdapter profileAdapter = new ProfileAdapter(myDataset,this);
+        ArrayList<Students> myDataset=new ArrayList<>();
+        myDataset.add(new Students());
+        myDataset.add(new Students());
+        myDataset.add(new Students());
+        myDataset.add(new Students());
+        myDataset.add(new Students());
+        myDataset.add(new Students());
+
+        ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(myDataset,this);
         mRandomSuggestionProfile.setAdapter(profileAdapter);
 
     }
@@ -74,5 +86,10 @@ public class SearchPageFramgents extends Fragment implements ProfileAdapter.OnPr
         Log.e("ERROROR","MUSTGOOO");
         startActivity(new Intent(getActivity(), ProfileTeacherActivity.class));
 
+    }
+
+    @Override
+    public void onProfileStudentClicked(int position) {
+        startActivity(new Intent(getActivity(), ProfileStudent_ParentsActivity.class));
     }
 }

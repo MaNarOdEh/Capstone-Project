@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyViewHolder> {
+public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAdapter.MyViewHolder> {
     private List<Teachers>mtTeachersList;
     private  OnProfileClicked onProfileClicked;
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -61,7 +61,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyViewHo
             onProfileClicked.onProfileClicked(getAdapterPosition());
         }
     }
-    public ProfileAdapter(ArrayList<Teachers> teachers,OnProfileClicked onProfileClicked) {
+    public ProfileTeacherAdapter(ArrayList<Teachers> teachers, OnProfileClicked onProfileClicked) {
         this.mtTeachersList=teachers;
         this.onProfileClicked=onProfileClicked;
     }
@@ -71,16 +71,16 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyViewHo
 
     // Create new views (invoked by the layout manager)
     @Override
-    public ProfileAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ProfileTeacherAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v =  LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_teacher_short_info, parent, false);
-        return new ProfileAdapter.MyViewHolder(v,onProfileClicked);
+        return new ProfileTeacherAdapter.MyViewHolder(v,onProfileClicked);
     }
 
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ProfileAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(ProfileTeacherAdapter.MyViewHolder holder, int position) {
 
     }
 

@@ -584,6 +584,10 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_magnifier.png.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\magnifier.png"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification.png.flat",
         "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\notification.png"
     },
@@ -1102,6 +1106,10 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\d23ca375c576c4f77f42c729153a7f8a\\core-1.1.0-rc02\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_student_short_info.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\card_student_short_info.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",

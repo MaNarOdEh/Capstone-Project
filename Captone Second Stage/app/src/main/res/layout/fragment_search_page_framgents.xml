@@ -13,8 +13,14 @@
         <EditText
             android:id="@+id/search_edit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"/>
+            android:layout_height="50dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/button_border"
+            android:drawableLeft="@drawable/magnifier"
+            android:paddingLeft="8dp"
+            android:drawablePadding="10dp"
+            android:hint="search.."
+            />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/random_suggestion_profile"
             android:layout_width="match_parent"
