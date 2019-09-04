@@ -1395,6 +1395,7 @@ drawable professor
 drawable profile
 drawable rounded_btn
 drawable settings
+drawable signoutoption
 drawable sky
 drawable star
 drawable telephone
@@ -1484,6 +1485,12 @@ id btn_call
 id btn_send_request
 id btn_show_profile
 id btn_sms
+id btn_update_address
+id btn_update_courses
+id btn_update_email
+id btn_update_password
+id btn_update_phone_number
+id btn_update_user_name
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1622,6 +1629,7 @@ id navigation_header_container
 id navigation_home
 id navigation_notification
 id navigation_settings
+id navigation_signOut
 id never
 id noScroll
 id none
@@ -1679,6 +1687,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id setting_txtView
 id shortcut
 id showCustom
 id showHome

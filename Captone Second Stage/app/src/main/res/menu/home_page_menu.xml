@@ -24,4 +24,9 @@
         android:icon="@drawable/heart"
         android:title="@string/favourite"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/navigation_signOut"
+        android:icon="@drawable/signoutoption"
+        android:title="Sign Out"
+        app:showAsAction="always"/>
 </menu>

@@ -13,11 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.captonesecondstage.Class.Notification;
-import com.example.captonesecondstage.Class.RecycleAdpaters.NotificationAdapter;
+
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapter;
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
-import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;

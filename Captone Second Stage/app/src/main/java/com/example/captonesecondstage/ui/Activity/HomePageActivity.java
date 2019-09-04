@@ -76,6 +76,8 @@ public class HomePageActivity extends AppCompatActivity {
                        showNotificationFragments();
       //                 mNavigationBottomContainer.setSelectedItemId(R.id.navigation_notification);
                        break;
+                   case R.id.navigation_signOut:
+                       break;
                }
 
                 return false;
