@@ -22,14 +22,14 @@ public class LogInFragment_ViewBinding implements Unbinder {
   public LogInFragment_ViewBinding(LogInFragment target, View source) {
     this.target = target;
 
-    target.mUserNameEt = Utils.findRequiredViewAsType(source, R.id.user_name_et, "field 'mUserNameEt'", EditText.class);
-    target.mPasswordEd = Utils.findRequiredViewAsType(source, R.id.password_ed, "field 'mPasswordEd'", EditText.class);
-    target.mRemmeberCb = Utils.findRequiredViewAsType(source, R.id.remember_cb, "field 'mRemmeberCb'", CheckBox.class);
-    target.mForgetPasswordBtn = Utils.findRequiredViewAsType(source, R.id.forget_password_btn, "field 'mForgetPasswordBtn'", Button.class);
-    target.mLogin = Utils.findRequiredViewAsType(source, R.id.login_btn, "field 'mLogin'", Button.class);
-    target.mCreateAccountTv = Utils.findRequiredViewAsType(source, R.id.create_account_tv, "field 'mCreateAccountTv'", TextView.class);
-    target.mGmailFloatBtn = Utils.findRequiredViewAsType(source, R.id.gmail_floatBtn, "field 'mGmailFloatBtn'", FloatingActionButton.class);
-    target.mFaceBtn = Utils.findRequiredViewAsType(source, R.id.face_floatBtn, "field 'mFaceBtn'", FloatingActionButton.class);
+    target.mUserNameEt = Utils.findOptionalViewAsType(source, R.id.user_name_et, "field 'mUserNameEt'", EditText.class);
+    target.mPasswordEd = Utils.findOptionalViewAsType(source, R.id.password_ed, "field 'mPasswordEd'", EditText.class);
+    target.mRemmeberCb = Utils.findOptionalViewAsType(source, R.id.remember_cb, "field 'mRemmeberCb'", CheckBox.class);
+    target.mForgetPasswordBtn = Utils.findOptionalViewAsType(source, R.id.forget_password_btn, "field 'mForgetPasswordBtn'", Button.class);
+    target.mLogin = Utils.findOptionalViewAsType(source, R.id.login_btn, "field 'mLogin'", Button.class);
+    target.mCreateAccountTv = Utils.findOptionalViewAsType(source, R.id.create_account_tv, "field 'mCreateAccountTv'", TextView.class);
+    target.mGmailFloatBtn = Utils.findOptionalViewAsType(source, R.id.gmail_floatBtn, "field 'mGmailFloatBtn'", FloatingActionButton.class);
+    target.mFaceBtn = Utils.findOptionalViewAsType(source, R.id.face_floatBtn, "field 'mFaceBtn'", FloatingActionButton.class);
   }
 
   @Override

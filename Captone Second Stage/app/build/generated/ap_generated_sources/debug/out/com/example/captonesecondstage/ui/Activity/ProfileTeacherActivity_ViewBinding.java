@@ -27,19 +27,19 @@ public class ProfileTeacherActivity_ViewBinding implements Unbinder {
   public ProfileTeacherActivity_ViewBinding(ProfileTeacherActivity target, View source) {
     this.target = target;
 
-    target.mAddFavImg = Utils.findRequiredViewAsType(source, R.id.add_fav_img, "field 'mAddFavImg'", ImageView.class);
-    target.mStarImageF = Utils.findRequiredViewAsType(source, R.id.star_img_f, "field 'mStarImageF'", ImageView.class);
-    target.mStartImageS = Utils.findRequiredViewAsType(source, R.id.star_img_s, "field 'mStartImageS'", ImageView.class);
-    target.mStartImageT = Utils.findRequiredViewAsType(source, R.id.star_img_t, "field 'mStartImageT'", ImageView.class);
-    target.mStartImageFour = Utils.findRequiredViewAsType(source, R.id.star_img_fourth, "field 'mStartImageFour'", ImageView.class);
-    target.mStartImageFifith = Utils.findRequiredViewAsType(source, R.id.star_img_fifth, "field 'mStartImageFifith'", ImageView.class);
-    target.mcircleImgProfile = Utils.findRequiredViewAsType(source, R.id.circleImg_profile, "field 'mcircleImgProfile'", CircleImageView.class);
-    target.mNameTxt = Utils.findRequiredViewAsType(source, R.id.name_txt, "field 'mNameTxt'", TextView.class);
-    target.mPhoneTxt = Utils.findRequiredViewAsType(source, R.id.phone_txt, "field 'mPhoneTxt'", TextView.class);
-    target.mAboutUsTxt = Utils.findRequiredViewAsType(source, R.id.aboutUs_txt, "field 'mAboutUsTxt'", TextView.class);
-    target.mBtnCall = Utils.findRequiredViewAsType(source, R.id.btn_call, "field 'mBtnCall'", Button.class);
-    target.mBtnSMS = Utils.findRequiredViewAsType(source, R.id.btn_sms, "field 'mBtnSMS'", Button.class);
-    target.mRecycleCourses = Utils.findRequiredViewAsType(source, R.id.recycle_courses, "field 'mRecycleCourses'", RecyclerView.class);
+    target.mAddFavImg = Utils.findOptionalViewAsType(source, R.id.add_fav_img, "field 'mAddFavImg'", ImageView.class);
+    target.mStarImageF = Utils.findOptionalViewAsType(source, R.id.star_img_f, "field 'mStarImageF'", ImageView.class);
+    target.mStartImageS = Utils.findOptionalViewAsType(source, R.id.star_img_s, "field 'mStartImageS'", ImageView.class);
+    target.mStartImageT = Utils.findOptionalViewAsType(source, R.id.star_img_t, "field 'mStartImageT'", ImageView.class);
+    target.mStartImageFour = Utils.findOptionalViewAsType(source, R.id.star_img_fourth, "field 'mStartImageFour'", ImageView.class);
+    target.mStartImageFifith = Utils.findOptionalViewAsType(source, R.id.star_img_fifth, "field 'mStartImageFifith'", ImageView.class);
+    target.mcircleImgProfile = Utils.findOptionalViewAsType(source, R.id.circleImg_profile, "field 'mcircleImgProfile'", CircleImageView.class);
+    target.mNameTxt = Utils.findOptionalViewAsType(source, R.id.name_txt, "field 'mNameTxt'", TextView.class);
+    target.mPhoneTxt = Utils.findOptionalViewAsType(source, R.id.phone_txt, "field 'mPhoneTxt'", TextView.class);
+    target.mAboutUsTxt = Utils.findOptionalViewAsType(source, R.id.aboutUs_txt, "field 'mAboutUsTxt'", TextView.class);
+    target.mBtnCall = Utils.findOptionalViewAsType(source, R.id.btn_call, "field 'mBtnCall'", Button.class);
+    target.mBtnSMS = Utils.findOptionalViewAsType(source, R.id.btn_sms, "field 'mBtnSMS'", Button.class);
+    target.mRecycleCourses = Utils.findOptionalViewAsType(source, R.id.recycle_courses, "field 'mRecycleCourses'", RecyclerView.class);
   }
 
   @Override

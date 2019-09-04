@@ -1,5 +1,6 @@
 package com.example.captonesecondstage.ui.Activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,23 +19,23 @@ import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileStudent_ParentsActivity extends AppCompatActivity {
-    @BindView(R.id.add_fav_img)
+    @BindView(R.id.add_fav_img)@Nullable()
     ImageView mAddFavImg;
-    @BindView(R.id.circleImg_profile)
+    @BindView(R.id.circleImg_profile)@Nullable()
     CircleImageView mcircleImgProfile;
-    @BindView(R.id.name_txt)
+    @BindView(R.id.name_txt)@Nullable()
     TextView mNameTxt;
-    @BindView(R.id.phone_txt)
+    @BindView(R.id.phone_txt)@Nullable()
     TextView mPhoneTxt;
-    @BindView(R.id.aboutUs_txt)
+    @BindView(R.id.aboutUs_txt)@Nullable()
     TextView mAboutUsTxt;
-    @BindView(R.id.btn_call)
+    @BindView(R.id.btn_call)@Nullable()
     Button mBtnCall;
-    @BindView(R.id.btn_sms)
+    @BindView(R.id.btn_sms)@Nullable()
     Button mBtnSMS;
-    @BindView(R.id.recycle_courses)
+    @BindView(R.id.recycle_courses)@Nullable()
     RecyclerView mRecycleCourses;
-    @BindView(R.id.btn_send_request)
+    @BindView(R.id.btn_send_request)@Nullable()
     Button mBtnSendRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

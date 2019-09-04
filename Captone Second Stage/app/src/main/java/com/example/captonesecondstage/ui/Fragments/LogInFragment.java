@@ -3,6 +3,7 @@ package com.example.captonesecondstage.ui.Fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -22,14 +23,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LogInFragment extends Fragment {
-    @BindView(R.id.user_name_et) EditText mUserNameEt;
-    @BindView(R.id.password_ed)EditText mPasswordEd;
-    @BindView(R.id.remember_cb) CheckBox mRemmeberCb;
-    @BindView(R.id.forget_password_btn) Button mForgetPasswordBtn;
-    @BindView(R.id.login_btn) Button mLogin;
-    @BindView(R.id.create_account_tv) TextView mCreateAccountTv;
-    @BindView(R.id.gmail_floatBtn) FloatingActionButton mGmailFloatBtn;
-    @BindView(R.id.face_floatBtn)FloatingActionButton mFaceBtn;
+    @BindView(R.id.user_name_et)@Nullable() EditText mUserNameEt;
+    @BindView(R.id.password_ed)@Nullable()EditText mPasswordEd;
+    @BindView(R.id.remember_cb)@Nullable() CheckBox mRemmeberCb;
+    @BindView(R.id.forget_password_btn)@Nullable() Button mForgetPasswordBtn;
+    @BindView(R.id.login_btn)@Nullable() Button mLogin;
+    @BindView(R.id.create_account_tv)@Nullable() TextView mCreateAccountTv;
+    @BindView(R.id.gmail_floatBtn)@Nullable() FloatingActionButton mGmailFloatBtn;
+    @BindView(R.id.face_floatBtn)@Nullable() FloatingActionButton mFaceBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

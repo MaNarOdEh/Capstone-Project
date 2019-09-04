@@ -1480,10 +1480,12 @@ id blocking
 id bottom
 id btn_call
 id btn_send_request
+id btn_show_profile
 id btn_sms
 id buttonPanel
 id cancel_action
 id cancel_button
+id card_view_teacher_profile
 id center
 id center_horizontal
 id center_vertical
@@ -1505,6 +1507,7 @@ id content
 id contentPanel
 id coordinator
 id courses_name_txt
+id courses_tv
 id create_account_tv
 id custom
 id customPanel
@@ -1555,7 +1558,13 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_profile_circle
 id image_upload
+id img_star_fifth
+id img_star_first
+id img_star_fourth
+id img_star_second
+id img_star_third
 id info
 id info_layout
 id invisible
@@ -1634,6 +1643,7 @@ id profile_image
 id progress_circular
 id progress_horizontal
 id radio
+id random_suggestion_profile
 id recycle_courses
 id remember_cb
 id right
@@ -1654,6 +1664,7 @@ id search_badge
 id search_bar
 id search_button
 id search_close_btn
+id search_edit
 id search_edit_frame
 id search_go_btn
 id search_mag_icon
@@ -1733,6 +1744,7 @@ id user_email_et
 id user_name_et
 id user_name_tv
 id user_phone_et
+id user_phone_tv
 id user_type_spinner
 id view_offset_helper
 id visible
@@ -1800,11 +1812,11 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_home_page
-layout activity_log_in_sign_up
 layout activity_main
 layout activity_profile_student__parents
 layout activity_profile_teacher
 layout card_material
+layout card_notification
 layout card_teacher_short_info
 layout custom_dialog
 layout design_bottom_navigation_item

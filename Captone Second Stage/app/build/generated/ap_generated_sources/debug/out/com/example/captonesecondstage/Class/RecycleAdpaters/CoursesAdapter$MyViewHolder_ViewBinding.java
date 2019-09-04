@@ -18,7 +18,7 @@ public class CoursesAdapter$MyViewHolder_ViewBinding implements Unbinder {
   public CoursesAdapter$MyViewHolder_ViewBinding(CoursesAdapter.MyViewHolder target, View source) {
     this.target = target;
 
-    target.mCoursesNameTxt = Utils.findRequiredViewAsType(source, R.id.courses_name_txt, "field 'mCoursesNameTxt'", TextView.class);
+    target.mCoursesNameTxt = Utils.findOptionalViewAsType(source, R.id.courses_name_txt, "field 'mCoursesNameTxt'", TextView.class);
   }
 
   @Override

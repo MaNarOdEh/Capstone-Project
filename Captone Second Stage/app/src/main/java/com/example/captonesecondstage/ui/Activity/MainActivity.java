@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.main_scrollView) ScrollView mMainScrollView;
+    @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

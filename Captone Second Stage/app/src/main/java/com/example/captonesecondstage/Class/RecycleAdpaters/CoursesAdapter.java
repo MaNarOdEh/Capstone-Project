@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.captonesecondstage.R;
@@ -19,7 +20,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.MyViewHo
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        @BindView(R.id.courses_name_txt)
+        @BindView(R.id.courses_name_txt) @Nullable()
         TextView mCoursesNameTxt;
         public MyViewHolder(View viewItems) {
             super(viewItems);

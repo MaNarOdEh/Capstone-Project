@@ -20,8 +20,6 @@
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
         <activity android:name=".ui.Activity.HomePageActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
-        <activity android:name=".ui.Activity.LogInSignUpActivity"
-            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"/>
         <activity
             android:name=".ui.Activity.MainActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation">

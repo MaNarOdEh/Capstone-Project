@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/card_view_teacher_profile"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -20,8 +21,9 @@
         android:orientation="horizontal"
       >
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/image_profile_circle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/profile"
             />
         <LinearLayout
@@ -30,18 +32,21 @@
             android:orientation="vertical"
             android:layout_marginLeft="15dp">
             <TextView
+                android:id="@+id/user_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/manar_odeh"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/user_phone_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_0597853325"
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="4dp"
+                android:textSize="13sp"
                 />
 
         </LinearLayout>
@@ -52,33 +57,62 @@
             android:layout_marginTop="20dp"
             android:gravity="right">
             <ImageView
+                android:id="@+id/img_star_first"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/star"/>
             <ImageView
+                android:id="@+id/img_star_second"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/star"/>
             <ImageView
+                android:id="@+id/img_star_third"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/star"/>
             <ImageView
+                android:id="@+id/img_star_fourth"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/star"/>
             <ImageView
+                android:id="@+id/img_star_fifth"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/star"/>
         </LinearLayout>
     </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/java_c_arabic_turkish"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:gravity="center"/>
+            android:gravity="center">
+            <TextView
+                android:id="@+id/courses_tv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/java_c_arabic_turkish"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="35dp"
+                android:textSize="14sp"
+                />
+            <Button
+                android:id="@+id/btn_show_profile"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/colorApp"
+                android:text="Show Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

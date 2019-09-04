@@ -23,7 +23,7 @@ public class MainActivity_ViewBinding implements Unbinder {
   public MainActivity_ViewBinding(MainActivity target, View source) {
     this.target = target;
 
-    target.mMainScrollView = Utils.findRequiredViewAsType(source, R.id.main_scrollView, "field 'mMainScrollView'", ScrollView.class);
+    target.mMainScrollView = Utils.findOptionalViewAsType(source, R.id.main_scrollView, "field 'mMainScrollView'", ScrollView.class);
   }
 
   @Override

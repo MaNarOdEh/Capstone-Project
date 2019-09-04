@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -24,15 +25,15 @@ import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ContinueSignUp extends Fragment {
-    @BindView(R.id.profile_image) CircleImageView mProfileImage;
-    @BindView(R.id.user_name_tv) TextView mUserNameTv;
-    @BindView(R.id.user_phone_et) EditText mUserPhoneEt;
-    @BindView(R.id.address_et) EditText mAdressEt;
-    @BindView(R.id.description_et) EditText mDescriptionEt;
-    @BindView(R.id.user_type_spinner) Spinner mUserTypeSpinner;
-    @BindView(R.id.autoCompleteTv_courses) MultiAutoCompleteTextView  mCoursesAutoComplete;
-    @BindView(R.id.signUp_btn) Button mSignUpBtn;
-    @BindView(R.id.image_upload) ImageView mImageUpload;
+    @BindView(R.id.profile_image) @Nullable()CircleImageView mProfileImage;
+    @BindView(R.id.user_name_tv) @Nullable()TextView mUserNameTv;
+    @BindView(R.id.user_phone_et) @Nullable()EditText mUserPhoneEt;
+    @BindView(R.id.address_et) @Nullable()EditText mAdressEt;
+    @BindView(R.id.description_et) @Nullable()EditText mDescriptionEt;
+    @BindView(R.id.user_type_spinner) @Nullable()Spinner mUserTypeSpinner;
+    @BindView(R.id.autoCompleteTv_courses)@Nullable() MultiAutoCompleteTextView  mCoursesAutoComplete;
+    @BindView(R.id.signUp_btn)@Nullable() Button mSignUpBtn;
+    @BindView(R.id.image_upload) @Nullable()ImageView mImageUpload;
 
     private static   final String[] COURSES = new String[] {
             "Java", "C++", "Python", "Android ", "JavaEE","HTML","CSS","JavaScript","PHP","Laravel"

@@ -24,15 +24,15 @@ public class ContinueSignUp_ViewBinding implements Unbinder {
   public ContinueSignUp_ViewBinding(ContinueSignUp target, View source) {
     this.target = target;
 
-    target.mProfileImage = Utils.findRequiredViewAsType(source, R.id.profile_image, "field 'mProfileImage'", CircleImageView.class);
-    target.mUserNameTv = Utils.findRequiredViewAsType(source, R.id.user_name_tv, "field 'mUserNameTv'", TextView.class);
-    target.mUserPhoneEt = Utils.findRequiredViewAsType(source, R.id.user_phone_et, "field 'mUserPhoneEt'", EditText.class);
-    target.mAdressEt = Utils.findRequiredViewAsType(source, R.id.address_et, "field 'mAdressEt'", EditText.class);
-    target.mDescriptionEt = Utils.findRequiredViewAsType(source, R.id.description_et, "field 'mDescriptionEt'", EditText.class);
-    target.mUserTypeSpinner = Utils.findRequiredViewAsType(source, R.id.user_type_spinner, "field 'mUserTypeSpinner'", Spinner.class);
-    target.mCoursesAutoComplete = Utils.findRequiredViewAsType(source, R.id.autoCompleteTv_courses, "field 'mCoursesAutoComplete'", MultiAutoCompleteTextView.class);
-    target.mSignUpBtn = Utils.findRequiredViewAsType(source, R.id.signUp_btn, "field 'mSignUpBtn'", Button.class);
-    target.mImageUpload = Utils.findRequiredViewAsType(source, R.id.image_upload, "field 'mImageUpload'", ImageView.class);
+    target.mProfileImage = Utils.findOptionalViewAsType(source, R.id.profile_image, "field 'mProfileImage'", CircleImageView.class);
+    target.mUserNameTv = Utils.findOptionalViewAsType(source, R.id.user_name_tv, "field 'mUserNameTv'", TextView.class);
+    target.mUserPhoneEt = Utils.findOptionalViewAsType(source, R.id.user_phone_et, "field 'mUserPhoneEt'", EditText.class);
+    target.mAdressEt = Utils.findOptionalViewAsType(source, R.id.address_et, "field 'mAdressEt'", EditText.class);
+    target.mDescriptionEt = Utils.findOptionalViewAsType(source, R.id.description_et, "field 'mDescriptionEt'", EditText.class);
+    target.mUserTypeSpinner = Utils.findOptionalViewAsType(source, R.id.user_type_spinner, "field 'mUserTypeSpinner'", Spinner.class);
+    target.mCoursesAutoComplete = Utils.findOptionalViewAsType(source, R.id.autoCompleteTv_courses, "field 'mCoursesAutoComplete'", MultiAutoCompleteTextView.class);
+    target.mSignUpBtn = Utils.findOptionalViewAsType(source, R.id.signUp_btn, "field 'mSignUpBtn'", Button.class);
+    target.mImageUpload = Utils.findOptionalViewAsType(source, R.id.image_upload, "field 'mImageUpload'", ImageView.class);
   }
 
   @Override

@@ -34,9 +34,6 @@
             android:name="com.example.captonesecondstage.ui.Activity.HomePageActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" />
         <activity
-            android:name="com.example.captonesecondstage.ui.Activity.LogInSignUpActivity"
-            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" />
-        <activity
             android:name="com.example.captonesecondstage.ui.Activity.MainActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
             <intent-filter>
