@@ -34,6 +34,12 @@
     <string name="description_profile">My Name Manar Odeh,I can teach in my spare time at times that suit you. I have good programming experience and I like building stuff</string>
     <string name="request_teach_the_student">Request Teach the student</string>
     <string name="notification_example">Manar Odeh Visit Your Profile!</string>
+    <string name="techapp">TechApp</string>
+    <string name="update_user_name">Update User Name</string>
+    <string name="update_email">Update Email</string>
+    <string name="update_courses">Update Courses</string>
+    <string name="update_phone_number">Update Phone Number</string>
+    <string name="update_password">Update Password</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

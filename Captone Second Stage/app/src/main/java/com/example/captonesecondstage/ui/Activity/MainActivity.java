@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.ScrollView;
@@ -26,8 +27,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+        Intent intent=getIntent();
+        if(intent!=null){
+           String res= intent.getStringExtra(SplachActivity.KEY_RESULT);
+           if(res.equals("1")){
+               showLoginFragment();
 
-        showLoginFragment();
+           }else {
+               showSignUpFragment();
+           }
+        }else {
+
+            showLoginFragment();
+        }
 
     }
     public void showLoginFragment(){
@@ -48,7 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        if(getSupportFragmentManager().getBackStackEntryCount() == 1){
+            finish();
+        }else{
+            super.onBackPressed();
+        }
     }
 
     @Override

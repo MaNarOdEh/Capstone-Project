@@ -53,7 +53,14 @@ public class HomePageActivity extends AppCompatActivity {
         FavoriteFragments fragment=new FavoriteFragments();
         fragmentManager.beginTransaction().addToBackStack("favourite").replace(R.id.frame_container,fragment).commit();
     }
+    @Override
+    public void onBackPressed() {
+        if(getSupportFragmentManager().getBackStackEntryCount() == 1){
 
+        }else{
+            super.onBackPressed();
+        }
+    }
     private void initializeEvent() {
         mNavigationBottomContainer.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

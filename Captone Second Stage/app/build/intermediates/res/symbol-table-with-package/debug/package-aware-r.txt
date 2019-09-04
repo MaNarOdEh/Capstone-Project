@@ -1328,6 +1328,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1396,7 +1397,6 @@ drawable profile
 drawable rounded_btn
 drawable settings
 drawable signoutoption
-drawable sky
 drawable star
 drawable telephone
 drawable test_custom_background
@@ -1481,9 +1481,12 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_aboutUs
 id btn_call
+id btn_login
 id btn_send_request
 id btn_show_profile
+id btn_signUp
 id btn_sms
 id btn_update_address
 id btn_update_courses
@@ -1832,6 +1835,7 @@ layout activity_home_page
 layout activity_main
 layout activity_profile_student__parents
 layout activity_profile_teacher
+layout activity_splach
 layout card_material
 layout card_notification
 layout card_student_short_info
@@ -2023,6 +2027,7 @@ string search_menu_title
 string setting
 string signup
 string status_bar_notification_info_overflow
+string techapp
 string user_name
 string user_name_or_email
 style AlertDialog_AppCompat
