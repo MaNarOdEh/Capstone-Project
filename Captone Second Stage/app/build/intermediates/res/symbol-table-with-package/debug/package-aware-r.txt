@@ -1479,6 +1479,7 @@ id beginning
 id blocking
 id bottom
 id btn_call
+id btn_send_request
 id btn_sms
 id buttonPanel
 id cancel_action
@@ -1986,6 +1987,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string phone_number
 string remember_me
+string request_teach_the_student
 string search_menu_title
 string setting
 string signup

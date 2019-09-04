@@ -25,16 +25,11 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity"
-            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" />
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation"
+            android:parentActivityName="com.example.captonesecondstage.ui.Activity.HomePageActivity" />
         <activity
             android:name="com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity"
-            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" />
         <activity
             android:name="com.example.captonesecondstage.ui.Activity.HomePageActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" />
@@ -44,6 +39,11 @@
         <activity
             android:name="com.example.captonesecondstage.ui.Activity.MainActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
