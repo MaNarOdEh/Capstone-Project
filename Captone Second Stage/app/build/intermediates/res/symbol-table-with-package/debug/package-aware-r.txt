@@ -1350,6 +1350,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable images
 drawable lock
 drawable mail
 drawable mtrl_dialog_background
@@ -1374,6 +1375,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable professor
 drawable rounded_btn
 drawable test_custom_background
 drawable tooltip_frame_dark
