@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
+import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
 import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
@@ -18,9 +20,15 @@ import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.paperdb.Paper;
 
 public class HomePageActivity extends AppCompatActivity {
     @BindView(R.id.frame_container)
@@ -44,9 +52,31 @@ public class HomePageActivity extends AppCompatActivity {
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
+        int app_widget= AppWidgetManager.INVALID_APPWIDGET_ID;
+        Paper.init(this);
+        Paper.book().write("INGREDIENTS","MANARODEH");
+        Intent intent_meeting_update=new  Intent(HomePageActivity.this, MyWidget.class);
+        intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
+        sendBroadcast(intent_meeting_update);
         setTitle("");
         setSupportActionBar(mToolbar);
         showSearchPageFragments();
+    }
+    private void getUserType(){
+        // Get a reference to our posts
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference(mAuth.getUid()).child("mUserName");
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override

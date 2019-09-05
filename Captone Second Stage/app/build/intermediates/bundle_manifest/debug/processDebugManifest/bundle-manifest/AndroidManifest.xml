@@ -57,6 +57,27 @@
             android:name="com.example.captonesecondstage.ui.Activity.MainActivity"
             android:configChanges="keyboardHidden|screenLayout|screenSize|orientation" >
         </activity>
+
+        <receiver
+            android:name="com.example.captonesecondstage.MyWidget"
+            android:icon="@drawable/app_logo"
+            android:label="Info" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_widget_info" />
+        </receiver>
+        <receiver
+            android:name="com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
