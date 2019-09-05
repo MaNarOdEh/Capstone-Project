@@ -1,6 +1,7 @@
 package com.example.captonesecondstage.ui.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -17,13 +18,23 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 
 import butterknife.BindView;
@@ -38,11 +49,14 @@ public class LogInFragment extends Fragment {
     @BindView(R.id.create_account_tv)@Nullable() TextView mCreateAccountTv;
     @BindView(R.id.gmail_floatBtn)@Nullable() FloatingActionButton mGmailFloatBtn;
     @BindView(R.id.face_floatBtn)@Nullable() FloatingActionButton mFaceBtn;
-    @BindView(R.id.progress_circular)@Nullable()
-    ProgressBar mProgressCircular;
+    @BindView(R.id.progress_circular)@Nullable() ProgressBar mProgressCircular;
+    @BindView(R.id.sign_in_button)@Nullable()
+    SignInButton mSign_in_button;
+    GoogleSignInClient mGoogleSignInClient;
     private  static final String MY_PREFS_NAME="EMAILPASSWORD";
     private  static final String EMAIL="EMAIL";
     private static  final String PASS="PASS";
+    private  static final int RC_SIGN_IN=3;
     private FirebaseAuth mAuth;
 
     @Override
@@ -53,6 +67,14 @@ public class LogInFragment extends Fragment {
         ButterKnife.bind(this,root);
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
         SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
         String email = prefs.getString(EMAIL, "");//""-Empty String is the default value.
         String pass = prefs.getString(PASS, ""); //""-Empty String is the default value.
@@ -88,6 +110,24 @@ public class LogInFragment extends Fragment {
                 ((MainActivity)getActivity()).showForgetPasswordFragments();
             }
         });
+        mSign_in_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        mGmailFloatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSign_in_button.setPressed(true);
+                signIn();
+
+            }
+        });
+    }
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     private void checkValidData(){
         String email=mUserNameEt.getText().toString(),
@@ -137,5 +177,37 @@ public class LogInFragment extends Fragment {
         editor.putString(EMAIL, email);
         editor.putString(PASS, pass);
         editor.apply();
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+    }
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            if(account!=null){
+              //
+              mAuth.fetchSignInMethodsForEmail(account.getEmail()).
+                      addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                  @Override
+                  public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+
+                      ((MainActivity)getActivity()).goToTheHomePage();
+                  }
+              });
+            }
+
+            // Signed in successfully, show authenticated UI.
+        } catch (ApiException e) {
+            ((MainActivity)getActivity()).showSnackBar(e.getMessage());
+
+        }
     }
 }

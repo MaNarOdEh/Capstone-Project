@@ -1746,6 +1746,7 @@ id showCustom
 id showHome
 id showTitle
 id signUp_btn
+id sign_in_button
 id skipCollapsed
 id slide
 id smallLabel

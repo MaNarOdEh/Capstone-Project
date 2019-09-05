@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
         ButterKnife.setDebug(true);
         mAuth= FirebaseAuth.getInstance();
         MyApplication.getInstance().setConnectivityListener(this);
+
+
+
+
         Intent intent=getIntent();
         if(intent!=null){
            String res= intent.getStringExtra(SplachActivity.KEY_RESULT);

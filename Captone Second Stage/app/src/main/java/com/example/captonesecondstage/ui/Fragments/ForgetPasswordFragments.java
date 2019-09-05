@@ -60,7 +60,6 @@ public class ForgetPasswordFragments extends Fragment {
                                         mBtnLogin.setText(R.string.login);
                                         mUserEmailEt.setVisibility(View.GONE);
                                     } else {
-                                        //   ((MainActivity)getActivity()).showSnackBar(task.getException()+"  ");
                                         ((MainActivity) getActivity()).showSnackBar("something wrong! Maybe you don't have accounts " +
                                                 "check your email please!");
                                     }

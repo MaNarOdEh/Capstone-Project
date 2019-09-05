@@ -34,19 +34,18 @@ import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
-import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -86,6 +85,7 @@ public class ContinueSignUp extends Fragment {
 
     private static   final String[] COURSES = new String[] {
             "Java", "C++", "Python", "Android ", "JavaEE","HTML","CSS","JavaScript","PHP","Laravel"
+            ,"Math","Physics","calculs","Arabic","English"
     };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,8 +103,10 @@ public class ContinueSignUp extends Fragment {
         }
         //initialize Events
         initializeEvent();
-        //setAdapters
+
+        //setAdapters For Some Courses Name
         setAdapter();
+
         return root;
     }
 
@@ -182,12 +184,29 @@ public class ContinueSignUp extends Fragment {
             if (((MainActivity) getActivity()).checkConnection()) {
                 if (type.equals("Teacher")) {
                     Teachers teachers = new Teachers(data.get(0), data.get(1), data.get(2), phone, description, cources, address);
-                    addTeacher(teachers);
+                    if(data.get(2).isEmpty()){
+                        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .requestEmail()
+                                .build();
+                        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
+                      firebaseAuthWithGoogle(account,teachers);
+                    }else {
+
+                        addTeacher(teachers);
+                    }
 
                 } else {
                     Students students = new Students(data.get(0), data.get(1), data.get(2)
                             , phone, description, cources, address);
-                    addStudent(students);
+                    if(data.get(2).isEmpty()){
+                        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .requestEmail()
+                                .build();
+                        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
+                        firebaseAuthWithGoogle(account,students);
+                    }else {
+                        addStudent(students);
+                    }
                 }
             }
         }else{
@@ -316,7 +335,7 @@ public class ContinueSignUp extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("1");
+                                        rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
                                         storeImage();
                                     }else{
                                         ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
@@ -331,5 +350,60 @@ public class ContinueSignUp extends Fragment {
 
     }
 
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct,Students students) {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        mAuth=FirebaseAuth.getInstance();
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                            .setValue(students).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
+                               // acct.getPhotoUrl();
+                                storeImage();
+                            }else{
+                                ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
+                            }
+                        }
+                    });
+                }else{
+                    ( (MainActivity) getActivity()).    throwException(task);
+                }
+
+            }
+        });
+    }
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct,Teachers teachers) {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        mAuth=FirebaseAuth.getInstance();
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                            .setValue(teachers).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("2");
+                             //   storeImage();
+                            }else{
+                                ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
+                            }
+                        }
+                    });
+                }else{
+
+                }
+
+            }
+        });
+    }
 
 }
