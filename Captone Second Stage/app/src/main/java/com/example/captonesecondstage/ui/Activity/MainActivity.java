@@ -24,9 +24,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    FirebaseDatabase firebaseDatabase; //Firebase Database
-    DatabaseReference databaseReference; //Firebase Referance
-    DatabaseReference databaseReferenceEmployee; //Firebase Referance
     @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth= FirebaseAuth.getInstance();
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+       /* FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
+        myRef.setValue("Hello, World!");*/
 
         Intent intent=getIntent();
         if(intent!=null){
@@ -57,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth!=null){
+            goToTheHomePage();
+        }
+    }
+    private  void goToTheHomePage(){
+        startActivity(new Intent(this,HomePageActivity.class));
+    }
+
     public void showLoginFragment(){
         FragmentManager fragmentManager=getSupportFragmentManager();
         LogInFragment fragment=new LogInFragment();
