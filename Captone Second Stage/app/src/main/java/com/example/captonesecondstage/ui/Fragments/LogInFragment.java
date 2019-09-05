@@ -1,8 +1,6 @@
 package com.example.captonesecondstage.ui.Fragments;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -114,11 +112,9 @@ public class LogInFragment extends Fragment {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         if(mRemmeberCb.isChecked()){
-                            SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
-                            editor.putString(EMAIL, email);
-                            editor.putString(PASS, password);
-                            editor.apply();
-
+                            editSharedPreference(email,password);
+                        }else{
+                            editSharedPreference("","");
                         }
                         ( (MainActivity) getActivity()).goToTheHomePage();
                         mProgressCircular.setVisibility(View.GONE);
@@ -131,7 +127,10 @@ public class LogInFragment extends Fragment {
         }
 
     }
-
-
-
+    private  void editSharedPreference(String email,String pass){
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
+        editor.putString(EMAIL, email);
+        editor.putString(PASS, pass);
+        editor.apply();
+    }
 }

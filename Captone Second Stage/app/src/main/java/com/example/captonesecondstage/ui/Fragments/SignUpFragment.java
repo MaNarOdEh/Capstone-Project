@@ -145,14 +145,14 @@ public class SignUpFragment extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child(AddingReadingData.ALL_TECH).hasChild(userName) ){
                         // run some code..this user name already taken before!!
-                        mUserNameEt.setError("Your Name Must Be Unique this name is already taken before!!");
+                        mUserNameEt.setError("Your name must be unique this name is already taken before!!");
+                        ((MainActivity)getActivity()).showSnackBar("your name must be unique this name is already taken before!!");
 
                     }else{
                         mUserNameEt.setError(null);
                         ((MainActivity)getActivity()).showContinueSignUpFragment(userName,userEmail,cpassword);
                     }
                 }
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 

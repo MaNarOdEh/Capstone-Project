@@ -97,6 +97,9 @@ public class ContinueSignUp extends Fragment {
         Bundle bundle = this.getArguments();
         if(bundle!=null){
             data=bundle.getStringArrayList(MainActivity.DATACREATEACCOUNTS);
+            mUserNameTv.setText(data.get(0));
+        }else{
+            ((MainActivity)getActivity()).showSignUpFragment();
         }
         //initialize Events
         initializeEvent();
