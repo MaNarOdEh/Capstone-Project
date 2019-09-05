@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.example.captonesecondstage.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -21,6 +22,7 @@ public class SearchPageFramgents_ViewBinding implements Unbinder {
 
     target.mRandomSuggestionProfile = Utils.findOptionalViewAsType(source, R.id.random_suggestion_profile, "field 'mRandomSuggestionProfile'", RecyclerView.class);
     target.mSearchEdit = Utils.findOptionalViewAsType(source, R.id.search_edit, "field 'mSearchEdit'", EditText.class);
+    target.mAdView = Utils.findOptionalViewAsType(source, R.id.adView, "field 'mAdView'", AdView.class);
   }
 
   @Override
@@ -32,5 +34,6 @@ public class SearchPageFramgents_ViewBinding implements Unbinder {
 
     target.mRandomSuggestionProfile = null;
     target.mSearchEdit = null;
+    target.mAdView = null;
   }
 }

@@ -17,10 +17,19 @@ import android.widget.EditText;
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapter;
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
 import com.example.captonesecondstage.Class.Students;
-import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 
@@ -32,6 +41,12 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     RecyclerView mRandomSuggestionProfile;
     @BindView(R.id.search_edit)@Nullable()
     EditText mSearchEdit;
+    @BindView(R.id.adView)
+    @Nullable
+    AdView mAdView;
+    FirebaseAuth mAuth;
+    FirebaseDatabase mFirebaseDatabase;
+    FirebaseStorage mFirebaseStorage;
 
 
 
@@ -42,9 +57,25 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
         View root= inflater.inflate(R.layout.fragment_search_page_framgents, container, false);
         ButterKnife.bind(this,root);
         ButterKnife.setDebug(true);
-
+        initiliaeAdb();
+        initializeFireBase();
         initializeEvent();
         return root;
+    }
+
+    private void initiliaeAdb() {
+        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
+
+    private void initializeFireBase() {
+        mAuth=FirebaseAuth.getInstance();
+
     }
 
     private void initializeEvent() {

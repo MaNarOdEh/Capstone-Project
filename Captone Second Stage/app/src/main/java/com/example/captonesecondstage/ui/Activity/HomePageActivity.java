@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -29,6 +30,7 @@ public class HomePageActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     FirebaseAuth mAuth;
+    String userType="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,8 @@ public class HomePageActivity extends AppCompatActivity {
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
         initializeEvent();
-       // getSupportActionBar().hide();
+
+        //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
@@ -90,29 +93,33 @@ public class HomePageActivity extends AppCompatActivity {
                switch (id){
                    case R.id.navigation_home:
                        showSearchPageFragments();
-//                       mNavigationBottomContainer.setSelectedItemId(R.id.navigation_home);
                        break;
                    case R.id.navigation_favourite:
                        showFavouriteFragments();
-  //                     mNavigationBottomContainer.setSelectedItemId(R.id.navigation_favourite);
                        break;
                    case R.id.navigation_settings:
                        showSettingsFragments();
-    //                   mNavigationBottomContainer.setSelectedItemId(R.id.navigation_settings);
                        break;
                    case R.id.navigation_notification:
                        showNotificationFragments();
-      //                 mNavigationBottomContainer.setSelectedItemId(R.id.navigation_notification);
                        break;
                    case R.id.navigation_signOut:
                        mAuth.signOut();
                        goToSplashScreen();
                        break;
-               }
+               }updateNavigationBarState(item.getItemId());
 
                 return false;
             }
         });
     }
     private void goToSplashScreen(){ startActivity(new Intent(this,SplachActivity.class)); }
+    private void updateNavigationBarState(int actionId){
+        Menu menu = mNavigationBottomContainer.getMenu();
+
+        for (int i = 0, size = menu.size(); i < size; i++) {
+            MenuItem item = menu.getItem(i);
+            item.setChecked(item.getItemId() == actionId);
+        }
+    }
 }

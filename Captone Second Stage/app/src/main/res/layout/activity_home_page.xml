@@ -7,22 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.Activity.HomePageActivity">
     <include layout="@layout/toolbar_home_page"/>
+
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="80dp"/>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom_container"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:background="@color/colorApp"
         android:padding="15dp"
         android:foreground="?attr/selectableItemBackground"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/transparent"
         app:menu="@menu/home_page_menu"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        app:itemIconSize="20dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
