@@ -177,17 +177,21 @@ public class ContinueSignUp extends Fragment {
         }else{
             mCoursesAutoComplete.setError(null);
         }
-        if(correct){
+        if(correct) {
             mProgressCircular.setVisibility(View.VISIBLE);
-            if(type.equals("Teacher")) {
-                Teachers teachers=new Teachers(data.get(0),data.get(1),data.get(2),phone,description,cources,address);
-                addTeacher(teachers);
+            if (((MainActivity) getActivity()).checkConnection()) {
+                if (type.equals("Teacher")) {
+                    Teachers teachers = new Teachers(data.get(0), data.get(1), data.get(2), phone, description, cources, address);
+                    addTeacher(teachers);
 
-            }else{
-                Students students=new Students(data.get(0),data.get(1),data.get(2)
-                ,phone,description,cources,address);
-                addStudent(students);
+                } else {
+                    Students students = new Students(data.get(0), data.get(1), data.get(2)
+                            , phone, description, cources, address);
+                    addStudent(students);
+                }
             }
+        }else{
+            ((MainActivity) getActivity()).showNoInternetConnectionFragment();
         }
     }
     private  void openGallery(){
@@ -272,6 +276,7 @@ public class ContinueSignUp extends Fragment {
         }
     }
     private void addTeacher(Teachers teachers){
+
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         mAuth=FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(teachers.getmEmail(),teachers.getmPassword()).

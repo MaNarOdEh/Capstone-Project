@@ -11,10 +11,13 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.ScrollView;
 
+import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
+import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;
 import com.example.captonesecondstage.ui.Fragments.ForgetPasswordFragments;
 import com.example.captonesecondstage.ui.Fragments.LogInFragment;
+import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
 import com.example.captonesecondstage.ui.Fragments.SignUpFragment;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,7 +32,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
     FirebaseAuth mAuth;
     @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
         mAuth= FirebaseAuth.getInstance();
+        MyApplication.getInstance().setConnectivityListener(this);
         Intent intent=getIntent();
         if(intent!=null){
            String res= intent.getStringExtra(SplachActivity.KEY_RESULT);
@@ -59,13 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(mAuth.getCurrentUser()!=null){
-           goToTheHomePage();
-        }
-    }
     public  void goToTheHomePage(){
         startActivity(new Intent(this,HomePageActivity.class));
     }
@@ -99,18 +96,20 @@ public class MainActivity extends AppCompatActivity {
         setBackGroundToNull();
         FragmentManager fragmentManager=getSupportFragmentManager();
         ForgetPasswordFragments fragment=new ForgetPasswordFragments();
-        fragmentManager.beginTransaction().addToBackStack("Sign").replace(R.id.loginSignUp_frame,fragment).commit();
+        fragmentManager.beginTransaction().addToBackStack("forget").replace(R.id.loginSignUp_frame,fragment).commit();
+    }
+    public void showNoInternetConnectionFragment(){
+        setBackGroundToNull();
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        NoInternetConnectionFragment fragment=new NoInternetConnectionFragment();
+        fragmentManager.beginTransaction().addToBackStack("DisConnect").replace(R.id.loginSignUp_frame,fragment).commit();
+    }
+    // Method to manually check connection status
+    public  boolean checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        return isConnected;
     }
 
-    @Override
-    public void onBackPressed() {
-        if(getSupportFragmentManager().getBackStackEntryCount() == 1){
-            finish();
-        }else{
-            setBackgroundImages();
-            super.onBackPressed();
-        }
-    }
     private void setBackgroundImages(){
         mMainScrollView.setBackgroundResource(R.drawable.background);
 
@@ -163,6 +162,32 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    @Override
+    public void onBackPressed() {
+        if(getSupportFragmentManager().getBackStackEntryCount() == 1){
+            finish();
+        }else{
+            setBackgroundImages();
+            super.onBackPressed();
+        }
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser()!=null){
+            goToTheHomePage();
+        }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(checkConnection()){
+            showLoginFragment();
+        }
+    }
 }

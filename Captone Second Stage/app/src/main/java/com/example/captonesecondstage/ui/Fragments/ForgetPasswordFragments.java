@@ -51,20 +51,24 @@ public class ForgetPasswordFragments extends Fragment {
                     String email = mUserEmailEt.getText().toString();
                     if (ValidationData.isCorrectEmail(email)) {
                         mUserEmailEt.setError(null);
-                        FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    mMessageTxt.setText(R.string.reset_password_link_send);
-                                    mBtnLogin.setText(R.string.login);
-                                    mUserEmailEt.setVisibility(View.GONE);
-                                } else {
-                                 //   ((MainActivity)getActivity()).showSnackBar(task.getException()+"  ");
-                                    ((MainActivity)getActivity()).showSnackBar("something wrong! Maybe you don't have accounts " +
-                                            "check your email please!");
+                        if(((MainActivity) getActivity()).checkConnection()) {
+                            FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        mMessageTxt.setText(R.string.reset_password_link_send);
+                                        mBtnLogin.setText(R.string.login);
+                                        mUserEmailEt.setVisibility(View.GONE);
+                                    } else {
+                                        //   ((MainActivity)getActivity()).showSnackBar(task.getException()+"  ");
+                                        ((MainActivity) getActivity()).showSnackBar("something wrong! Maybe you don't have accounts " +
+                                                "check your email please!");
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }else{
+                            ((MainActivity) getActivity()).showNoInternetConnectionFragment();
+                        }
 
                     } else {
                         mUserEmailEt.setError("Please Input Valid Email!");

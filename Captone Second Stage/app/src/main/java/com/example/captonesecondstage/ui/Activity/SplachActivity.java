@@ -72,4 +72,10 @@ public class SplachActivity extends AppCompatActivity {
             startActivity(new Intent(this,HomePageActivity.class));
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

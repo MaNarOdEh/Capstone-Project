@@ -1384,6 +1384,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable disconnect
 drawable facebook_logo
 drawable gallery
 drawable gmail
@@ -1525,6 +1526,7 @@ id blocking
 id bottom
 id btn_aboutUs
 id btn_call
+id btn_is_connect
 id btn_login
 id btn_send_request
 id btn_show_profile
@@ -1913,6 +1915,7 @@ layout forget_password_fragments
 layout fragment_continue_sign_up
 layout fragment_favorite_fragments
 layout fragment_log_in
+layout fragment_no_internet_connection
 layout fragment_notification_fragments
 layout fragment_search_page_framgents
 layout fragment_settings

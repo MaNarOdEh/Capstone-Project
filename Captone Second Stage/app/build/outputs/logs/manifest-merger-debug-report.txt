@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\4526c4a8a772668fe4abe3353e517654\appcompat-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9bac9c4889645f6890dde18e8b20da08\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -72,20 +72,20 @@ MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] C:\Users\pc corner\.grad
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\7c3f40922534760522232442d1a17b19\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f286ad629c995b201730b04ab989d86d\protolite-well-known-types-17.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:2:1-13:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
 	package
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:11-69
@@ -129,8 +129,30 @@ uses-permission#android.permission.CAMERA
 ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:10:5-65
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:10:22-62
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:11:5-79
+MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75839c69ac3c675543fc992c1d85b16a\firebase-iid-20.0.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75839c69ac3c675543fc992c1d85b16a\firebase-iid-20.0.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eb126c6ed70102d6b61915c9583dd213\play-services-measurement-impl-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eb126c6ed70102d6b61915c9583dd213\play-services-measurement-impl-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6afdd053bee1e6a18e04235e884caea8\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6afdd053bee1e6a18e04235e884caea8\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:11:22-76
 application
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:12:5-40:19
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:13:5-42:19
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9bac9c4889645f6890dde18e8b20da08\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -188,57 +210,59 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Use
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:9-48
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-48
 	android:icon
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:9-40
+	android:name
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:14:9-64
 activity#com.example.captonesecondstage.ui.Activity.SplachActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:9-25:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:9-27:20
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:19:19-61
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:25:27-74
 activity#com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:9-29:74
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:28:9-31:74
 	android:parentActivityName
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:31:13-71
+	android:configChanges
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:30:13-87
+	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:29:13-71
-	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:28:13-87
-	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:27:13-71
 activity#com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:30:9-32:90
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:32:9-34:90
 	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:32:13-87
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:34:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:31:13-63
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:33:13-63
 activity#com.example.captonesecondstage.ui.Activity.HomePageActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:33:9-35:90
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:35:9-37:90
 	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:35:13-87
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:37:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:34:13-57
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:36:13-57
 activity#com.example.captonesecondstage.ui.Activity.MainActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:36:9-39:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:38:9-41:20
 	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:38:13-87
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:40:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:37:13-53
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:39:13-53
 uses-sdk
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
@@ -427,26 +451,6 @@ ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\pc corner\.gradle
 		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\789523bdf8b00c836dc6f1de412f9e40\firebase-auth-19.0.0\AndroidManifest.xml:38:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\789523bdf8b00c836dc6f1de412f9e40\firebase-auth-19.0.0\AndroidManifest.xml:37:17-109
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-iid:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75839c69ac3c675543fc992c1d85b16a\firebase-iid-20.0.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75839c69ac3c675543fc992c1d85b16a\firebase-iid-20.0.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eb126c6ed70102d6b61915c9583dd213\play-services-measurement-impl-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eb126c6ed70102d6b61915c9583dd213\play-services-measurement-impl-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6afdd053bee1e6a18e04235e884caea8\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6afdd053bee1e6a18e04235e884caea8\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
-MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:11:5-79
-MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:11:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:13:22-76
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
 ADDED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:20:13-22:85
 	android:value

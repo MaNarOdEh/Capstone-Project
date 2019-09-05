@@ -106,24 +106,29 @@ public class LogInFragment extends Fragment {
         }else{
             mPasswordEd.setError(null);
         }
-        if(correct){
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        if(mRemmeberCb.isChecked()){
-                            editSharedPreference(email,password);
-                        }else{
-                            editSharedPreference("","");
+        if(correct) {
+            if (((MainActivity) getActivity()).checkConnection()) {
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            if (mRemmeberCb.isChecked()) {
+                                editSharedPreference(email, password);
+                            } else {
+                                editSharedPreference("", "");
+                            }
+                            ((MainActivity) getActivity()).goToTheHomePage();
+                            mProgressCircular.setVisibility(View.GONE);
+                        } else {
+                            ((MainActivity) getActivity()).throwException(task);
+                            mProgressCircular.setVisibility(View.GONE);
                         }
-                        ( (MainActivity) getActivity()).goToTheHomePage();
-                        mProgressCircular.setVisibility(View.GONE);
-                    }else{
-                        ( (MainActivity) getActivity()).  throwException(task);
-                        mProgressCircular.setVisibility(View.GONE);
                     }
-                }
-            });
+                });
+            }
+            else{
+                ((MainActivity) getActivity()).showNoInternetConnectionFragment();
+            }
         }
 
     }

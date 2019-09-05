@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Fragments.NoInternetConnectionFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+
+  >
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="5dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/disconnect"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Whoops"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:padding="15dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Slow or no internet connection.\nPlease check your internet settings"
+        android:gravity="center"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        />
+    <Button
+        android:id="@+id/btn_is_connect"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorApp"
+        android:text="Pull down to Refresh"/>
+
+</LinearLayout>
