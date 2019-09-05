@@ -18,6 +18,7 @@ import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -67,8 +68,49 @@ public class SignUpFragment extends Fragment {
             }
 
         });
+        mGmailFloatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createAccountsUsingGoogleAccounts();
+            }
+        });
 
     }
+
+    private void createAccountsUsingGoogleAccounts() {
+        String userName=mUserNameEt.getText().toString();
+        if(!ValidationData.isCorrectName(userName)){
+            mUserNameEt.setError("Your name must al least have 3 char at the beginning,\nyou should input a user name before!!");
+        }else{
+            mUserNameEt.setError(null);
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.child(AddingReadingData.ALL_TECH).hasChild(userName) ){
+                        // run some code..this user name already taken before!!
+                        mUserNameEt.setError("Your Name Must Be Unique this name is already taken before!!");
+                    }else{
+                        // Configure Google Sign In
+                        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .requestIdToken(getString(R.string.default_web_client_id))
+                                .requestEmail()
+                                .build();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+    }
+    /*private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }*/
+
     private void validateInput() {
         String userName=mUserNameEt.getText().toString(),
                 userEmail=mUserEmailEt.getText().toString(),

@@ -235,11 +235,7 @@ public class ContinueSignUp extends Fragment {
 
         }
     }
-    private void showSnackBar(String message){
-        Snackbar snackbar = Snackbar
-                .make(mMainLayout, message, Snackbar.LENGTH_LONG);
-        snackbar.show();
-    }
+
     private  void storeImage(){
         if(bitmap!=null) {
             FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -254,21 +250,22 @@ public class ContinueSignUp extends Fragment {
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    showSnackBar(exception.getMessage());
-                    goToTheHomePage();
+                    ( (MainActivity) getActivity()). showSnackBar(exception.getMessage());
+                    ( (MainActivity) getActivity()).goToTheHomePage();
+
                     mProgressCircular.setVisibility(View.GONE);
-                    // Handle unsuccessful uploads
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    goToTheHomePage();
+                    ( (MainActivity) getActivity()).goToTheHomePage();
+
                     mProgressCircular.setVisibility(View.GONE);
-                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
                 }
             });
         }else{
-            goToTheHomePage();
+            ( (MainActivity) getActivity()).goToTheHomePage();
+
         }
     }
     private void addTeacher(Teachers teachers){
@@ -287,12 +284,12 @@ public class ContinueSignUp extends Fragment {
                                         rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("1");
                                         storeImage();
                                     }else{
-                                        showSnackBar(task.getException()+" ");
+                                        ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                                     }
                                 }
                             });
                         }else {
-                            throwException(task);
+                            ( (MainActivity) getActivity()).    throwException(task);
                         }
                     }
                 });
@@ -314,55 +311,17 @@ public class ContinueSignUp extends Fragment {
                                         rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("1");
                                         storeImage();
                                     }else{
-                                        showSnackBar(task.getException()+" ");
+                                        ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                                     }
                                 }
                             });
                         }else {
-                            throwException(task);
+                            ( (MainActivity) getActivity()).    throwException(task);
                         }
                     }
                 });
 
     }
-    private  void goToTheHomePage(){
-        startActivity(new Intent(getActivity(), HomePageActivity.class));
-    }
-    private void throwException(@Nullable Task<AuthResult> task){
-        try
-        {
-            throw task.getException();
-        }
-        // if user enters wrong email.
-        catch (FirebaseAuthWeakPasswordException weakPassword)
-        {
-            // Log.d(TAG, "onComplete: weak_password");
 
-            showSnackBar("Weak password,Try Input Stronger password!");
-
-            // TODO: take your actions!
-        }
-        // if user enters wrong password.
-        catch (FirebaseAuthInvalidCredentialsException malformedEmail)
-        {
-            //Log.d(TAG, "onComplete: malformed_email");
-            showSnackBar("malformed_email!");
-
-            // TODO: Take your action
-        }
-        catch (FirebaseAuthUserCollisionException existEmail)
-        {
-            // Log.d(TAG, "onComplete: exist_email");
-            showSnackBar("Exist email! The Input Email is already taken");
-
-            // TODO: Take your action
-        }
-        catch (Exception e)
-        {
-            showSnackBar(e.getMessage());
-
-            // Log.d(TAG, "onComplete: " + e.getMessage());
-        }
-    }
 
 }

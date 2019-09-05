@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
@@ -35,6 +36,7 @@ public class ContinueSignUp_ViewBinding implements Unbinder {
     target.mSignUpBtn = Utils.findOptionalViewAsType(source, R.id.signUp_btn, "field 'mSignUpBtn'", Button.class);
     target.mImageUpload = Utils.findOptionalViewAsType(source, R.id.image_upload, "field 'mImageUpload'", ImageView.class);
     target.mMainLayout = Utils.findOptionalViewAsType(source, R.id.main_layout, "field 'mMainLayout'", LinearLayout.class);
+    target.mProgressCircular = Utils.findOptionalViewAsType(source, R.id.progress_circular, "field 'mProgressCircular'", ProgressBar.class);
   }
 
   @Override
@@ -54,5 +56,6 @@ public class ContinueSignUp_ViewBinding implements Unbinder {
     target.mSignUpBtn = null;
     target.mImageUpload = null;
     target.mMainLayout = null;
+    target.mProgressCircular = null;
   }
 }

@@ -3,6 +3,7 @@ package com.example.captonesecondstage.ui.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
@@ -14,7 +15,13 @@ import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;
 import com.example.captonesecondstage.ui.Fragments.LogInFragment;
 import com.example.captonesecondstage.ui.Fragments.SignUpFragment;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import java.util.ArrayList;
 
@@ -25,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
+    @BindView(R.id.main_layout)@Nullable()
+    CoordinatorLayout mMainLayout;
     public static String DATACREATEACCOUNTS="NAMEEMAILPASS";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
            goToTheHomePage();
         }
     }
-    private  void goToTheHomePage(){
+    public  void goToTheHomePage(){
         startActivity(new Intent(this,HomePageActivity.class));
     }
 
@@ -101,4 +110,40 @@ public class MainActivity extends AppCompatActivity {
     public void onRestoreInstanceState(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onRestoreInstanceState(savedInstanceState, persistentState);
     }
+    public  void showSnackBar(String message){
+        Snackbar snackbar = Snackbar
+                .make(mMainLayout, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
+    public void throwException(@Nullable Task<AuthResult> task){
+        try
+        {
+            throw task.getException();
+        }
+        // if user enters wrong email.
+        catch (FirebaseAuthWeakPasswordException weakPassword)
+        {
+
+             showSnackBar("Weak password,Try Input Stronger password!");
+
+        }
+        // if user enters wrong password.
+        catch (FirebaseAuthInvalidCredentialsException malformedEmail)
+        {
+          showSnackBar("malformed_email!");
+
+        }
+        catch (FirebaseAuthUserCollisionException existEmail)
+        {
+           showSnackBar("Exist email! The Input Email is already taken");
+
+        }
+        catch (Exception e)
+        {
+          showSnackBar(e.getMessage());
+
+        }
+    }
+
+
 }

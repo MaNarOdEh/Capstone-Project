@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.captonesecondstage.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,14 +23,17 @@ public class SplachActivity extends AppCompatActivity {
     @BindView(R.id.btn_aboutUs)@Nullable()
     Button mBtnAboutUs;
     public static final String KEY_RESULT="LOG_SIGN";
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+        mAuth=FirebaseAuth.getInstance();
         initializeEvents();
     }
+
 
     private void initializeEvents() {
         mBtnAboutUs.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +68,8 @@ public class SplachActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        if(mAuth.getCurrentUser()!=null){
+            startActivity(new Intent(this,HomePageActivity.class));
+        }
     }
 }

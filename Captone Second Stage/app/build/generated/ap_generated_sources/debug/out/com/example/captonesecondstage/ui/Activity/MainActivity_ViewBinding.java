@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ScrollView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.example.captonesecondstage.R;
@@ -24,6 +25,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.mMainScrollView = Utils.findOptionalViewAsType(source, R.id.main_scrollView, "field 'mMainScrollView'", ScrollView.class);
+    target.mMainLayout = Utils.findOptionalViewAsType(source, R.id.main_layout, "field 'mMainLayout'", CoordinatorLayout.class);
   }
 
   @Override
@@ -34,5 +36,6 @@ public class MainActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.mMainScrollView = null;
+    target.mMainLayout = null;
   }
 }
