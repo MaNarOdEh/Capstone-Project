@@ -6312,31 +6312,32 @@ public final class R {
     public static final int title=0x7f090153;
     public static final int titleDividerNoCustom=0x7f090154;
     public static final int title_template=0x7f090155;
-    public static final int top=0x7f090156;
-    public static final int topPanel=0x7f090157;
-    public static final int touch_outside=0x7f090158;
-    public static final int transition_current_scene=0x7f090159;
-    public static final int transition_layout_save=0x7f09015a;
-    public static final int transition_position=0x7f09015b;
-    public static final int transition_scene_layoutid_cache=0x7f09015c;
-    public static final int transition_transform=0x7f09015d;
-    public static final int txt_notification_status=0x7f09015e;
-    public static final int unchecked=0x7f09015f;
-    public static final int uniform=0x7f090160;
-    public static final int unlabeled=0x7f090161;
-    public static final int up=0x7f090162;
-    public static final int useLogo=0x7f090163;
-    public static final int user_email_et=0x7f090164;
-    public static final int user_name_et=0x7f090165;
-    public static final int user_name_tv=0x7f090166;
-    public static final int user_phone_et=0x7f090167;
-    public static final int user_phone_tv=0x7f090168;
-    public static final int user_type_spinner=0x7f090169;
-    public static final int view_offset_helper=0x7f09016a;
-    public static final int visible=0x7f09016b;
-    public static final int withText=0x7f09016c;
-    public static final int wrap=0x7f09016d;
-    public static final int wrap_content=0x7f09016e;
+    public static final int toolbar=0x7f090156;
+    public static final int top=0x7f090157;
+    public static final int topPanel=0x7f090158;
+    public static final int touch_outside=0x7f090159;
+    public static final int transition_current_scene=0x7f09015a;
+    public static final int transition_layout_save=0x7f09015b;
+    public static final int transition_position=0x7f09015c;
+    public static final int transition_scene_layoutid_cache=0x7f09015d;
+    public static final int transition_transform=0x7f09015e;
+    public static final int txt_notification_status=0x7f09015f;
+    public static final int unchecked=0x7f090160;
+    public static final int uniform=0x7f090161;
+    public static final int unlabeled=0x7f090162;
+    public static final int up=0x7f090163;
+    public static final int useLogo=0x7f090164;
+    public static final int user_email_et=0x7f090165;
+    public static final int user_name_et=0x7f090166;
+    public static final int user_name_tv=0x7f090167;
+    public static final int user_phone_et=0x7f090168;
+    public static final int user_phone_tv=0x7f090169;
+    public static final int user_type_spinner=0x7f09016a;
+    public static final int view_offset_helper=0x7f09016b;
+    public static final int visible=0x7f09016c;
+    public static final int withText=0x7f09016d;
+    public static final int wrap=0x7f09016e;
+    public static final int wrap_content=0x7f09016f;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;
@@ -6494,6 +6495,7 @@ public final class R {
     public static final int text_view_with_line_height_from_style=0x7f0c0074;
     public static final int text_view_with_theme_line_height=0x7f0c0075;
     public static final int text_view_without_line_height=0x7f0c0076;
+    public static final int toolbar_home_page=0x7f0c0077;
   }
   public static final class menu {
     public static final int home_page_menu=0x7f0d0000;

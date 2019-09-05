@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.example.captonesecondstage.R;
@@ -26,6 +27,7 @@ public class HomePageActivity_ViewBinding implements Unbinder {
 
     target.mFrameContainer = Utils.findRequiredViewAsType(source, R.id.frame_container, "field 'mFrameContainer'", FrameLayout.class);
     target.mNavigationBottomContainer = Utils.findRequiredViewAsType(source, R.id.navigation_bottom_container, "field 'mNavigationBottomContainer'", BottomNavigationView.class);
+    target.mToolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'mToolbar'", Toolbar.class);
   }
 
   @Override
@@ -37,5 +39,6 @@ public class HomePageActivity_ViewBinding implements Unbinder {
 
     target.mFrameContainer = null;
     target.mNavigationBottomContainer = null;
+    target.mToolbar = null;
   }
 }

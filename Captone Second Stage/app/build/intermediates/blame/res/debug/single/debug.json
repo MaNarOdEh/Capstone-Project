@@ -640,6 +640,10 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\drawable\\ic_calendar_black_24dp.xml"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar_home_page.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\toolbar_home_page.xml"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\5488c81610655eccbe4589ddb707dc5f\\material-1.1.0-alpha09\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
     },

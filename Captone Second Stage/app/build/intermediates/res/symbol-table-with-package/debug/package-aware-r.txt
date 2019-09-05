@@ -1746,6 +1746,7 @@ id time_txt
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -1922,6 +1923,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toolbar_home_page
 menu home_page_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

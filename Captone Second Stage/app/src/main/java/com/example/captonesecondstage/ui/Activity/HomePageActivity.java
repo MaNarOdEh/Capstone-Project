@@ -2,6 +2,7 @@ package com.example.captonesecondstage.ui.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.widget.FrameLayout;
 
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
-import com.example.captonesecondstage.ui.Fragments.LogInFragment;
 import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
@@ -24,6 +24,8 @@ public class HomePageActivity extends AppCompatActivity {
     FrameLayout mFrameContainer;
     @BindView(R.id.navigation_bottom_container)
     BottomNavigationView mNavigationBottomContainer;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,12 @@ public class HomePageActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
         initializeEvent();
+       // getSupportActionBar().hide();
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
+        setTitle("");
+        setSupportActionBar(mToolbar);
         showSearchPageFragments();
     }
     public void showSearchPageFragments(){
