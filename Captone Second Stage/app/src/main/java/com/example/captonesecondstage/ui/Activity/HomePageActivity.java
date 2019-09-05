@@ -8,10 +8,14 @@ import androidx.fragment.app.FragmentManager;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.captonesecondstage.Class.Students;
+import com.example.captonesecondstage.Class.Teachers;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
@@ -25,6 +29,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,27 +55,39 @@ public class HomePageActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         initializeEvent();
 
+        getUserType();
         //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
-        int app_widget= AppWidgetManager.INVALID_APPWIDGET_ID;
+      /*  int app_widget= AppWidgetManager.INVALID_APPWIDGET_ID;
         Paper.init(this);
         Paper.book().write("INGREDIENTS","MANARODEH");
         Intent intent_meeting_update=new  Intent(HomePageActivity.this, MyWidget.class);
         intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
-        sendBroadcast(intent_meeting_update);
+        sendBroadcast(intent_meeting_update);*/
         setTitle("");
         setSupportActionBar(mToolbar);
-        showSearchPageFragments();
     }
     private void getUserType(){
+        //check in teacher and student table to get studen's type after that you can get's
+        //the other side to show in main screen
+
         // Get a reference to our posts
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference(mAuth.getUid()).child("mUserName");
+        DatabaseReference ref = database.getReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).exists()){
+                    userType="2";
+                    Students students=dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).getValue(Students.class);
+                }else{
+                  Teachers teachers= dataSnapshot.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid()).getValue(Teachers.class);
+                  userType="1";
+                }
+                Log.e("USERTYPES",userType);
+                showSearchPageFragments();
 
             }
 
@@ -78,7 +97,9 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
     }
-
+        public ArrayList<Students>getStudentsAdapters(){
+                return new ArrayList<Students>();
+        }
     @Override
     protected void onStart() {
         super.onStart();
