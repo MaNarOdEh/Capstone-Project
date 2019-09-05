@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -15,6 +16,7 @@ import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,12 +28,14 @@ public class HomePageActivity extends AppCompatActivity {
     BottomNavigationView mNavigationBottomContainer;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+        mAuth=FirebaseAuth.getInstance();
         initializeEvent();
        // getSupportActionBar().hide();
         if(getSupportActionBar()!=null){
@@ -41,6 +45,15 @@ public class HomePageActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         showSearchPageFragments();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser()==null){
+            goToSplashScreen();
+        }
+    }
+
     public void showSearchPageFragments(){
         FragmentManager fragmentManager=getSupportFragmentManager();
         SearchPageFramgents fragment=new SearchPageFramgents();
@@ -92,6 +105,8 @@ public class HomePageActivity extends AppCompatActivity {
       //                 mNavigationBottomContainer.setSelectedItemId(R.id.navigation_notification);
                        break;
                    case R.id.navigation_signOut:
+                       mAuth.signOut();
+                       goToSplashScreen();
                        break;
                }
 
@@ -99,4 +114,5 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
     }
+    private void goToSplashScreen(){ startActivity(new Intent(this,SplachActivity.class)); }
 }

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class ContinueSignUp_ViewBinding implements Unbinder {
     target.mCoursesAutoComplete = Utils.findOptionalViewAsType(source, R.id.autoCompleteTv_courses, "field 'mCoursesAutoComplete'", MultiAutoCompleteTextView.class);
     target.mSignUpBtn = Utils.findOptionalViewAsType(source, R.id.signUp_btn, "field 'mSignUpBtn'", Button.class);
     target.mImageUpload = Utils.findOptionalViewAsType(source, R.id.image_upload, "field 'mImageUpload'", ImageView.class);
+    target.mMainLayout = Utils.findOptionalViewAsType(source, R.id.main_layout, "field 'mMainLayout'", LinearLayout.class);
   }
 
   @Override
@@ -51,5 +53,6 @@ public class ContinueSignUp_ViewBinding implements Unbinder {
     target.mCoursesAutoComplete = null;
     target.mSignUpBtn = null;
     target.mImageUpload = null;
+    target.mMainLayout = null;
   }
 }

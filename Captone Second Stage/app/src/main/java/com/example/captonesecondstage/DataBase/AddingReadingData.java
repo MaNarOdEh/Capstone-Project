@@ -4,11 +4,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddingReadingData {
-    DatabaseReference dbRef ;
-   public  AddingReadingData(){
-       dbRef= FirebaseDatabase.getInstance().getReference();
-   }
-   public  AddingReadingData(String reference){
-       dbRef= FirebaseDatabase.getInstance().getReference(reference);
-   }
+    public final static String ALL_TECH="ALL_TECH_STUD";
+    public final static String TEACHER_DB="Teachers";
+    public final static String STUDENT_DB="Students_Parents";
 }

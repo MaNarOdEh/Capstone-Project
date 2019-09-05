@@ -3,7 +3,6 @@ package com.example.captonesecondstage.ui.Fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -24,20 +23,37 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
+import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -56,11 +72,17 @@ public class ContinueSignUp extends Fragment {
     @BindView(R.id.autoCompleteTv_courses)@Nullable() MultiAutoCompleteTextView  mCoursesAutoComplete;
     @BindView(R.id.signUp_btn)@Nullable() Button mSignUpBtn;
     @BindView(R.id.image_upload) @Nullable()ImageView mImageUpload;
+    @BindView(R.id.main_layout)@Nullable()
+    LinearLayout mMainLayout;
+    @BindView(R.id.progress_circular)@Nullable()
+    ProgressBar mProgressCircular;
     Dialog dialog;
     private static  final int RESULT_UPLOPAD_FROM_GALLERY=44;
     private static final int RESULT_IMAGE_CAPTURE = 22;
+    Bitmap bitmap;
 
     ArrayList<String>data=new ArrayList<>();
+    FirebaseAuth mAuth;
 
     private static   final String[] COURSES = new String[] {
             "Java", "C++", "Python", "Android ", "JavaEE","HTML","CSS","JavaScript","PHP","Laravel"
@@ -153,30 +175,15 @@ public class ContinueSignUp extends Fragment {
             mCoursesAutoComplete.setError(null);
         }
         if(correct){
+            mProgressCircular.setVisibility(View.VISIBLE);
             if(type.equals("Teacher")) {
                 Teachers teachers=new Teachers(data.get(0),data.get(1),data.get(2),phone,description,cources,address);
-                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Teachers");
-                rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild(teachers.getmUserName())) {
-                            // run some code..this user name already taken before!!
+                addTeacher(teachers);
 
-                        }else{
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-                //dbRef.child(teachers.getmUserName());
             }else{
-                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Students_Parents");
-
+                Students students=new Students(data.get(0),data.get(1),data.get(2)
+                ,phone,description,cources,address);
+                addStudent(students);
             }
         }
     }
@@ -203,7 +210,7 @@ public class ContinueSignUp extends Fragment {
         //Detects request codes
         if(requestCode==RESULT_UPLOPAD_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
             Uri selectedImage = data.getData();
-          Bitmap  bitmap = null;
+            bitmap = null;
             try {
 
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImage);
@@ -220,7 +227,7 @@ public class ContinueSignUp extends Fragment {
         }
         if(requestCode== RESULT_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             Bundle extras = data.getExtras();
-          Bitmap  bitmap = (Bitmap) extras.get("data");
+            bitmap = (Bitmap) extras.get("data");
                 if(bitmap!=null) {
                     mProfileImage.setImageBitmap(bitmap);
                 }
@@ -228,4 +235,134 @@ public class ContinueSignUp extends Fragment {
 
         }
     }
+    private void showSnackBar(String message){
+        Snackbar snackbar = Snackbar
+                .make(mMainLayout, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
+    private  void storeImage(){
+        if(bitmap!=null) {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference();
+            StorageReference profileImage = storageRef.child("ProfileImages");
+            profileImage = profileImage.child("images/"+mAuth.getUid()+".jpg");
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] data = baos.toByteArray();
+            UploadTask uploadTask = profileImage.putBytes(data);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    showSnackBar(exception.getMessage());
+                    goToTheHomePage();
+                    mProgressCircular.setVisibility(View.GONE);
+                    // Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    goToTheHomePage();
+                    mProgressCircular.setVisibility(View.GONE);
+                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                }
+            });
+        }else{
+            goToTheHomePage();
+        }
+    }
+    private void addTeacher(Teachers teachers){
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        mAuth=FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(teachers.getmEmail(),teachers.getmPassword()).
+                addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            rootRef.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid())
+                                    .setValue(teachers).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("1");
+                                        storeImage();
+                                    }else{
+                                        showSnackBar(task.getException()+" ");
+                                    }
+                                }
+                            });
+                        }else {
+                            throwException(task);
+                        }
+                    }
+                });
+
+    }
+    private void addStudent(Students students){
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        mAuth=FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(students.getmEmail(),students.getmPassword()).
+                addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                                    .setValue(students).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("1");
+                                        storeImage();
+                                    }else{
+                                        showSnackBar(task.getException()+" ");
+                                    }
+                                }
+                            });
+                        }else {
+                            throwException(task);
+                        }
+                    }
+                });
+
+    }
+    private  void goToTheHomePage(){
+        startActivity(new Intent(getActivity(), HomePageActivity.class));
+    }
+    private void throwException(@Nullable Task<AuthResult> task){
+        try
+        {
+            throw task.getException();
+        }
+        // if user enters wrong email.
+        catch (FirebaseAuthWeakPasswordException weakPassword)
+        {
+            // Log.d(TAG, "onComplete: weak_password");
+
+            showSnackBar("Weak password,Try Input Stronger password!");
+
+            // TODO: take your actions!
+        }
+        // if user enters wrong password.
+        catch (FirebaseAuthInvalidCredentialsException malformedEmail)
+        {
+            //Log.d(TAG, "onComplete: malformed_email");
+            showSnackBar("malformed_email!");
+
+            // TODO: Take your action
+        }
+        catch (FirebaseAuthUserCollisionException existEmail)
+        {
+            // Log.d(TAG, "onComplete: exist_email");
+            showSnackBar("Exist email! The Input Email is already taken");
+
+            // TODO: Take your action
+        }
+        catch (Exception e)
+        {
+            showSnackBar(e.getMessage());
+
+            // Log.d(TAG, "onComplete: " + e.getMessage());
+        }
+    }
+
 }

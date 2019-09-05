@@ -17,6 +17,7 @@ MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\pc corner\.gradl
 MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:17:1-36:12
@@ -99,6 +100,8 @@ MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.
 MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:27:5-67
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:22:5-67
@@ -141,6 +144,8 @@ MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.g
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:29:5-37:19
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:26:5-34:19
@@ -259,6 +264,8 @@ MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.g
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:20:5-44
@@ -393,6 +400,8 @@ MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.
 MERGED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.firebase:firebase-iid:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75839c69ac3c675543fc992c1d85b16a\firebase-iid-20.0.0\AndroidManifest.xml:29:9-35:19
@@ -411,6 +420,8 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-firestore:21.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\be4550b0fc7fc69de23f0e9ba06d656b\jetified-firebase-firestore-21.0.0\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-database:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\73682cc1ef2d97ebed1b3b9eb3040722\firebase-database-19.0.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
@@ -451,6 +462,12 @@ action#com.google.firebase.MESSAGING_EVENT
 ADDED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:32:17-78
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\eca61eb7427972d1c63eab9736ed9beb\jetified-firebase-messaging-20.0.0\AndroidManifest.xml:32:25-75
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:34:17-107
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:24:5-68

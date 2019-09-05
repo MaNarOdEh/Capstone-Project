@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(mAuth!=null){
-         //   goToTheHomePage();
+        if(mAuth.getCurrentUser()!=null){
+           goToTheHomePage();
         }
     }
     private  void goToTheHomePage(){

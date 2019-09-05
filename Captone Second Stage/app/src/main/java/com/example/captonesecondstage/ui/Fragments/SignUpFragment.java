@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
@@ -100,12 +101,12 @@ public class SignUpFragment extends Fragment {
             rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.child("Teachers").hasChild(userName) ){
+                    if (dataSnapshot.child(AddingReadingData.ALL_TECH).hasChild(userName) ){
                         // run some code..this user name already taken before!!
+                        mUserNameEt.setError("Your Name Must Be Unique this name is already taken before!!");
 
-                    }else if(dataSnapshot.child("Students_Parents").hasChild(userName)){
-                        //this user name is already taken before
                     }else{
+                        mUserNameEt.setError(null);
                         ((MainActivity)getActivity()).showContinueSignUpFragment(userName,userEmail,cpassword);
                     }
                 }

@@ -14,7 +14,9 @@ public class Students {
     public  Students(){
 
     }
-    public Students(String mUserName, String mEmail, String mPassword, String mPhone, String mDescritption, String mCources, String mAdress) {
+    public Students(String mUserName, String mEmail,
+                    String mPassword, String mPhone,
+                    String mDescritption, String mCources, String mAdress) {
         this.mUserName = mUserName;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
