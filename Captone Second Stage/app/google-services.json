@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "129227314550",
+    "firebase_url": "https://techapp-20608.firebaseio.com",
+    "project_id": "techapp-20608",
+    "storage_bucket": "techapp-20608.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129227314550:android:2c0695489fc55bab185657",
+        "android_client_info": {
+          "package_name": "com.example.captonesecondstage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129227314550-9uj2ssefrc8lqnnv1sp7bvio3eumugir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.captonesecondstage",
+            "certificate_hash": "880a627e50a47eb9c85e3067d4073ff90317f08f"
+          }
+        },
+        {
+          "client_id": "129227314550-2gtehbi5oriecvbdeqrgclf6tp6s7rdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKdYYsKvcxs8ZhPGDWbUZY8_B3Qk6YsZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129227314550-2gtehbi5oriecvbdeqrgclf6tp6s7rdt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

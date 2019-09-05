@@ -14,12 +14,19 @@ import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;
 import com.example.captonesecondstage.ui.Fragments.LogInFragment;
 import com.example.captonesecondstage.ui.Fragments.SignUpFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase; //Firebase Database
+    DatabaseReference databaseReference; //Firebase Referance
+    DatabaseReference databaseReferenceEmployee; //Firebase Referance
     @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+
+        mAuth= FirebaseAuth.getInstance();
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
+
         Intent intent=getIntent();
         if(intent!=null){
            String res= intent.getStringExtra(SplachActivity.KEY_RESULT);

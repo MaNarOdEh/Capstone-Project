@@ -3,11 +3,9 @@ package com.example.captonesecondstage.ui.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.widget.TextView;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.R;
 
-import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

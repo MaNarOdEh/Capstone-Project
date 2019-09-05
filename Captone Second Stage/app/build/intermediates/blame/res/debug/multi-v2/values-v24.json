@@ -4,7 +4,7 @@
             "outputFile": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a6ce3afbff3f1ae3fa1fe13048b173d9\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\717e6b360e75f02e025558cc6e7ce8a4\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\a8c03165c69018fbda4f77f1eb58f4bb\\appcompat-1.1.0-rc01\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\4526c4a8a772668fe4abe3353e517654\\appcompat-1.1.0-rc01\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
