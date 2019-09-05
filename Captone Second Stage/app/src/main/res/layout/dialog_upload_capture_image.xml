@@ -25,11 +25,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="5dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="4dp">
         <androidx.cardview.widget.CardView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:elevation="3dp"
             android:layout_gravity="center"
             >
@@ -62,12 +62,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="5dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="4dp">
         <androidx.cardview.widget.CardView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:elevation="3dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             >
             <ImageView
