@@ -1,5 +1,6 @@
 package com.example.captonesecondstage.ui.Fragments;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -70,6 +71,12 @@ public class LogInFragment extends Fragment {
               // startActivity(new Intent(getActivity(), HomePageActivity.class));
             }
         });
+        mForgetPasswordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).showForgetPasswordFragments();
+            }
+        });
     }
     private void checkValidData(){
         String email=mUserNameEt.getText().toString(),
@@ -95,7 +102,6 @@ public class LogInFragment extends Fragment {
                     }else{
                         ( (MainActivity) getActivity()).  throwException(task);
                     }
-
                 }
             });
         }

@@ -1644,6 +1644,7 @@ id main_scrollView
 id masked
 id media_actions
 id message
+id message_txt
 id middle
 id mini
 id month_grid
@@ -1908,7 +1909,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_upload_capture_image
-layout forget_password_dialog
+layout forget_password_fragments
 layout fragment_continue_sign_up
 layout fragment_favorite_fragments
 layout fragment_log_in
@@ -1979,6 +1980,7 @@ menu home_page_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Forget_pass
 string _0597853325
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2052,6 +2054,7 @@ string favourite
 string fcm_fallback_notification_channel_label
 string firebase_database_url
 string forget_password
+string forget_password_message
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -2104,7 +2107,9 @@ string phone_number
 string project_id
 string remember_me
 string request_teach_the_student
+string reset_password_link_send
 string search_menu_title
+string send
 string setting
 string signup
 string status_bar_notification_info_overflow

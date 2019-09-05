@@ -1424,6 +1424,10 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\4526c4a8a772668fe4abe3353e517654\\appcompat-1.1.0-rc01\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_forget_password_fragments.xml.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\forget_password_fragments.xml"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\75b5090a6e9615bc751c57c51ce85710\\material-1.1.0-alpha09\\res\\animator\\mtrl_chip_state_list_anim.xml"
     },
@@ -1882,10 +1886,6 @@
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\4526c4a8a772668fe4abe3353e517654\\appcompat-1.1.0-rc01\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
-        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_forget_password_dialog.xml.flat",
-        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\layout\\forget_password_dialog.xml"
     },
     {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",

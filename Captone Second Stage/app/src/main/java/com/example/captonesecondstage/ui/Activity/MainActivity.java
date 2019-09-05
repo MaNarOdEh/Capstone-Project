@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;
+import com.example.captonesecondstage.ui.Fragments.ForgetPasswordFragments;
 import com.example.captonesecondstage.ui.Fragments.LogInFragment;
 import com.example.captonesecondstage.ui.Fragments.SignUpFragment;
 import com.google.android.gms.tasks.Task;
@@ -70,16 +71,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showLoginFragment(){
+        setBackgroundImages();
         FragmentManager fragmentManager=getSupportFragmentManager();
         LogInFragment fragment=new LogInFragment();
         fragmentManager.beginTransaction().addToBackStack("Login").replace(R.id.loginSignUp_frame,fragment).commit();
     }
     public void showSignUpFragment(){
+        setBackgroundImages();
         FragmentManager fragmentManager=getSupportFragmentManager();
         SignUpFragment fragment=new SignUpFragment();
         fragmentManager.beginTransaction().addToBackStack("Sign").replace(R.id.loginSignUp_frame,fragment).commit();
     }
     public void showContinueSignUpFragment(String name,String email,String password){
+        setBackGroundToNull();
         FragmentManager fragmentManager=getSupportFragmentManager();
         ArrayList<String>data=new ArrayList<>();
         data.add(name);
@@ -91,14 +95,29 @@ public class MainActivity extends AppCompatActivity {
         fragment.setArguments(bundle);
         fragmentManager.beginTransaction().addToBackStack("CSign").replace(R.id.loginSignUp_frame,fragment).commit();
     }
+    public void showForgetPasswordFragments(){
+        setBackGroundToNull();
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        ForgetPasswordFragments fragment=new ForgetPasswordFragments();
+        fragmentManager.beginTransaction().addToBackStack("Sign").replace(R.id.loginSignUp_frame,fragment).commit();
+    }
 
     @Override
     public void onBackPressed() {
         if(getSupportFragmentManager().getBackStackEntryCount() == 1){
             finish();
         }else{
+            setBackgroundImages();
             super.onBackPressed();
         }
+    }
+    private void setBackgroundImages(){
+        mMainScrollView.setBackgroundResource(R.drawable.background);
+
+    }
+    private void setBackGroundToNull(){
+        mMainScrollView.setBackground(null);
+
     }
 
     @Override

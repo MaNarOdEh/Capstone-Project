@@ -6,6 +6,7 @@
     <string name="login">Login</string>
     <string name="remember_me">Remember Me?</string>
     <string name="forget_password">Forget Password?</string>
+    <string name="Forget_pass">Forget Password</string>
     <string name="user_name_or_email">Email</string>
     <string name="password">Password</string>
     <string name="new_user_create_an_account">New User! </string>
@@ -41,6 +42,9 @@
     <string name="update_phone_number">Update Phone Number</string>
     <string name="update_password">Update Password</string>
     <string name="about_us">About Us</string>
+    <string name="forget_password_message">Input your email to send you an email in order to change your password you will receive an email within 5 minutes</string>
+    <string name="send">Send</string>
+    <string name="reset_password_link_send">You will receive an Email within 5 minutes if you don\'t receive an email please try again</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>
