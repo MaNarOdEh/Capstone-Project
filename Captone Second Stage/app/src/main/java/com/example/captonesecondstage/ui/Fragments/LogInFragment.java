@@ -1,7 +1,9 @@
 package com.example.captonesecondstage.ui.Fragments;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,20 +16,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.captonesecondstage.R;
-import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +40,11 @@ public class LogInFragment extends Fragment {
     @BindView(R.id.create_account_tv)@Nullable() TextView mCreateAccountTv;
     @BindView(R.id.gmail_floatBtn)@Nullable() FloatingActionButton mGmailFloatBtn;
     @BindView(R.id.face_floatBtn)@Nullable() FloatingActionButton mFaceBtn;
+    @BindView(R.id.progress_circular)@Nullable()
+    ProgressBar mProgressCircular;
+    private  static final String MY_PREFS_NAME="EMAILPASSWORD";
+    private  static final String EMAIL="EMAIL";
+    private static  final String PASS="PASS";
     private FirebaseAuth mAuth;
 
     @Override
@@ -51,6 +55,14 @@ public class LogInFragment extends Fragment {
         ButterKnife.bind(this,root);
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
+        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
+        String email = prefs.getString(EMAIL, "");//""-Empty String is the default value.
+        String pass = prefs.getString(PASS, ""); //""-Empty String is the default value.
+        if(!email.isEmpty()){
+            mRemmeberCb.setChecked(true);
+        }
+        mPasswordEd.setText(pass);
+        mUserNameEt.setText(email);
         //initialize Events
         initializeEvent();
 
@@ -67,6 +79,7 @@ public class LogInFragment extends Fragment {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mProgressCircular.setVisibility(View.VISIBLE);
                 checkValidData();
               // startActivity(new Intent(getActivity(), HomePageActivity.class));
             }
@@ -84,11 +97,13 @@ public class LogInFragment extends Fragment {
         boolean correct=true;
         if(email==null||email.isEmpty()){
             mUserNameEt.setError("Input Your Email Please!!");
+            mProgressCircular.setVisibility(View.GONE);
             correct=false;
         }else{
             mUserNameEt.setError(null);
         }if(password==null||password.isEmpty()){
             mPasswordEd.setError("Input Your Password Please!!");
+            mProgressCircular.setVisibility(View.GONE);
             correct=false;
         }else{
             mPasswordEd.setError(null);
@@ -98,9 +113,18 @@ public class LogInFragment extends Fragment {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        if(mRemmeberCb.isChecked()){
+                            SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
+                            editor.putString(EMAIL, email);
+                            editor.putString(PASS, password);
+                            editor.apply();
+
+                        }
                         ( (MainActivity) getActivity()).goToTheHomePage();
+                        mProgressCircular.setVisibility(View.GONE);
                     }else{
                         ( (MainActivity) getActivity()).  throwException(task);
+                        mProgressCircular.setVisibility(View.GONE);
                     }
                 }
             });

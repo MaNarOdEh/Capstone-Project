@@ -72,6 +72,13 @@
            android:textColor="@color/colorApp"
            android:textSize="13sp"/>
    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"/>
     <Button
         android:id="@+id/login_btn"
         android:layout_width="130dp"
@@ -84,6 +91,7 @@
         android:textColor="@android:color/white"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorApp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

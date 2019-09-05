@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
@@ -30,6 +31,7 @@ public class LogInFragment_ViewBinding implements Unbinder {
     target.mCreateAccountTv = Utils.findOptionalViewAsType(source, R.id.create_account_tv, "field 'mCreateAccountTv'", TextView.class);
     target.mGmailFloatBtn = Utils.findOptionalViewAsType(source, R.id.gmail_floatBtn, "field 'mGmailFloatBtn'", FloatingActionButton.class);
     target.mFaceBtn = Utils.findOptionalViewAsType(source, R.id.face_floatBtn, "field 'mFaceBtn'", FloatingActionButton.class);
+    target.mProgressCircular = Utils.findOptionalViewAsType(source, R.id.progress_circular, "field 'mProgressCircular'", ProgressBar.class);
   }
 
   @Override
@@ -47,5 +49,6 @@ public class LogInFragment_ViewBinding implements Unbinder {
     target.mCreateAccountTv = null;
     target.mGmailFloatBtn = null;
     target.mFaceBtn = null;
+    target.mProgressCircular = null;
   }
 }
