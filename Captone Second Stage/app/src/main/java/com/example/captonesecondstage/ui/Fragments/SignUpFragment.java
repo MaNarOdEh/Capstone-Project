@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
@@ -94,7 +92,6 @@ public class SignUpFragment extends Fragment {
         mGmailFloatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Clicked!!!!", Toast.LENGTH_SHORT).show();
                 mSign_in_button.setPressed(true);
                 createAccountsUsingGoogleAccounts();
 
@@ -211,7 +208,6 @@ public class SignUpFragment extends Fragment {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            //
             FirebaseAuth.getInstance().fetchSignInMethodsForEmail(account.getEmail()).
                     addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                         @Override

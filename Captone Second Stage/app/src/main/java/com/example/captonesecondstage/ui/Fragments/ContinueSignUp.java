@@ -392,7 +392,7 @@ public class ContinueSignUp extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("2");
-                             //   storeImage();
+                              storeImage();
                             }else{
                                 ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                             }

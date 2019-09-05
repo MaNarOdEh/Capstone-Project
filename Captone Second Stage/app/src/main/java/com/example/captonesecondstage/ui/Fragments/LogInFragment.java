@@ -121,6 +121,7 @@ public class LogInFragment extends Fragment {
             public void onClick(View view) {
                 mSign_in_button.setPressed(true);
                 signIn();
+                mProgressCircular.setVisibility(View.VISIBLE);
 
             }
         });
@@ -187,26 +188,44 @@ public class LogInFragment extends Fragment {
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
+            mProgressCircular.setVisibility(View.GONE);
+
         }
     }
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            if(account!=null){
-              //
-              mAuth.fetchSignInMethodsForEmail(account.getEmail()).
-                      addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
-                  @Override
-                  public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+            if(account!=null) {
+                mAuth.fetchSignInMethodsForEmail(account.getEmail()).
+                        addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
 
-                      ((MainActivity)getActivity()).goToTheHomePage();
-                  }
-              });
-            }
+                               // ((MainActivity) getActivity()).goToTheHomePage();
+                                if(task.isSuccessful()){
+                                    AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+                                    mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if(task.isSuccessful()){
+                                                ( (MainActivity) getActivity()).goToTheHomePage();
 
-            // Signed in successfully, show authenticated UI.
-        } catch (ApiException e) {
-            ((MainActivity)getActivity()).showSnackBar(e.getMessage());
+                                            }else{
+                                                ((MainActivity)getActivity()).showSnackBar(task.getException()+"");
+
+                                            }
+
+                                        }
+                                    });
+                                }else{
+                                    ((MainActivity)getActivity()).showSnackBar("You Don't have accounts create one instead!");
+
+                                }
+                            }
+                        });
+            }        }
+        catch (ApiException e) {
+                         ((MainActivity)getActivity()).showSnackBar(e.getMessage());
 
         }
     }
