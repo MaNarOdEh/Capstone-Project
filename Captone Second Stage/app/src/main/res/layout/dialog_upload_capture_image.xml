@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="170dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Photo From:"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorApp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorApp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gallery"/>
+
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btn_upload_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gallery"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:background="@color/colorWhite"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorApp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/photo_camera"/>
+
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/take_photo_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Camera"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:background="@color/colorWhite"
+            />
+    </LinearLayout>
+</LinearLayout>

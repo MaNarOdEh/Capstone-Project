@@ -87,7 +87,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/address"
             android:maxLines="1"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:textSize="14sp"
             android:drawableLeft="@drawable/home_address"
             android:drawableTint="@color/colorApp"

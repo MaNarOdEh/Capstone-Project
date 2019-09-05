@@ -16,14 +16,14 @@ public class Teachers {
     public Teachers() {
     }
 
-    public Teachers(String mUserName, String mEmail, String mPassword, String mPhone, String mDescritption, String mCources, ArrayList<String> courStringArrayList, String mAdress) {
+    public Teachers(String mUserName, String mEmail, String mPassword,
+                    String mPhone, String mDescritption, String mCources,  String mAdress) {
         this.mUserName = mUserName;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
         this.mPhone = mPhone;
         this.mDescritption = mDescritption;
         this.mCources = mCources;
-        this.courStringArrayList = courStringArrayList;
         this.mAdress = mAdress;
     }
 

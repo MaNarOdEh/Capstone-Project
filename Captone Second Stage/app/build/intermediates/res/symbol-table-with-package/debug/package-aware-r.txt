@@ -1385,6 +1385,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable facebook_logo
+drawable gallery
 drawable gmail
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1430,6 +1431,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable photo_camera
 drawable professor
 drawable profile
 drawable rounded_btn
@@ -1534,6 +1536,7 @@ id btn_update_email
 id btn_update_password
 id btn_update_phone_number
 id btn_update_user_name
+id btn_upload_image
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1773,6 +1776,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id take_photo_btn
 id text
 id text2
 id textEnd
@@ -1902,6 +1906,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_upload_capture_image
 layout forget_password_dialog
 layout fragment_continue_sign_up
 layout fragment_favorite_fragments

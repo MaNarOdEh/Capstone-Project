@@ -34,7 +34,7 @@ public class ValidationData {
     //we consider the password is correct if it's have at least 2 Capital letters and the length more than or equal 6..
     public static boolean isCorrectPassword(String password){
         int count=0;
-        if(password!=null){return false;}
+        if(password==null){return false;}
             for(int i=0;i<password.length();i++){
                if(Character.isUpperCase(password.charAt(i)))count++;
             }
