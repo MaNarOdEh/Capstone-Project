@@ -14,9 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.Class.Students;
@@ -51,7 +48,6 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
     Toolbar mToolbar;
     FirebaseAuth mAuth;
    public String userType="";
-    public static final String USER_TYPE="USERTYPE";
     @BindView(R.id.float_profile) @NonNull FloatingActionButton  mFloatProfile;
     @BindView(R.id.progress_profile)@NonNull
     ProgressBar mProgressProfile;
@@ -66,8 +62,8 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
 
         MyApplication.getInstance().setConnectivityListener(this);
 
-        SharedPreferences prefs = getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
-         userType = prefs.getString("USERTYPES", "");//""-Empty String is the default value.
+        SharedPreferences prefs = getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE);
+         userType = prefs.getString(AddingReadingData.SHARED_PREF_USERTYPES, "");//""-Empty String is the default value.
 
         //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
@@ -124,7 +120,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
             @Override
             public void onClick(View view) {
                 mProgressProfile.setVisibility(View.VISIBLE);
-                Toast.makeText(HomePageActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(HomePageActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference();
                 ref.addListenerForSingleValueEvent(new ValueEventListener() {

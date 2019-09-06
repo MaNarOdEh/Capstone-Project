@@ -106,7 +106,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String phone = mTeachers.getmPhone();
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(AddingReadingData.CALL, phone, null));
                 startActivity(intent);
             }
         });
@@ -115,7 +115,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String number = mTeachers.getmPhone();  // The number on which you want to send SMS
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(AddingReadingData.SMS, number, null)));
 
             }
         });

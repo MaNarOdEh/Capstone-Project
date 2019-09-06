@@ -96,7 +96,7 @@ public class ContinueSignUp extends Fragment {
         ButterKnife.setDebug(true);
         Bundle bundle = this.getArguments();
         if(bundle!=null){
-            data=bundle.getStringArrayList(MainActivity.DATACREATEACCOUNTS);
+            data=bundle.getStringArrayList(AddingReadingData.DATACREATEACCOUNTS_MAIN_ACTIVITY);
             mUserNameTv.setText(data.get(0));
         }else{
             ((MainActivity)getActivity()).showSignUpFragment();

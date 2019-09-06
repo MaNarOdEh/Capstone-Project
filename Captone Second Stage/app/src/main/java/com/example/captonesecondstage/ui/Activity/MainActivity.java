@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;
 import com.example.captonesecondstage.ui.Fragments.ForgetPasswordFragments;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
     @BindView(R.id.main_scrollView)@Nullable() ScrollView mMainScrollView;
     @BindView(R.id.main_layout)@Nullable()
     CoordinatorLayout mMainLayout;
-    public static String DATACREATEACCOUNTS="NAMEEMAILPASS";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
         data.add(email);
         data.add(password);
         Bundle bundle=new Bundle();
-        bundle.putStringArrayList(DATACREATEACCOUNTS,data);
+        bundle.putStringArrayList(AddingReadingData.DATACREATEACCOUNTS_MAIN_ACTIVITY,data);
         ContinueSignUp fragment=new ContinueSignUp();
         fragment.setArguments(bundle);
         fragmentManager.beginTransaction().addToBackStack("CSign").replace(R.id.loginSignUp_frame,fragment).commit();

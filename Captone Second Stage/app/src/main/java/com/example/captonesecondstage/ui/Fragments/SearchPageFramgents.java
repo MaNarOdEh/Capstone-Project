@@ -25,16 +25,12 @@ import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -120,7 +116,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     public void onProfileClicked(int position) {
         Log.e("ERROROR","MUSTGOOO");
         Intent intent=new Intent(getActivity(),ProfileTeacherActivity.class);
-        intent.putExtra("TEACHERINFO",mTeachers.get(position));
+        intent.putExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT,mTeachers.get(position));
         startActivity(intent);
 
     }
@@ -128,7 +124,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     @Override
     public void onProfileStudentClicked(int position) {
         Intent intent=new Intent(getActivity(),ProfileStudent_ParentsActivity.class);
-        intent.putExtra("STUDENTS",mStudents.get(position));
+        intent.putExtra(AddingReadingData.PROFILE_STUDENTS_ACTVITVITY_INTENT,mStudents.get(position));
         startActivity(intent);
     }
     private void getAllStudents(){

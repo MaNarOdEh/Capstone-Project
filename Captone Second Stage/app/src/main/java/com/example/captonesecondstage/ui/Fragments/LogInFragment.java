@@ -61,10 +61,6 @@ public class LogInFragment extends Fragment {
     @BindView(R.id.sign_in_button)@Nullable()
     SignInButton mSign_in_button;
     GoogleSignInClient mGoogleSignInClient;
-    private  static final String MY_PREFS_NAME="EMAILPASSWORD";
-    public static final String USER_TYPE="USERTYPE";
-    private  static final String EMAIL="EMAIL";
-    private static  final String PASS="PASS";
     private  static final int RC_SIGN_IN=3;
     private FirebaseAuth mAuth;
 
@@ -76,6 +72,7 @@ public class LogInFragment extends Fragment {
         ButterKnife.bind(this,root);
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
+
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -84,9 +81,11 @@ public class LogInFragment extends Fragment {
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
-        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
-        String email = prefs.getString(EMAIL, "");//""-Empty String is the default value.
-        String pass = prefs.getString(PASS, ""); //""-Empty String is the default value.
+
+        SharedPreferences prefs = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_MY_PREFS_NAME, Context.MODE_PRIVATE);
+        String email = prefs.getString(AddingReadingData.SHARED_PREF_EMAIL, "");//""-Empty String is the default value.
+        String pass = prefs.getString(AddingReadingData.SHARED_PREF_PASS, ""); //""-Empty String is the default value.
+
         if(!email.isEmpty()){
             mRemmeberCb.setChecked(true);
         }
@@ -168,7 +167,6 @@ public class LogInFragment extends Fragment {
                                 editSharedPreference("", "");
                             }
                             getUserType();
-                          //  ((MainActivity) getActivity()).goToTheHomePage();
 
                         } else {
                             ((MainActivity) getActivity()).throwException(task);
@@ -184,9 +182,9 @@ public class LogInFragment extends Fragment {
 
     }
     private  void editSharedPreference(String email,String pass){
-        SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
-        editor.putString(EMAIL, email);
-        editor.putString(PASS, pass);
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_MY_PREFS_NAME,Context.MODE_PRIVATE).edit();
+        editor.putString(AddingReadingData.SHARED_PREF_EMAIL, email);
+        editor.putString(AddingReadingData.SHARED_PREF_PASS, pass);
         editor.apply();
     }
     @Override
@@ -198,7 +196,6 @@ public class LogInFragment extends Fragment {
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
-          //  mProgressCircular.setVisibility(View.GONE);
 
         }
     }
@@ -211,7 +208,6 @@ public class LogInFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
 
-                               // ((MainActivity) getActivity()).goToTheHomePage();
                                 if(task.isSuccessful()){
                                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                                     mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -219,7 +215,6 @@ public class LogInFragment extends Fragment {
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if(task.isSuccessful()){
                                                 getUserType();
-                                                //( (MainActivity) getActivity()).goToTheHomePage();
 
                                             }else{
                                                 ((MainActivity)getActivity()).showSnackBar(task.getException()+"");
@@ -252,18 +247,17 @@ public class LogInFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).exists()){
                   //  SharedPreferences prefs = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE).edit();
-                    editor.putString("USERTYPES", "2");
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(AddingReadingData.SHARED_PREF_USERTYPES, "2");
                     editor.apply();
                 }else{
-                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE).edit();
-                    editor.putString("USERTYPES", "1");
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(AddingReadingData.SHARED_PREF_USERTYPES, "1");
                     editor.apply();
 
                 }
                 mProgressCircular.setVisibility(View.GONE);
                 ((MainActivity)getActivity()).goToTheHomePage();
-                //Log.e("USERTYPES",userType);
 
             }
 
