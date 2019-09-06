@@ -45,6 +45,7 @@
     <string name="forget_password_message">Input your email to send you an email in order to change your password you will receive an email within 5 minutes</string>
     <string name="send">Send</string>
     <string name="reset_password_link_send">You will receive an Email within 5 minutes if you don\'t receive an email please try again</string>
+    <string name="update_description">update description</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

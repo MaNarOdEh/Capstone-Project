@@ -1524,6 +1524,7 @@ id adView
 id add
 id add_fav_img
 id address_et
+id address_linear
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1542,6 +1543,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_aboutUs
+id btn_back_to_setting
 id btn_call
 id btn_is_connect
 id btn_login
@@ -1549,12 +1551,14 @@ id btn_send_request
 id btn_show_profile
 id btn_signUp
 id btn_sms
+id btn_update_addre
 id btn_update_address
+id btn_update_cour
 id btn_update_courses
-id btn_update_email
-id btn_update_password
+id btn_update_desc
+id btn_update_description
+id btn_update_phone
 id btn_update_phone_number
-id btn_update_user_name
 id btn_upload_image
 id buttonPanel
 id cancel_action
@@ -1581,6 +1585,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id courses_layout
 id courses_name_txt
 id courses_tv
 id create_account_tv
@@ -1592,6 +1597,7 @@ id date_picker_actions
 id decor_content_parent
 id default_activity_button
 id description_et
+id description_layout
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1691,6 +1697,7 @@ id mtrl_picker_text_input_date
 id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
+id mulitple_courses
 id multiply
 id name_txt
 id navigation_bottom_container
@@ -1719,6 +1726,8 @@ id password_ed
 id password_toggle
 id peekHeight
 id percent
+id phone_et
+id phone_layout
 id phone_txt
 id pin
 id profile_image
@@ -2146,6 +2155,7 @@ string signup
 string status_bar_notification_info_overflow
 string techapp
 string update_courses
+string update_description
 string update_email
 string update_password
 string update_phone_number

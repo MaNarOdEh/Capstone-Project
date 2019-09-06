@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.captonesecondstage.Class.Students;
+import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
@@ -35,6 +38,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 import butterknife.BindView;
@@ -54,6 +62,7 @@ public class LogInFragment extends Fragment {
     SignInButton mSign_in_button;
     GoogleSignInClient mGoogleSignInClient;
     private  static final String MY_PREFS_NAME="EMAILPASSWORD";
+    public static final String USER_TYPE="USERTYPE";
     private  static final String EMAIL="EMAIL";
     private static  final String PASS="PASS";
     private  static final int RC_SIGN_IN=3;
@@ -158,8 +167,9 @@ public class LogInFragment extends Fragment {
                             } else {
                                 editSharedPreference("", "");
                             }
-                            ((MainActivity) getActivity()).goToTheHomePage();
-                            mProgressCircular.setVisibility(View.GONE);
+                            getUserType();
+                          //  ((MainActivity) getActivity()).goToTheHomePage();
+
                         } else {
                             ((MainActivity) getActivity()).throwException(task);
                             mProgressCircular.setVisibility(View.GONE);
@@ -188,7 +198,7 @@ public class LogInFragment extends Fragment {
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
-            mProgressCircular.setVisibility(View.GONE);
+          //  mProgressCircular.setVisibility(View.GONE);
 
         }
     }
@@ -208,7 +218,8 @@ public class LogInFragment extends Fragment {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if(task.isSuccessful()){
-                                                ( (MainActivity) getActivity()).goToTheHomePage();
+                                                getUserType();
+                                                //( (MainActivity) getActivity()).goToTheHomePage();
 
                                             }else{
                                                 ((MainActivity)getActivity()).showSnackBar(task.getException()+"");
@@ -228,5 +239,38 @@ public class LogInFragment extends Fragment {
                          ((MainActivity)getActivity()).showSnackBar(e.getMessage());
 
         }
+    }
+    private void getUserType(){
+        //check in teacher and student table to get studen's type after that you can get's
+        //the other side to show in main screen
+
+        // Get a reference to our posts
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).exists()){
+                  //  SharedPreferences prefs = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString("USERTYPES", "2");
+                    editor.apply();
+                }else{
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString("USERTYPES", "1");
+                    editor.apply();
+
+                }
+                mProgressCircular.setVisibility(View.GONE);
+                ((MainActivity)getActivity()).goToTheHomePage();
+                //Log.e("USERTYPES",userType);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

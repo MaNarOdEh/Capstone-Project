@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -14,8 +16,7 @@ import android.widget.FrameLayout;
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.Class.Students;
-import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
 import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
@@ -24,11 +25,7 @@ import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
 
@@ -45,6 +42,8 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
     Toolbar mToolbar;
     FirebaseAuth mAuth;
    public String userType="";
+    public static final String USER_TYPE="USERTYPE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +55,14 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
 
         MyApplication.getInstance().setConnectivityListener(this);
 
-        getUserType();
+        SharedPreferences prefs = getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
+         userType = prefs.getString("USERTYPES", "");//""-Empty String is the default value.
+
         //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
+        showSearchPageFragments();
       /*  int app_widget= AppWidgetManager.INVALID_APPWIDGET_ID;
         Paper.init(this);
         Paper.book().write("INGREDIENTS","MANARODEH");
@@ -70,34 +72,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         setTitle("");
         setSupportActionBar(mToolbar);
     }
-    private void getUserType(){
-        //check in teacher and student table to get studen's type after that you can get's
-        //the other side to show in main screen
 
-        // Get a reference to our posts
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).exists()){
-                    userType="2";
-                    Students students=dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).getValue(Students.class);
-                }else{
-                  Teachers teachers= dataSnapshot.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid()).getValue(Teachers.class);
-                  userType="1";
-                }
-                Log.e("USERTYPES",userType);
-                showSearchPageFragments();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
         public ArrayList<Students>getStudentsAdapters(){
                 return new ArrayList<Students>();
         }
