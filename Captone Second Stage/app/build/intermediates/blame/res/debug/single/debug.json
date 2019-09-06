@@ -2184,6 +2184,10 @@
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\75b5090a6e9615bc751c57c51ce85710\\material-1.1.0-alpha09\\res\\drawable\\ic_mtrl_chip_checked_black.xml"
     },
     {
+        "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_man_user.png.flat",
+        "source": "G:\\Capstone Projects\\Captone Second Stage\\app\\src\\main\\res\\drawable\\man_user.png"
+    },
+    {
         "merged": "G:\\Capstone Projects\\Captone Second Stage\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_text_input_start_icon.xml.flat",
         "source": "C:\\Users\\pc corner\\.gradle\\caches\\transforms-2\\files-2.1\\75b5090a6e9615bc751c57c51ce85710\\material-1.1.0-alpha09\\res\\layout\\design_text_input_start_icon.xml"
     },

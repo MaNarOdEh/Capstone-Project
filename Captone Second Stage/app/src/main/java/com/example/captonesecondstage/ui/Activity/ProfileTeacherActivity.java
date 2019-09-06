@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Teachers;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.squareup.picasso.Picasso;
 
@@ -62,7 +63,10 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         if(intent==null){
             finish();
         }else{
-            mTeachers=intent.getParcelableExtra("TEACHERINFO");
+            mTeachers=intent.getParcelableExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT);
+        }
+        if(mTeachers==null){
+            finish();
         }
         //initialize Values
         initialize();

@@ -11,12 +11,18 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.Class.Students;
 
+import com.example.captonesecondstage.Class.Teachers;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
 import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
@@ -24,10 +30,13 @@ import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-
-
-import java.util.ArrayList;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +52,9 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
     FirebaseAuth mAuth;
    public String userType="";
     public static final String USER_TYPE="USERTYPE";
-
+    @BindView(R.id.float_profile) @NonNull FloatingActionButton  mFloatProfile;
+    @BindView(R.id.progress_profile)@NonNull
+    ProgressBar mProgressProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,19 +74,10 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
             getSupportActionBar().hide();
         }
         showSearchPageFragments();
-      /*  int app_widget= AppWidgetManager.INVALID_APPWIDGET_ID;
-        Paper.init(this);
-        Paper.book().write("INGREDIENTS","MANARODEH");
-        Intent intent_meeting_update=new  Intent(HomePageActivity.this, MyWidget.class);
-        intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
-        sendBroadcast(intent_meeting_update);*/
         setTitle("");
         setSupportActionBar(mToolbar);
     }
 
-        public ArrayList<Students>getStudentsAdapters(){
-                return new ArrayList<Students>();
-        }
     @Override
     protected void onStart() {
         super.onStart();
@@ -118,6 +120,40 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         }
     }
     private void initializeEvent() {
+        mFloatProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mProgressProfile.setVisibility(View.VISIBLE);
+                Toast.makeText(HomePageActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference ref = database.getReference();
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(userType.equals("2")){
+                           Students students=dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).getValue(Students.class);
+                            Intent intent=new Intent(HomePageActivity.this,ProfileStudent_ParentsActivity.class);
+                            intent.putExtra(AddingReadingData.PROFILE_STUDENTS_ACTVITVITY_INTENT,students);
+                            startActivity(intent);
+
+                        }else{
+                            Teachers teachers=dataSnapshot.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid()).getValue(Teachers.class);
+                            Intent intent=new Intent(HomePageActivity.this,ProfileTeacherActivity.class);
+                            intent.putExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT,teachers);
+                            startActivity(intent);
+
+                        }
+                        mProgressProfile.setVisibility(View.GONE);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
         mNavigationBottomContainer.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -139,11 +175,22 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
                        mAuth.signOut();
                        goToSplashScreen();
                        break;
+
                }updateNavigationBarState(item.getItemId());
 
                 return false;
             }
         });
+    }
+    private void show_Profile(){
+        if(userType.equals("1")){//teacher
+            Intent intent=new Intent(this,ProfileStudent_ParentsActivity.class);
+
+        }else{//students--parents
+            Intent intent=new Intent(this,ProfileStudent_ParentsActivity.class);
+
+
+        }
     }
     private void goToSplashScreen(){ startActivity(new Intent(this,SplachActivity.class)); }
     private void updateNavigationBarState(int actionId){

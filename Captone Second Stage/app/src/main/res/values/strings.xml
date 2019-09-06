@@ -46,6 +46,9 @@
     <string name="send">Send</string>
     <string name="reset_password_link_send">You will receive an Email within 5 minutes if you don\'t receive an email please try again</string>
     <string name="update_description">update description</string>
+    <string name="notest_course">Please, Separate each course with comma \',\' to make it easy to show them when any one visit your profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="profile">Profile</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

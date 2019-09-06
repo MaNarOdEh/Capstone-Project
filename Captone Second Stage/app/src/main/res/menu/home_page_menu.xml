@@ -27,6 +27,7 @@
     <item
         android:id="@+id/navigation_signOut"
         android:icon="@drawable/signoutoption"
-        android:title="Sign Out"
+        android:title="@string/sign_out"
         app:showAsAction="always"/>
+
 </menu>

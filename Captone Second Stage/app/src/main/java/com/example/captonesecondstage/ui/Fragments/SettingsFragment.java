@@ -140,7 +140,7 @@ public class SettingsFragment extends Fragment {
 
             }
         });
-        
+
 
         mBtnUpdateAdre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,7 +167,7 @@ public class SettingsFragment extends Fragment {
 
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
-                    mAdressEt.setError("Input Valid phone number Please!");
+                    mPohneEt.setError("Input Valid phone number Please!");
                 }
             }
         });
@@ -180,7 +180,7 @@ public class SettingsFragment extends Fragment {
                     chechIntenetConnection("mCources",courser);
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
-                    mAdressEt.setError("Input Valid courses Please!");
+                    mMutluplecourses.setError("Input Valid courses Please!");
                 }
             }
 
@@ -194,7 +194,7 @@ public class SettingsFragment extends Fragment {
                     chechIntenetConnection("mDescritption",courser);
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
-                    mAdressEt.setError("Input Valid Description Please!");
+                    mDesciptionEt.setError("Input Valid Description Please!");
                 }
             }
 

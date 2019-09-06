@@ -1419,6 +1419,7 @@ drawable language
 drawable lock
 drawable magnifier
 drawable mail
+drawable man_user
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1625,6 +1626,7 @@ id filled
 id filter_chip
 id fitToContents
 id fixed
+id float_profile
 id forever
 id forget_password_btn
 id frame_container
@@ -1733,6 +1735,7 @@ id pin
 id profile_image
 id progress_circular
 id progress_horizontal
+id progress_profile
 id radio
 id random_suggestion_profile
 id recycle_Favorite
@@ -2126,6 +2129,7 @@ string mtrl_picker_text_input_date_hint
 string mtrl_picker_text_input_date_range_end_hint
 string mtrl_picker_text_input_date_range_start_hint
 string new_user_create_an_account
+string notest_course
 string notification
 string notification_example
 string or_login_with
@@ -2137,6 +2141,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string phone_number
+string profile
 string project_id
 string remember_me
 string request_teach_the_student
@@ -2151,6 +2156,7 @@ string s7
 string search_menu_title
 string send
 string setting
+string sign_out
 string signup
 string status_bar_notification_info_overflow
 string techapp

@@ -106,6 +106,19 @@
             android:drawableTint="@color/colorApp"
             android:drawablePadding="15dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notest_course"
+            android:textColor="#cccc"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="8dp"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"/>
+
         <MultiAutoCompleteTextView
             android:id="@+id/autoCompleteTv_courses"
             android:layout_width="match_parent"

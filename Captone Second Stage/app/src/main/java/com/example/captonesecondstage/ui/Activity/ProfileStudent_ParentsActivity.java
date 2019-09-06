@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Students;
+import com.example.captonesecondstage.DataBase.AddingReadingData;
 import com.example.captonesecondstage.R;
 import com.squareup.picasso.Picasso;
 
@@ -51,8 +52,11 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
 
         Intent intent=getIntent();
         if(intent!=null){
-            mStudents=intent.getParcelableExtra("STUDENTS");
+            mStudents=intent.getParcelableExtra(AddingReadingData.PROFILE_STUDENTS_ACTVITVITY_INTENT);
         }else{
+            finish();
+        }
+        if(mStudents==null){
             finish();
         }
         //show Student Info
