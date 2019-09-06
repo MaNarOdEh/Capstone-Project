@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
+import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
 import com.squareup.picasso.Picasso;
 
@@ -24,6 +25,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.paperdb.Paper;
 
 public class ProfileTeacherActivity extends AppCompatActivity {
 
@@ -129,6 +131,26 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                     String number = mTeachers.getmPhone();  // The number on which you want to send SMS
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(CommnuicationBetweenActivities.SMS, number, null)));
                 }
+
+            }
+        });
+        mAddFavImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(val==1) {
+                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+
+                }else{
+                    Toast.makeText(ProfileTeacherActivity.this, "Added Successfully in your Widget", Toast.LENGTH_SHORT).show();
+                    Paper.init(getApplicationContext());
+                    Paper.book().write("NAME_WIDGET",mNameTxt.getText().toString());
+                    Paper.book().write("PHONE",mPhoneTxt.getText().toString());
+                    Intent intent_meeting_update=new  Intent(ProfileTeacherActivity.this, MyWidget.class);
+                    intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
+                    sendBroadcast(intent_meeting_update);
+                   //make the widget...
+                }
+
 
             }
         });

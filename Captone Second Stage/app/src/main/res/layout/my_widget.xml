@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="350dp"
+    android:layout_height="250dp"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:background="@android:color/white"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="horizontal">
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/graduate"
@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/name_widget_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
@@ -43,12 +44,14 @@
                 android:layout_marginTop="15dp"
                 android:textStyle="bold"/>
             <TextView
+                android:id="@+id/phone_widget_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0597853325"
                 android:paddingLeft="15dp"
                 />
             <Button
+                android:id="@+id/btn_call_widget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="contact"
@@ -60,7 +63,7 @@
                 android:layout_margin="5dp"/>
         </LinearLayout>
     </LinearLayout>
-    <View
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorAccent"

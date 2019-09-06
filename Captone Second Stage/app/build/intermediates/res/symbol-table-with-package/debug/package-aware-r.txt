@@ -1550,6 +1550,7 @@ id btn_add_new_student
 id btn_add_student
 id btn_back_to_setting
 id btn_call
+id btn_call_widget
 id btn_is_connect
 id btn_login
 id btn_send_request
@@ -1706,6 +1707,7 @@ id mtrl_picker_title_text
 id mulitple_courses
 id multiply
 id name_txt
+id name_widget_txt
 id navigation_bottom_container
 id navigation_header_container
 id navigation_home
@@ -1734,6 +1736,7 @@ id percent
 id phone_et
 id phone_layout
 id phone_txt
+id phone_widget_txt
 id pin
 id profile_image
 id progress_circular

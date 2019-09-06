@@ -17,12 +17,14 @@ import android.widget.Toast;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
+import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.paperdb.Paper;
 
 public class ProfileStudent_ParentsActivity extends AppCompatActivity {
     @BindView(R.id.add_fav_img)@Nullable()
@@ -129,6 +131,23 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
                     Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
                 }else{
 
+                }
+            }
+        });
+        mAddFavImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(val==1){
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+
+                }else{
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Added Successfully in your Widget", Toast.LENGTH_SHORT).show();
+                    Paper.init(getApplicationContext());
+                    Paper.book().write("NAME_WIDGET",mNameTxt.getText().toString());
+                    Paper.book().write("PHONE",mPhoneTxt.getText().toString());
+                    Intent intent_meeting_update=new  Intent(ProfileStudent_ParentsActivity.this, MyWidget.class);
+                    intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
+                    sendBroadcast(intent_meeting_update);
                 }
             }
         });

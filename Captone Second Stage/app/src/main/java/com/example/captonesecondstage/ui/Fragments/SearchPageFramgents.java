@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
+import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
@@ -42,6 +45,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 import butterknife.BindView;
@@ -58,6 +63,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     FirebaseAuth mAuth;
     ArrayList<Students>mStudents=new ArrayList<>();
     ArrayList<Teachers>mTeachers=new ArrayList<>();
+    Timer searchScheduleTimer = null;
 
 
 
@@ -79,45 +85,79 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     }
 
     private void search() {
-        mSearchEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i == EditorInfo.IME_ACTION_SEARCH) {
-                    performSearch();
-                    return true;
-                }
-                return false;
-            }
-        });
-        mSearchEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+      mSearchEdit.addTextChangedListener(new TextWatcher() {
+          @Override
+          public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+          }
+
+          @Override
+          public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+          }
+
+          @Override
+          public void afterTextChanged(Editable editable) {
+              if(editable.toString().length()>=1){
+                  setSearchScheduleTimer();
+              }else{
+                  setAdapterRecycle();
+              }
+
+          }
+      });
+    }
+    private void cancelTimer(){
+        if (searchScheduleTimer != null){
+            searchScheduleTimer.cancel();
+            searchScheduleTimer.purge();
+            searchScheduleTimer = null;
+        }
+    }
+    private  void setSearchScheduleTimer(){
+        cancelTimer();
+        searchScheduleTimer = new Timer("search_scheduler");
+        searchScheduleTimer.schedule(new TimerTask() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-             performSearch();
+            public void run() {
+             getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        performSearch();
+
+                    }
+                });
             }
-        });
+        }, 1500);
     }
     public void performSearch(){
-
         if(mStudents.size()!=0){
             ArrayList<Students>students=new ArrayList<>();
             for(int i=0;i<mStudents.size();i++){
-                if(mStudents.get(i).getmUserName().equals(mSearchEdit.getText().toString())){
+                if(mStudents.get(i).getmUserName().indexOf(mSearchEdit.getText().toString())>0){
                     students.add(mStudents.get(i));
+                    Log.e("SSSSS",mStudents.get(i).getmUserName()) ;
                 }
             }
-            ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(students, SearchPageFramgents.this);
-            mRandomSuggestionProfile.setAdapter(profileAdapter);
+            if(students.size()>0) {
+                ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(students, SearchPageFramgents.this);
+                mRandomSuggestionProfile.setAdapter(profileAdapter);
+
+                mStudents = students;
+            }
 
         }if(mTeachers.size()!=0){
             ArrayList<Teachers>teachers=new ArrayList<>();
             for(int i=0;i<mTeachers.size();i++){
-                if(mTeachers.get(i).getmUserName().equals(mSearchEdit.getText().toString())){
+                if(mTeachers.get(i).getmUserName().indexOf(mSearchEdit.getText().toString())>0){
                     teachers.add(mTeachers.get(i));
                 }
             }
-            ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers, SearchPageFramgents.this);
-            mRandomSuggestionProfile.setAdapter(profileAdapter);
+            if(teachers.size()>0) {
+                ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(teachers, SearchPageFramgents.this);
+                mRandomSuggestionProfile.setAdapter(profileAdapter);
+                mTeachers = teachers;
+            }
 
 
         }

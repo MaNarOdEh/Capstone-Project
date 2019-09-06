@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="110dp"/>
         <ProgressBar
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="85dp"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="15dp"
         android:src="@drawable/man_user"
@@ -44,7 +44,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom_container"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="55dp"
         android:background="@color/colorApp"
         android:padding="15dp"
         android:foreground="?attr/selectableItemBackground"
@@ -52,5 +52,5 @@
         app:itemTextColor="@android:color/transparent"
         app:menu="@menu/home_page_menu"
         android:layout_gravity="bottom"
-        app:itemIconSize="20dp"/>
+        app:itemIconSize="16dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
