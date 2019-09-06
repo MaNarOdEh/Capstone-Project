@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
+import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.R;
 
 
@@ -49,17 +50,32 @@ public class ProfileTeacherActivity extends AppCompatActivity {
     Button mBtnSMS;
     @BindView(R.id.recycle_courses)@Nullable()
     RecyclerView mRecycleCourses;
+    Teachers mTeachers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_teacher);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+        Intent intent=getIntent();
+        if(intent==null){
+            finish();
+        }else{
+            mTeachers=intent.getParcelableExtra("TEACHERINFO");
+        }
 
+        //initialize Values
+        initialize();
         //initialize Events
         initializeEvent();
         //setAdapters
         setAdapterRecycle();
+    }
+    private  void initialize(){
+        mNameTxt.setText(mTeachers.getmUserName());
+        mPhoneTxt.setText(mTeachers.getmPhone());
+        mAboutUsTxt.setText(mTeachers.getmDescritption()+"\n"+mTeachers.getmAdress());
+
     }
 
     private void initializeEvent() {
@@ -71,7 +87,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         mRecycleCourses.setLayoutManager(new GridLayoutManager(this, 3));
 
 
-        String myDataset[]={"JAVA","PHP","CSS","PYTHON","JAVAEE","HTML","ENGLISH"};
+        String myDataset[]=mTeachers.getmCources().trim().split(",");
         // specify an adapter (see also next example)
         CoursesAdapter coursesAdapter = new CoursesAdapter(myDataset);
         mRecycleCourses.setAdapter(coursesAdapter);
@@ -81,7 +97,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         mBtnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phone = "0597853325";
+                String phone = mTeachers.getmPhone();
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 startActivity(intent);
             }
@@ -90,7 +106,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String number = "0597853325";  // The number on which you want to send SMS
+                String number = mTeachers.getmPhone();  // The number on which you want to send SMS
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)));
 
             }

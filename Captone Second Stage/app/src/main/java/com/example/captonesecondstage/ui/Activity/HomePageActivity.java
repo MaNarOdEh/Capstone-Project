@@ -45,7 +45,7 @@ public class HomePageActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     FirebaseAuth mAuth;
-    String userType="";
+   public String userType="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

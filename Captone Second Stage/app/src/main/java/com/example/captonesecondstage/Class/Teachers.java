@@ -1,8 +1,11 @@
 package com.example.captonesecondstage.Class;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class Teachers {
+public class Teachers implements Parcelable {
     String mUserName;
     String mEmail;
     String mPassword;
@@ -26,6 +29,18 @@ public class Teachers {
         this.mCources = mCources;
         this.mAdress = mAdress;
     }
+
+    public static final Creator<Teachers> CREATOR = new Creator<Teachers>() {
+        @Override
+        public Teachers createFromParcel(Parcel in) {
+            return new Teachers(in);
+        }
+
+        @Override
+        public Teachers[] newArray(int size) {
+            return new Teachers[size];
+        }
+    };
 
     public String getmUserName() {
         return mUserName;
@@ -75,7 +90,14 @@ public class Teachers {
         this.mCources = mCources;
     }
 
-    public ArrayList<String> getCourStringArrayList() {
+    public ArrayList<String> getCourStringArrayList()
+    {
+        if(courStringArrayList==null||courStringArrayList.size()==0){
+           String arr[]=mCources.split(",");
+           for(int i=0;i<arr.length;i++){
+               courStringArrayList.add(arr[i]);
+           }
+        }
         return courStringArrayList;
     }
 
@@ -97,5 +119,44 @@ public class Teachers {
 
     public void setmEvaluation(Double mEvaluation) {
         this.mEvaluation = mEvaluation;
+    }
+
+    public Teachers(Parcel parcel){
+
+        mUserName = parcel.readString();
+        mEmail = parcel.readString();
+        mPassword = parcel.readString();
+        mPhone = parcel.readString();
+        mDescritption = parcel.readString();
+        mCources = parcel.readString();
+        courStringArrayList = parcel.createStringArrayList();
+        mAdress = parcel.readString();
+        if (parcel.readByte() == 0) {
+            mEvaluation = null;
+        } else {
+            mEvaluation = parcel.readDouble();
+        }
+    }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mUserName);
+        parcel.writeString(mEmail);
+        parcel.writeString(mPassword);
+        parcel.writeString(mPhone);
+        parcel.writeString(mDescritption);
+        parcel.writeString(mCources);
+        parcel.writeStringList(courStringArrayList);
+        parcel.writeString(mAdress);
+        if (mEvaluation == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(mEvaluation);
+        }
     }
 }
