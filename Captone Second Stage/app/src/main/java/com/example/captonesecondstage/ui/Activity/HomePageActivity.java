@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-
-import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,12 +11,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
+import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.DataBase.AddingReadingData;
-import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
+import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
 import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
@@ -36,7 +36,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class HomePageActivity extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
     @BindView(R.id.frame_container)
     FrameLayout mFrameContainer;
     @BindView(R.id.navigation_bottom_container)
@@ -53,6 +53,8 @@ public class HomePageActivity extends AppCompatActivity {
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
         initializeEvent();
+
+        MyApplication.getInstance().setConnectivityListener(this);
 
         getUserType();
         //set My Toolbar as aSupport ActionBar
@@ -127,6 +129,11 @@ public class HomePageActivity extends AppCompatActivity {
         FavoriteFragments fragment=new FavoriteFragments();
         fragmentManager.beginTransaction().addToBackStack("favourite").replace(R.id.frame_container,fragment).commit();
     }
+    public void ShowNoInternetConnection(){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        NoInternetConnectionFragment fragment=new NoInternetConnectionFragment();
+        fragmentManager.beginTransaction().addToBackStack("disconnect").replace(R.id.frame_container,fragment).commit();
+    }
     @Override
     public void onBackPressed() {
         if(getSupportFragmentManager().getBackStackEntryCount() == 1){
@@ -170,6 +177,18 @@ public class HomePageActivity extends AppCompatActivity {
         for (int i = 0, size = menu.size(); i < size; i++) {
             MenuItem item = menu.getItem(i);
             item.setChecked(item.getItemId() == actionId);
+        }
+    }
+    // Method to manually check connection status
+    public  boolean checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        return isConnected;
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(checkConnection()){
+            showSearchPageFragments();
         }
     }
 }

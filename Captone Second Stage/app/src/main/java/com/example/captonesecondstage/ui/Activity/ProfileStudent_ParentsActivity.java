@@ -83,7 +83,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         mRecycleCourses.setLayoutManager(new GridLayoutManager(this, 3));
 
 
-        String myDataset[]={"JAVA","PHP","CSS","PYTHON","JAVAEE","HTML","ENGLISH"};
+        String myDataset[]=mStudents.getmCources().trim().split(",");
         // specify an adapter (see also next example)
         CoursesAdapter coursesAdapter = new CoursesAdapter(myDataset);
         mRecycleCourses.setAdapter(coursesAdapter);

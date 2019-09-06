@@ -83,7 +83,7 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
         Teachers teachers=mtTeachersList.get(position);
         holder.mUserNameTv.setText(teachers.getmUserName());
         holder.mUserPhoneTv.setText(teachers.getmPhone());
-        holder.mCoursesTv.setText(teachers.getmCources().trim());
+        holder.mCoursesTv.setText(teachers.getmCources()!=null?teachers.getmCources().trim():"");
         Picasso.get().load(teachers.getmImageUrl())
                 .placeholder(R.drawable.teachers)
                 .error(R.drawable.teachers)

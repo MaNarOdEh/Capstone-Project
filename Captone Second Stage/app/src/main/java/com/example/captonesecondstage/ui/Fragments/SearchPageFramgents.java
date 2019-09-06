@@ -132,67 +132,77 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
         startActivity(intent);
     }
     private void getAllStudents(){
-        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Students user = snapshot.getValue(Students.class);
-                            try{
-                                StorageReference load =FirebaseStorage.getInstance().
-                                        getReferenceFromUrl("ProfileImages/images/"+user.getmEmail()+".jpg");
+        if(((HomePageActivity) getActivity()).checkConnection()) {
+            FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                Students user = snapshot.getValue(Students.class);
+                                try {
+                                    StorageReference load = FirebaseStorage.getInstance().
+                                            getReferenceFromUrl("ProfileImages/images/" + user.getmEmail() + ".jpg");
 
-                                load.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        user.setmImageUrl(uri.toString());
-                                        //  Picasso.with(context).load(uri.toString()).into(imageView);
-                                    }
-                                });
-                            }catch (Exception e){
+                                    load.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            user.setmImageUrl(uri.toString());
+                                            //  Picasso.with(context).load(uri.toString()).into(imageView);
+                                        }
+                                    });
+                                } catch (Exception e) {
 
+                                }
+                                mStudents.add(user);
+                                ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(mStudents, SearchPageFramgents.this::onProfileStudentClicked);
+                                mRandomSuggestionProfile.setAdapter(profileAdapter);
                             }
-                            mStudents.add(user);
-                            ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(mStudents,SearchPageFramgents.this::onProfileStudentClicked);
-                            mRandomSuggestionProfile.setAdapter(profileAdapter);
                         }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+        }else{
+            ((HomePageActivity)getActivity()).ShowNoInternetConnection();
+        }
 
     }
     private void getAllTeachers(){
-        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Teachers user = snapshot.getValue(Teachers.class);
-                            try{
-                                StorageReference load =FirebaseStorage.getInstance().
-                                        getReferenceFromUrl("ProfileImages/images/"+user.getmEmail()+".jpg");
+       if( ((HomePageActivity) getActivity()).checkConnection()) {
+           FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB)
+                   .addListenerForSingleValueEvent(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(DataSnapshot dataSnapshot) {
+                           for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                               Teachers user = snapshot.getValue(Teachers.class);
+                               try {
+                                   StorageReference load = FirebaseStorage.getInstance().
+                                           getReferenceFromUrl("ProfileImages/images/" + user.getmEmail() + ".jpg");
 
-                                load.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        user.setmImageUrl(uri.toString());
-                                        //  Picasso.with(context).load(uri.toString()).into(imageView);
-                                    }
-                                });
-                            }catch (Exception e){
+                                   load.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                       @Override
+                                       public void onSuccess(Uri uri) {
+                                           user.setmImageUrl(uri.toString());
+                                           //  Picasso.with(context).load(uri.toString()).into(imageView);
+                                       }
+                                   });
+                               } catch (Exception e) {
 
-                            }
-                            mTeachers.add(user);
-                            ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers,SearchPageFramgents.this::onProfileClicked);
-                            mRandomSuggestionProfile.setAdapter(profileAdapter);
+                               }
+                               mTeachers.add(user);
+                               ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers, SearchPageFramgents.this::onProfileClicked);
+                               mRandomSuggestionProfile.setAdapter(profileAdapter);
 
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
+                           }
+                       }
+
+                       @Override
+                       public void onCancelled(DatabaseError databaseError) {
+                       }
+                   });
+       }else{
+           ((HomePageActivity)getActivity()).ShowNoInternetConnection();
+       }
     }
 }

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.captonesecondstage.R;
+import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
 
 import butterknife.BindView;
@@ -32,8 +33,14 @@ public class NoInternetConnectionFragment extends Fragment {
         mBtnIsConnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(((MainActivity)getActivity()).checkConnection()){
-                    ((MainActivity)getActivity()).showLoginFragment();
+                if(getActivity() instanceof MainActivity) {
+                    if (((MainActivity) getActivity()).checkConnection()) {
+                        ((MainActivity) getActivity()).showLoginFragment();
+                    }
+                }else if(getActivity() instanceof HomePageActivity){
+                    if(((HomePageActivity) getActivity()).checkConnection()){
+                        ((HomePageActivity) getActivity()).showSearchPageFragments();
+                    }
                 }
             }
         });
