@@ -262,12 +262,13 @@ public class ContinueSignUp extends Fragment {
         }
     }
 
-    private  void storeImage(){
+    private  void storeImage(String mEmail){
         if(bitmap!=null) {
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageRef = storage.getReference();
             StorageReference profileImage = storageRef.child("ProfileImages");
-            profileImage = profileImage.child("images/"+mAuth.getUid()+".jpg");
+            profileImage = profileImage.child("images/"+mEmail+".jpg");
+            //ProfileImages/images/mEmail.jpg
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -309,7 +310,7 @@ public class ContinueSignUp extends Fragment {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("1");
-                                        storeImage();
+                                        storeImage(teachers.getmEmail());
                                     }else{
                                         ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                                     }
@@ -336,7 +337,7 @@ public class ContinueSignUp extends Fragment {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
-                                        storeImage();
+                                        storeImage(students.getmEmail());
                                     }else{
                                         ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                                     }
@@ -365,7 +366,7 @@ public class ContinueSignUp extends Fragment {
                             if(task.isSuccessful()){
                                 rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
                                // acct.getPhotoUrl();
-                                storeImage();
+                                storeImage(students.getmEmail());
                             }else{
                                 ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                             }
@@ -392,7 +393,7 @@ public class ContinueSignUp extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("2");
-                              storeImage();
+                              storeImage(teachers.getmEmail());
                             }else{
                                 ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
                             }

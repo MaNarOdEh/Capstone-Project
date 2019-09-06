@@ -122,7 +122,9 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
 
     @Override
     public void onProfileStudentClicked(int position) {
-        startActivity(new Intent(getActivity(), ProfileStudent_ParentsActivity.class));
+        Intent intent=new Intent(getActivity(),ProfileStudent_ParentsActivity.class);
+        intent.putExtra("STUDENTS",mStudents.get(position));
+        startActivity(intent);
     }
     private void getAllStudents(){
         FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB)

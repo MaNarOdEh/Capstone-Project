@@ -1,8 +1,11 @@
 package com.example.captonesecondstage.Class;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class Students {
+public class Students implements Parcelable {
     String mUserName;
     String mEmail;
     String mPassword;
@@ -25,6 +28,29 @@ public class Students {
         this.mCources = mCources;
         this.mAdress = mAdress;
     }
+
+    protected Students(Parcel in) {
+        mUserName = in.readString();
+        mEmail = in.readString();
+        mPassword = in.readString();
+        mPhone = in.readString();
+        mDescritption = in.readString();
+        mCources = in.readString();
+        courStringArrayList = in.createStringArrayList();
+        mAdress = in.readString();
+    }
+
+    public static final Creator<Students> CREATOR = new Creator<Students>() {
+        @Override
+        public Students createFromParcel(Parcel in) {
+            return new Students(in);
+        }
+
+        @Override
+        public Students[] newArray(int size) {
+            return new Students[size];
+        }
+    };
 
     public String getmUserName() {
         return mUserName;
@@ -86,4 +112,20 @@ public class Students {
         this.mAdress = mAdress;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mUserName);
+        parcel.writeString(mEmail);
+        parcel.writeString(mPassword);
+        parcel.writeString(mPhone);
+        parcel.writeString(mDescritption);
+        parcel.writeString(mCources);
+        parcel.writeStringList(courStringArrayList);
+        parcel.writeString(mAdress);
+    }
 }

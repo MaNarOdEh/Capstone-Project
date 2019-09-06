@@ -52,6 +52,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-ads:18.2.0'
     implementation 'com.google.android.gms:play-services-ads:18.2.0'
 
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
     //paper
     implementation 'io.paperdb:paperdb:2.6'
 

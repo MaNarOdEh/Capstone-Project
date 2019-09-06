@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
+import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.R;
 
 import butterknife.BindView;
@@ -39,17 +40,33 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
     RecyclerView mRecycleCourses;
     @BindView(R.id.btn_send_request)@Nullable()
     Button mBtnSendRequest;
+    Students mStudents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_student__parents);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
+
+        Intent intent=getIntent();
+        if(intent!=null){
+            mStudents=intent.getParcelableExtra("STUDENTS");
+        }else{
+            finish();
+        }
+        //show Student Info
+        showInfo();
         //initialize Events
         initializeEvent();
         //setAdapters
         setAdapterRecycle();
 
+    }
+    private  void showInfo(){
+        mNameTxt.setText(mStudents.getmUserName());
+        mPhoneTxt.setText(mStudents.getmPhone());
+        mAboutUsTxt.setText(mStudents.getmDescritption()+"\n"+
+                mStudents.getmAdress());
     }
 
     private void initializeEvent() {
@@ -71,7 +88,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         mBtnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phone = "0597853325";
+                String phone = mStudents.getmPhone();
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 startActivity(intent);
             }
@@ -79,7 +96,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         mBtnSMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String number = "0597853325";  // The number on which you want to send SMS
+                String number = mStudents.getmPhone();  // The number on which you want to send SMS
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)));
             }
         });

@@ -27,7 +27,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
-                android:src="@drawable/profile"
+                android:src="@drawable/graduate"
                 app:civ_border_width="1dp"
                 app:civ_border_color="@color/colorApp"
                 android:layout_marginLeft="25dp"
