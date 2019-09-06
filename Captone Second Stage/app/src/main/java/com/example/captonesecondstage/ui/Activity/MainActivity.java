@@ -13,7 +13,6 @@ import android.widget.ScrollView;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
-import com.example.captonesecondstage.Class.displayNotifications;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.ContinueSignUp;

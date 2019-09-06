@@ -255,22 +255,9 @@ public class SettingsFragment extends Fragment {
     private void add_student(String userName){
         if(((HomePageActivity)getActivity()).checkConnection()){
 
-            FirebaseDatabase.getInstance().getReference().
-                    child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).child("mEmail").addListenerForSingleValueEvent(
-                    new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             FirebaseDatabase.getInstance().getReference()
                                     .child(CommnuicationBetweenActivities.STUDENTTEACH)
-                                    .child(userName).push().setValue(dataSnapshot.getValue());
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    }
-            );
+                                    .child(userName).push().setValue(((HomePageActivity)getActivity()).userName);
             Toast.makeText(getActivity(), "Added Successfully", Toast.LENGTH_LONG).show();
 
         }else{

@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.captonesecondstage.Class.displayNotifications;
+import com.example.captonesecondstage.Class.NotificationHelper;
 import com.example.captonesecondstage.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -48,7 +48,7 @@ public class SplachActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SplachActivity.this, "WHHHHHHHAAAATTTTSSS", Toast.LENGTH_SHORT).show();
-                displayNotifications.display_Notification(getApplicationContext(),"TRAYING NOTIFICATONS","HELLO NOTIFICATIONS");
+                NotificationHelper.display_Notification(getApplicationContext(),"TRAYING NOTIFICATONS","HELLO NOTIFICATIONS");
 
             }
         });

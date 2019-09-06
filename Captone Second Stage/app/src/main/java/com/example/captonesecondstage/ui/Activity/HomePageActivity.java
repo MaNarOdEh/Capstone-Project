@@ -14,8 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
 import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
+import com.example.captonesecondstage.Class.Notification;
 import com.example.captonesecondstage.Class.Students;
 
 import com.example.captonesecondstage.Class.Teachers;
@@ -26,6 +29,8 @@ import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
 import com.example.captonesecondstage.ui.Fragments.NotificationFragments;
 import com.example.captonesecondstage.ui.Fragments.SearchPageFramgents;
 import com.example.captonesecondstage.ui.Fragments.SettingsFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +39,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +58,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
     @BindView(R.id.float_profile) @NonNull FloatingActionButton  mFloatProfile;
     @BindView(R.id.progress_profile)@NonNull
     ProgressBar mProgressProfile;
+    public static String userName="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +67,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
         initializeEvent();
+        getUserName();
 
         MyApplication.getInstance().setConnectivityListener(this);
 
@@ -76,6 +85,45 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         showSearchPageFragments();
         setTitle("");
         setSupportActionBar(mToolbar);
+    }
+
+    private void getUserName() {
+        //in this case we check if the user is already have an accounts or not!!
+        if (userType.equals("1")) {
+            FirebaseDatabase.getInstance().getReference().
+                    child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).child("mUserName").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            userName = dataSnapshot.getValue().toString();
+                            getToken();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    }
+            );
+        }else{
+            FirebaseDatabase.getInstance().getReference().
+                    child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid()).child("mUserName").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            userName = dataSnapshot.getValue().toString();
+                            getToken();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    }
+            );
+        }
     }
 
     @Override
@@ -211,5 +259,39 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         if(checkConnection()){
             showSearchPageFragments();
         }
+    }
+    public void getToken(){
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                String token=task.getResult().getToken();
+                save_token(token);
+            }
+        });
+    }
+    private void save_token(String token){
+        FirebaseDatabase.getInstance().getReference().child("TOKENS").child(userName).child("token").setValue(token).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //    Toast.makeText(Main_Activity.this,"done",Toast.LENGTH_LONG).show();
+                }else{
+                    //  Toast.makeText(Main_Activity.this,"Some thing wrong",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+    public void storeNorifications(Notification notification,String user_name){
+        FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
+                .child(user_name).push().setValue(notification).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(HomePageActivity.this, "Successfully Done", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(HomePageActivity.this, "Something Wrong Happen", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
