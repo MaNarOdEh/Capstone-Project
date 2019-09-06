@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.R;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +68,10 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         mPhoneTxt.setText(mStudents.getmPhone());
         mAboutUsTxt.setText(mStudents.getmDescritption()+"\n"+
                 mStudents.getmAdress());
+        Picasso.get().load(mStudents.getmImageUrl())
+                .placeholder(R.drawable.graduate)
+                .error(R.drawable.graduate)
+                .into(mcircleImgProfile);
     }
 
     private void initializeEvent() {

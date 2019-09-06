@@ -14,6 +14,7 @@ public class Students implements Parcelable {
     String mCources;
     ArrayList<String> courStringArrayList;
     String mAdress;
+    String mImageUrl;
     public  Students(){
 
     }
@@ -38,6 +39,7 @@ public class Students implements Parcelable {
         mCources = in.readString();
         courStringArrayList = in.createStringArrayList();
         mAdress = in.readString();
+        mImageUrl=in.readString();
     }
 
     public static final Creator<Students> CREATOR = new Creator<Students>() {
@@ -70,6 +72,10 @@ public class Students implements Parcelable {
 
     public String getmDescritption() {
         return mDescritption;
+    }
+
+    public String getmImageUrl() {
+        return mImageUrl;
     }
 
     public String getmCources() {
@@ -112,6 +118,14 @@ public class Students implements Parcelable {
         this.mAdress = mAdress;
     }
 
+    public void setCourStringArrayList(ArrayList<String> courStringArrayList) {
+        this.courStringArrayList = courStringArrayList;
+    }
+
+    public void setmImageUrl(String mImageUrl) {
+        this.mImageUrl = mImageUrl;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -127,5 +141,6 @@ public class Students implements Parcelable {
         parcel.writeString(mCources);
         parcel.writeStringList(courStringArrayList);
         parcel.writeString(mAdress);
+        parcel.writeString(mImageUrl);
     }
 }

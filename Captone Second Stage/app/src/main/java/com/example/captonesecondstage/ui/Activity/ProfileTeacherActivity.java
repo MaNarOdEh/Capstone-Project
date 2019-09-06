@@ -64,7 +64,6 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         }else{
             mTeachers=intent.getParcelableExtra("TEACHERINFO");
         }
-
         //initialize Values
         initialize();
         //initialize Events
@@ -77,8 +76,8 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         mPhoneTxt.setText(mTeachers.getmPhone());
         mAboutUsTxt.setText(mTeachers.getmDescritption()+"\n"+mTeachers.getmAdress());
         Picasso.get().load(mTeachers.getmImageUrl())
-                .placeholder(R.drawable.graduate)
-                .error(R.drawable.graduate)
+                .placeholder(R.drawable.teachers)
+                .error(R.drawable.teachers)
                 .into(mcircleImgProfile);
 
     }

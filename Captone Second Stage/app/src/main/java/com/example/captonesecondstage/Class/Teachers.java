@@ -102,6 +102,7 @@ public class Teachers implements Parcelable {
     public ArrayList<String> getCourStringArrayList()
     {
         if(courStringArrayList==null||courStringArrayList.size()==0){
+            courStringArrayList=new ArrayList<>();
            String arr[]=mCources.split(",");
            for(int i=0;i<arr.length;i++){
                courStringArrayList.add(arr[i]);

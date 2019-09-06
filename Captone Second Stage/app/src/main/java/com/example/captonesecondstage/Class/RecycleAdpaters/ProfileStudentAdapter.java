@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +68,14 @@ public class ProfileStudentAdapter  extends RecyclerView.Adapter<ProfileStudentA
 
     @Override
     public void onBindViewHolder(@NonNull ProfileStudentAdapter.MyViewHolder holder, int position) {
+        Students students=mStudentList.get(position);
+        holder.mCoursesTv.setText(students.getmCources());
+        holder.mUserNameTv.setText(students.getmUserName());
+        holder.mUserPhoneTv.setText(students.getmPhone());
+        Picasso.get().load(students.getmImageUrl())
+                .placeholder(R.drawable.graduate)
+                .error(R.drawable.graduate)
+                .into(holder.mImageProfileCircle);
 
     }
 

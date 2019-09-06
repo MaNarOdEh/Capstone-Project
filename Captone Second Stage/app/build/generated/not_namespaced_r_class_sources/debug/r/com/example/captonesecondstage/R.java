@@ -6858,12 +6858,13 @@ public final class R {
     public static final int settings=0x7f0800b8;
     public static final int signoutoption=0x7f0800b9;
     public static final int star=0x7f0800ba;
-    public static final int telephone=0x7f0800bb;
-    public static final int test_custom_background=0x7f0800bc;
-    public static final int tooltip_frame_dark=0x7f0800bd;
-    public static final int tooltip_frame_light=0x7f0800be;
-    public static final int upload_photo=0x7f0800bf;
-    public static final int user=0x7f0800c0;
+    public static final int teachers=0x7f0800bb;
+    public static final int telephone=0x7f0800bc;
+    public static final int test_custom_background=0x7f0800bd;
+    public static final int tooltip_frame_dark=0x7f0800be;
+    public static final int tooltip_frame_light=0x7f0800bf;
+    public static final int upload_photo=0x7f0800c0;
+    public static final int user=0x7f0800c1;
   }
   public static final class id {
     public static final int ALT=0x7f090000;
