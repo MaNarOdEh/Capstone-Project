@@ -140,11 +140,7 @@ public class SettingsFragment extends Fragment {
 
             }
         });
-
-
-
-
-
+        
 
         mBtnUpdateAdre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,14 +148,7 @@ public class SettingsFragment extends Fragment {
                 String address=mAdressEt.getText().toString();
                 if(ValidationData.isCorrectAddress(address)){
                     mAdressEt.setError(null);
-                    if(((HomePageActivity)(getActivity())).userType.equals("2")) {
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
-                                child(mAuth.getUid()).child("mAdress").setValue(address);
-                    }
-                    else{
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
-                                child(mAuth.getUid()).child("mAdress").setValue(address);
-                    }
+                    chechIntenetConnection("mAdress",address);
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
                     mAdressEt.setError("Input Valid adress Please!");
@@ -174,14 +163,8 @@ public class SettingsFragment extends Fragment {
                 String phone=mPohneEt.getText().toString();
                 if(ValidationData.isCorrectPhone(phone)){
                     mPohneEt.setError(null);
-                    if(((HomePageActivity)(getActivity())).userType.equals("2")) {
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
-                                child(mAuth.getUid()).child("mPhone").setValue(phone);
-                    }
-                    else{
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
-                                child(mAuth.getUid()).child("mPhone").setValue(phone);
-                    }
+                    chechIntenetConnection("mPhone",phone);
+
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
                     mAdressEt.setError("Input Valid phone number Please!");
@@ -194,14 +177,7 @@ public class SettingsFragment extends Fragment {
                 String courser=mMutluplecourses.getText().toString();
                 if(ValidationData.isCorrectCources(courser)){
                     mMutluplecourses.setError(null);
-                    if(((HomePageActivity)(getActivity())).userType.equals("2")) {
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
-                                child(mAuth.getUid()).child("mCources").setValue(courser);
-                    }
-                    else{
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
-                                child(mAuth.getUid()).child("mCources").setValue(courser);
-                    }
+                    chechIntenetConnection("mCources",courser);
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
                     mAdressEt.setError("Input Valid courses Please!");
@@ -215,14 +191,7 @@ public class SettingsFragment extends Fragment {
                 String courser=mDesciptionEt.getText().toString();
                 if(ValidationData.isCorrectDesciption(courser)){
                     mMutluplecourses.setError(null);
-                    if(((HomePageActivity)(getActivity())).userType.equals("2")) {
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
-                                child(mAuth.getUid()).child("mDescritption").setValue(courser);
-                    }
-                    else{
-                        FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
-                                child(mAuth.getUid()).child("mDescritption").setValue(courser);
-                    }
+                    chechIntenetConnection("mDescritption",courser);
                     Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
                 }else{
                     mAdressEt.setError("Input Valid Description Please!");
@@ -232,6 +201,22 @@ public class SettingsFragment extends Fragment {
         });
 
 
+    }
+    private void chechIntenetConnection(String child,String values){
+        if(((HomePageActivity)getActivity()).checkConnection()){
+            if(((HomePageActivity)(getActivity())).userType.equals("2")) {
+                FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
+                        child(mAuth.getUid()).child(child).setValue(values);
+            }
+            else{
+                FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
+                        child(mAuth.getUid()).child(child).setValue(values);
+            }
+
+        }else{
+            ((HomePageActivity)getActivity()).ShowNoInternetConnection();
+
+        }
     }
 
 
