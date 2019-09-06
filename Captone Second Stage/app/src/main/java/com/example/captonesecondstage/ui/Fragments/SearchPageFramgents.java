@@ -53,8 +53,6 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     @Nullable
     AdView mAdView;
     FirebaseAuth mAuth;
-    FirebaseDatabase mFirebaseDatabase;
-    FirebaseStorage mFirebaseStorage;
     ArrayList<Students>mStudents=new ArrayList<>();
     ArrayList<Teachers>mTeachers=new ArrayList<>();
 
@@ -76,6 +74,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
 
         return root;
     }
+
 
     private void initiliaeAdb() {
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
