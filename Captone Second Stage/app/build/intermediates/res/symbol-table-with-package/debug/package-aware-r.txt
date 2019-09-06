@@ -1399,6 +1399,7 @@ drawable gallery
 drawable gmail
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable graduate
 drawable hastag
 drawable heart
 drawable home

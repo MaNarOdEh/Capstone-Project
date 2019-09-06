@@ -15,6 +15,7 @@ public class Teachers implements Parcelable {
     ArrayList<String> courStringArrayList;
     String mAdress;
     Double mEvaluation;
+    String mImageUrl;
 
     public Teachers() {
     }
@@ -90,6 +91,14 @@ public class Teachers implements Parcelable {
         this.mCources = mCources;
     }
 
+    public void setmImageUrl(String mImageUrl) {
+        this.mImageUrl = mImageUrl;
+    }
+
+    public String getmImageUrl() {
+        return mImageUrl;
+    }
+
     public ArrayList<String> getCourStringArrayList()
     {
         if(courStringArrayList==null||courStringArrayList.size()==0){
@@ -136,6 +145,7 @@ public class Teachers implements Parcelable {
         } else {
             mEvaluation = parcel.readDouble();
         }
+        mImageUrl=parcel.readString();
     }
     @Override
     public int describeContents() {
@@ -158,5 +168,6 @@ public class Teachers implements Parcelable {
             parcel.writeByte((byte) 1);
             parcel.writeDouble(mEvaluation);
         }
+        parcel.writeString(mImageUrl);
     }
 }

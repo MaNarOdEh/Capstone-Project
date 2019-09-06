@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +82,14 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ProfileTeacherAdapter.MyViewHolder holder, int position) {
+        Teachers teachers=mtTeachersList.get(position);
+        holder.mUserNameTv.setText(teachers.getmUserName());
+        holder.mUserPhoneTv.setText(teachers.getmPhone());
+        holder.mCoursesTv.setText(teachers.getmCources().trim());
+        Picasso.get().load(teachers.getmImageUrl())
+                .placeholder(R.drawable.graduate)
+                .error(R.drawable.graduate)
+                .into(holder.mImageProfileCircle);
 
     }
 

@@ -1,8 +1,10 @@
 package com.example.captonesecondstage.ui.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,21 +27,24 @@ import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-import javax.crypto.AEADBadTagException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -152,6 +157,20 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Teachers user = snapshot.getValue(Teachers.class);
                             mTeachers.add(user);
+                            try{
+                                StorageReference load =FirebaseStorage.getInstance().
+                                        getReferenceFromUrl("ProfileImages/images/"+user.getmEmail()+".jpg");
+
+                                load.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        user.setmImageUrl(uri.toString());
+                                        //  Picasso.with(context).load(uri.toString()).into(imageView);
+                                    }
+                                });
+                            }catch (Exception e){
+
+                            }
                             ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers,SearchPageFramgents.this::onProfileClicked);
                             mRandomSuggestionProfile.setAdapter(profileAdapter);
 
