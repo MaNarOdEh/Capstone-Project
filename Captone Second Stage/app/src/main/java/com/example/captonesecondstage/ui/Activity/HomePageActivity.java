@@ -62,6 +62,10 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
 
         MyApplication.getInstance().setConnectivityListener(this);
 
+
+        if(getSupportActionBar()!=null)
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         SharedPreferences prefs = getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE);
          userType = prefs.getString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "");//""-Empty String is the default value.
 
@@ -72,6 +76,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         showSearchPageFragments();
         setTitle("");
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

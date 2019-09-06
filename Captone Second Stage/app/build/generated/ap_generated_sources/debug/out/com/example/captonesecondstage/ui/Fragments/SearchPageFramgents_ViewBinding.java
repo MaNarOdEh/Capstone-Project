@@ -2,9 +2,9 @@
 package com.example.captonesecondstage.ui.Fragments;
 
 import android.view.View;
-import android.widget.EditText;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
@@ -21,8 +21,8 @@ public class SearchPageFramgents_ViewBinding implements Unbinder {
     this.target = target;
 
     target.mRandomSuggestionProfile = Utils.findOptionalViewAsType(source, R.id.random_suggestion_profile, "field 'mRandomSuggestionProfile'", RecyclerView.class);
-    target.mSearchEdit = Utils.findOptionalViewAsType(source, R.id.search_edit, "field 'mSearchEdit'", EditText.class);
     target.mAdView = Utils.findOptionalViewAsType(source, R.id.adView, "field 'mAdView'", AdView.class);
+    target.mSearchView = Utils.findOptionalViewAsType(source, R.id.search_view, "field 'mSearchView'", SearchView.class);
   }
 
   @Override
@@ -33,7 +33,7 @@ public class SearchPageFramgents_ViewBinding implements Unbinder {
     this.target = null;
 
     target.mRandomSuggestionProfile = null;
-    target.mSearchEdit = null;
     target.mAdView = null;
+    target.mSearchView = null;
   }
 }

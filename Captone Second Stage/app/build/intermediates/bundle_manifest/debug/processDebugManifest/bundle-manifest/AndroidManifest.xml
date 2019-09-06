@@ -35,6 +35,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4117198275443536~7132660070" />
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
 
         <activity android:name="com.example.captonesecondstage.ui.Activity.SplachActivity" >
             <intent-filter>

@@ -5,20 +5,18 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
+
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapter;
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
@@ -26,7 +24,6 @@ import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
-import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
@@ -46,7 +43,6 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 
 import butterknife.BindView;
@@ -55,15 +51,19 @@ import butterknife.ButterKnife;
 public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapter.OnProfileClicked, ProfileStudentAdapter.OnProfileStudentClicked {
     @BindView(R.id.random_suggestion_profile)@Nullable()
     RecyclerView mRandomSuggestionProfile;
-    @BindView(R.id.search_edit)@Nullable()
-    EditText mSearchEdit;
+   /* @BindView(R.id.search_edit)@Nullable()
+    EditText mSearchEdit;*/
     @BindView(R.id.adView)
     @Nullable
     AdView mAdView;
+    @BindView(R.id.search_view)@Nullable
+    SearchView mSearchView;
     FirebaseAuth mAuth;
     ArrayList<Students>mStudents=new ArrayList<>();
     ArrayList<Teachers>mTeachers=new ArrayList<>();
     Timer searchScheduleTimer = null;
+    ProfileStudentAdapter profileAdapter;
+    ProfileTeacherAdapter profileAdapter_teace;
 
 
 
@@ -75,7 +75,6 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
         ButterKnife.bind(this,root);
         ButterKnife.setDebug(true);
 
-
         search();
         initiliaeAdb();
         initializeFireBase();
@@ -84,85 +83,26 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
         return root;
     }
 
+
     private void search() {
-      mSearchEdit.addTextChangedListener(new TextWatcher() {
-          @Override
-          public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-          }
-
-          @Override
-          public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-          }
-
-          @Override
-          public void afterTextChanged(Editable editable) {
-              if(editable.toString().length()>=1){
-                  setSearchScheduleTimer();
-              }else{
-                  setAdapterRecycle();
-              }
-
-          }
-      });
-    }
-    private void cancelTimer(){
-        if (searchScheduleTimer != null){
-            searchScheduleTimer.cancel();
-            searchScheduleTimer.purge();
-            searchScheduleTimer = null;
-        }
-    }
-    private  void setSearchScheduleTimer(){
-        cancelTimer();
-        searchScheduleTimer = new Timer("search_scheduler");
-        searchScheduleTimer.schedule(new TimerTask() {
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void run() {
-             getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        performSearch();
-
-                    }
-                });
+            public boolean onQueryTextSubmit(String s) {
+                return false;
             }
-        }, 1500);
-    }
-    public void performSearch(){
-        if(mStudents.size()!=0){
-            ArrayList<Students>students=new ArrayList<>();
-            for(int i=0;i<mStudents.size();i++){
-                if(mStudents.get(i).getmUserName().indexOf(mSearchEdit.getText().toString())>0){
-                    students.add(mStudents.get(i));
-                    Log.e("SSSSS",mStudents.get(i).getmUserName()) ;
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if(((HomePageActivity)(getActivity())).userType.equals("1")){
+                     profileAdapter.getFilter().filter(s);
+                }else{
+                   // getAllTeachers();
                 }
+                return true;
             }
-            if(students.size()>0) {
-                ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(students, SearchPageFramgents.this);
-                mRandomSuggestionProfile.setAdapter(profileAdapter);
-
-                mStudents = students;
-            }
-
-        }if(mTeachers.size()!=0){
-            ArrayList<Teachers>teachers=new ArrayList<>();
-            for(int i=0;i<mTeachers.size();i++){
-                if(mTeachers.get(i).getmUserName().indexOf(mSearchEdit.getText().toString())>0){
-                    teachers.add(mTeachers.get(i));
-                }
-            }
-            if(teachers.size()>0) {
-                ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(teachers, SearchPageFramgents.this);
-                mRandomSuggestionProfile.setAdapter(profileAdapter);
-                mTeachers = teachers;
-            }
-
-
-        }
-
+        });
     }
+
 
 
     private void initiliaeAdb() {
@@ -202,6 +142,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     @Override
     public void onProfileClicked(int position) {
         Log.e("ERROROR","MUSTGOOO");
+
         Intent intent=new Intent(getActivity(),ProfileTeacherActivity.class);
         intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,mTeachers.get(position));
         startActivity(intent);
@@ -211,7 +152,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     @Override
     public void onProfileStudentClicked(int position) {
         Intent intent=new Intent(getActivity(),ProfileStudent_ParentsActivity.class);
-        intent.putExtra(CommnuicationBetweenActivities.PROFILE_STUDENTS_ACTVITVITY_INTENT,mStudents.get(position));
+        intent.putExtra(CommnuicationBetweenActivities.PROFILE_STUDENTS_ACTVITVITY_INTENT,profileAdapter.getList().get(position));
         startActivity(intent);
     }
     private void getAllStudents(){
@@ -231,15 +172,16 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             user.setmImageUrl(uri.toString());
-                                            //  Picasso.with(context).load(uri.toString()).into(imageView);
+                                            // Picasso.with(context).load(uri.toString()).into(imageView);
                                         }
                                     });
                                 } catch (Exception e) {
 
                                 }
                                 mStudents.add(user);
-                                ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(mStudents, SearchPageFramgents.this::onProfileStudentClicked);
+                                 profileAdapter = new ProfileStudentAdapter(mStudents, SearchPageFramgents.this::onProfileStudentClicked);
                                 mRandomSuggestionProfile.setAdapter(profileAdapter);
+                                profileAdapter.notifyDataSetChanged();
                             }
                         }
 
@@ -275,9 +217,10 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
                                } catch (Exception e) {
 
                                }
-                               mTeachers.add(user);
-                               ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers, SearchPageFramgents.this::onProfileClicked);
-                               mRandomSuggestionProfile.setAdapter(profileAdapter);
+                                 mTeachers.add(user);
+                                profileAdapter_teace = new ProfileTeacherAdapter(mTeachers, SearchPageFramgents.this::onProfileClicked);
+                                mRandomSuggestionProfile.setAdapter(profileAdapter_teace);
+                               profileAdapter_teace.notifyDataSetChanged();
 
                            }
                        }

@@ -1415,6 +1415,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_search_black_24dp
 drawable language
 drawable lock
 drawable magnifier
@@ -1518,6 +1519,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_search
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1766,12 +1768,12 @@ id search_badge
 id search_bar
 id search_button
 id search_close_btn
-id search_edit
 id search_edit_frame
 id search_go_btn
 id search_mag_icon
 id search_plate
 id search_src_text
+id search_view
 id search_voice_btn
 id select_dialog_listview
 id selected
@@ -2019,6 +2021,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout toolbar_home_page
 menu home_page_menu
+menu search_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2160,6 +2163,7 @@ string s4
 string s5
 string s6
 string s7
+string search
 string search_menu_title
 string send
 string setting
@@ -2952,3 +2956,4 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml my_widget_info
+xml searchable

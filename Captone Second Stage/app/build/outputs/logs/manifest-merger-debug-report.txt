@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\4526c4a8a772668fe4abe3353e517654\appcompat-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9bac9c4889645f6890dde18e8b20da08\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -81,20 +81,20 @@ MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\p
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f286ad629c995b201730b04ab989d86d\protolite-well-known-types-17.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3693997727d7dd6d9be6586a036ce5d5\grpc-android-1.21.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.gms:play-services-ads-base:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6cb77cdaa1f93cd8ee69ea61a94d2f0f\play-services-ads-base-18.2.0\AndroidManifest.xml:2:1-9:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
-INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
 	package
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-71:12
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:1-74:12
 		INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:2:11-69
@@ -165,7 +165,7 @@ MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\pc corner\.gradle\caches\tran
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:11:22-76
 application
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:13:5-69:19
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:13:5-72:19
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha09] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\75b5090a6e9615bc751c57c51ce85710\material-1.1.0-alpha09\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9bac9c4889645f6890dde18e8b20da08\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -254,78 +254,84 @@ ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifes
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:25:13-67
 	android:name
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:24:13-69
+meta-data#android.app.searchable
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:9-28:50
+	android:resource
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:28:13-47
+	android:name
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:27:13-50
 activity#com.example.captonesecondstage.ui.Activity.SplachActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:9-32:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:29:9-35:20
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:26:19-61
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:29:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:33:27-74
 activity#com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:33:9-36:74
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:36:9-39:74
 	android:parentActivityName
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:36:13-71
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:39:13-71
 	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:35:13-87
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:38:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:34:13-71
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:37:13-71
 activity#com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:37:9-39:90
-	android:configChanges
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:39:13-87
-	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:38:13-63
-activity#com.example.captonesecondstage.ui.Activity.HomePageActivity
 ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:40:9-42:90
 	android:configChanges
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:42:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:41:13-57
-activity#com.example.captonesecondstage.ui.Activity.MainActivity
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:43:9-46:20
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:41:13-63
+activity#com.example.captonesecondstage.ui.Activity.HomePageActivity
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:43:9-45:90
 	android:configChanges
 		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:45:13-87
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:44:13-53
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:44:13-57
+activity#com.example.captonesecondstage.ui.Activity.MainActivity
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:46:9-49:20
+	android:configChanges
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:48:13-87
+	android:name
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:47:13-53
 receiver#com.example.captonesecondstage.MyWidget
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:48:9-59:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:51:9-62:20
 	android:label
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:51:13-33
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:54:13-33
 	android:icon
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:50:13-46
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:53:13-46
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:49:13-37
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:52:13-37
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:52:13-54:29
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:55:13-57:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:53:17-84
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:56:17-84
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:53:25-81
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:56:25-81
 meta-data#android.appwidget.provider
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:56:13-58:58
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:59:13-61:58
 	android:resource
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:58:17-55
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:61:17-55
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:57:17-58
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:60:17-58
 receiver#com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:60:9-66:20
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:63:9-69:20
 	android:enabled
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:62:13-35
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:65:13-35
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:61:13-75
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:64:13-75
 intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:63:13-65:29
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:66:13-68:29
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:64:17-79
+ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:67:17-79
 	android:name
-		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:64:25-76
+		ADDED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml:67:25-76
 uses-sdk
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\Capstone Projects\Captone Second Stage\app\src\main\AndroidManifest.xml

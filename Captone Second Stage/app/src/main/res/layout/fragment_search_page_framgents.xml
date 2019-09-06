@@ -12,28 +12,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-
-        <EditText
-            android:id="@+id/search_edit"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="30dp"
-            android:background="@drawable/button_border"
-            android:drawableLeft="@drawable/magnifier"
-            android:paddingLeft="8dp"
-            android:drawablePadding="10dp"
-            android:hint="search.."
-            android:imeOptions="actionSearch"
-            android:singleLine="true"
-            />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/button_border"
+                android:drawablePadding="10dp"
+                android:hint="search.." />
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"
                 xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="false"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
+                android:layout_height="45dp"
                 ads:adSize="SMART_BANNER"
                 ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
         <androidx.recyclerview.widget.RecyclerView
