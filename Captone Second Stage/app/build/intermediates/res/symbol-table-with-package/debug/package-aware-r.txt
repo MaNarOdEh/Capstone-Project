@@ -2025,6 +2025,7 @@ menu search_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string CHANNEL_ID
 string Forget_pass
 string _0597853325
 string abc_action_bar_home_description
@@ -2061,6 +2062,8 @@ string already_have_account
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string channel_description
+string channel_name
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2084,6 +2087,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string contact
 string continue_signup
 string courses
 string create_account
@@ -2183,6 +2187,7 @@ string update_user_name
 string user_name
 string user_name_or_email
 string warning_text
+string why_you_wait_contact_him_now
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

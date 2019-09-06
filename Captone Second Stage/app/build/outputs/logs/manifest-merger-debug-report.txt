@@ -23,8 +23,6 @@ MERGED from [com.google.firebase:firebase-messaging:20.0.0] C:\Users\pc corner\.
 MERGED from [com.google.firebase:firebase-storage:19.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\dba992db07e637198233ca5f1f36f279\firebase-storage-19.0.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\61514b71cbdccb91960e86d472b23291\play-services-auth-17.0.0\AndroidManifest.xml:17:1-39:12
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\10af2d6b14e42075de1b6ae9e632d6b5\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
-MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:2:1-14:12
-MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a1b997e4466009e92c7f31d45e2ff608\play-services-ads-lite-18.2.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\3a43d693107d86972d65b6650c6a5e15\play-services-measurement-api-17.2.0\AndroidManifest.xml:17:1-36:12
@@ -54,6 +52,7 @@ MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\pc c
 MERGED from [androidx.fragment:fragment:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\707b1f91b8a93220aa50729b02688714\fragment-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9018728aba2e591a5ba4281d05049483\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\717e6b360e75f02e025558cc6e7ce8a4\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.jakewharton:butterknife-runtime:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f867d4b8138111e41f2c98da7158b0d5\butterknife-runtime-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\e278cfc9faaacad07df37a7d20a7d5d9\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0-beta01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\bfcd4a59853dfa4b3cab05acecc056e1\recyclerview-1.1.0-beta01\AndroidManifest.xml:17:1-24:12
@@ -64,6 +63,7 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\pc c
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\56956c1b92ecac01fcceb0b2d6e5dd50\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0333bc073cac21e74c35766b804a6d61\activity-1.0.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:17:1-26:12
+MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d8684c99796f8f6ba8ae0f3c893856cf\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\1d5f8457587395dcecf0e4e42cd6d0ee\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\79cd06093dc5a0268dc44082331f1f86\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -190,8 +190,6 @@ MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\pc corne
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\61514b71cbdccb91960e86d472b23291\play-services-auth-17.0.0\AndroidManifest.xml:22:5-37:19
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\10af2d6b14e42075de1b6ae9e632d6b5\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\10af2d6b14e42075de1b6ae9e632d6b5\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
-MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:12:5-20
-MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:12:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a1b997e4466009e92c7f31d45e2ff608\play-services-ads-lite-18.2.0\AndroidManifest.xml:26:5-40:19
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a1b997e4466009e92c7f31d45e2ff608\play-services-ads-lite-18.2.0\AndroidManifest.xml:26:5-40:19
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:28:5-53:19
@@ -228,6 +226,8 @@ MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\pc c
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\88d6015879d0e706d68d9cfbf53eff04\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:24:5-89
+MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:12:5-20
+MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:12:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ec067878d8725420b5a919def2f73947\versionedparcelable-1.1.0-rc01\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\ec067878d8725420b5a919def2f73947\versionedparcelable-1.1.0-rc01\AndroidManifest.xml:24:5-25:19
 MERGED from [com.google.android.gms:play-services-ads-base:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\6cb77cdaa1f93cd8ee69ea61a94d2f0f\play-services-ads-base-18.2.0\AndroidManifest.xml:7:5-20
@@ -374,10 +374,6 @@ MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\pc corne
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\61514b71cbdccb91960e86d472b23291\play-services-auth-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\10af2d6b14e42075de1b6ae9e632d6b5\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\10af2d6b14e42075de1b6ae9e632d6b5\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
-MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:8:5-10:41
-MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:8:5-10:41
-MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a1b997e4466009e92c7f31d45e2ff608\play-services-ads-lite-18.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\a1b997e4466009e92c7f31d45e2ff608\play-services-ads-lite-18.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\31352f294ec4d3330bd0acc7d4a18c60\play-services-measurement-17.2.0\AndroidManifest.xml:20:5-44
@@ -436,6 +432,8 @@ MERGED from [androidx.loader:loader:1.0.0] C:\Users\pc corner\.gradle\caches\tra
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\9018728aba2e591a5ba4281d05049483\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\717e6b360e75f02e025558cc6e7ce8a4\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\717e6b360e75f02e025558cc6e7ce8a4\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\20fb29979eb13a5ba760cdfdca6b95ce\butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife-runtime:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f867d4b8138111e41f2c98da7158b0d5\butterknife-runtime-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife-runtime:10.1.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\f867d4b8138111e41f2c98da7158b0d5\butterknife-runtime-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\e278cfc9faaacad07df37a7d20a7d5d9\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
@@ -456,6 +454,8 @@ MERGED from [androidx.activity:activity:1.0.0-rc01] C:\Users\pc corner\.gradle\c
 MERGED from [androidx.activity:activity:1.0.0-rc01] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\0333bc073cac21e74c35766b804a6d61\activity-1.0.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.1.0-rc02] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\283f376a2aa4c7116a0d575e662517f8\core-1.1.0-rc02\AndroidManifest.xml:20:5-22:41
+MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:8:5-10:41
+MERGED from [io.paperdb:paperdb:2.6] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d6ceca94ec02b1168891f57ee1e7f926\paperdb-2.6\AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d8684c99796f8f6ba8ae0f3c893856cf\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\d8684c99796f8f6ba8ae0f3c893856cf\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\pc corner\.gradle\caches\transforms-2\files-2.1\1d5f8457587395dcecf0e4e42cd6d0ee\exifinterface-1.0.0\AndroidManifest.xml:20:5-44

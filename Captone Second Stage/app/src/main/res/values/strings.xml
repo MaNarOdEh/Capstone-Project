@@ -55,6 +55,11 @@
     <string name="search">Search</string>
     <string name="search_hinit">You can Search by input user name or phone number!</string>
     <string name="search_">search..</string>
+    <string name="why_you_wait_contact_him_now">Why you wait contact him now!!</string>
+    <string name="contact">contact</string>
+    <string name="channel_name">PRIVATETEACHERAPPS</string>
+    <string name="channel_description">Show Notification when people visit your profiles or one some one send you a request </string>
+    <string name="CHANNEL_ID">PRIVATE_TEACHER</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

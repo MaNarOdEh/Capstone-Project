@@ -5516,7 +5516,7 @@
         <item>Student</item>
         <item>Teacher</item>
         <item>Parents</item>
-    </string-array><string name="search_">search..</string><string name="search_hinit">You can Search by input user name or phone number!</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </string-array><string name="search_">search..</string><string name="search_hinit">You can Search by input user name or phone number!</string><string name="why_you_wait_contact_him_now">Why you wait contact him now!!</string><string name="contact">contact</string><string name="channel_name">PRIVATETEACHERAPPS</string><string name="channel_description">Show Notification when people visit your profiles or one some one send you a request </string><string name="CHANNEL_ID">PRIVATE_TEACHER</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
