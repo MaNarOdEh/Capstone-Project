@@ -76,7 +76,6 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         showSearchPageFragments();
         setTitle("");
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

@@ -2164,6 +2164,8 @@ string s5
 string s6
 string s7
 string search
+string search_
+string search_hinit
 string search_menu_title
 string send
 string setting

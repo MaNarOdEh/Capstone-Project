@@ -53,6 +53,8 @@
     <string name="student_user_name">Student User Name!</string>
     <string name="warning_text">Note any Student you will add here can evaluate you! and you can\'t delete student after you adding them</string>
     <string name="search">Search</string>
+    <string name="search_hinit">You can Search by input user name or phone number!</string>
+    <string name="search_">search..</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

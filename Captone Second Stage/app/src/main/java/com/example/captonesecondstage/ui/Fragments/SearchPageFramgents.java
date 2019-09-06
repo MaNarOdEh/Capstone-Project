@@ -61,7 +61,6 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     FirebaseAuth mAuth;
     ArrayList<Students>mStudents=new ArrayList<>();
     ArrayList<Teachers>mTeachers=new ArrayList<>();
-    Timer searchScheduleTimer = null;
     ProfileStudentAdapter profileAdapter;
     ProfileTeacherAdapter profileAdapter_teace;
 
@@ -96,7 +95,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
                 if(((HomePageActivity)(getActivity())).userType.equals("1")){
                      profileAdapter.getFilter().filter(s);
                 }else{
-                   // getAllTeachers();
+                   profileAdapter_teace.getFilter().filter(s);
                 }
                 return true;
             }
@@ -141,12 +140,9 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
 
     @Override
     public void onProfileClicked(int position) {
-        Log.e("ERROROR","MUSTGOOO");
-
         Intent intent=new Intent(getActivity(),ProfileTeacherActivity.class);
-        intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,mTeachers.get(position));
+        intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,profileAdapter_teace.getList().get(position));
         startActivity(intent);
-
     }
 
     @Override
