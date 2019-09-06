@@ -128,6 +128,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     }
     private void getAllStudents(){
         if(((HomePageActivity) getActivity()).checkConnection()) {
+            mStudents=new ArrayList<>();
             FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.STUDENT_DB)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -165,6 +166,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     }
     private void getAllTeachers(){
        if( ((HomePageActivity) getActivity()).checkConnection()) {
+           mTeachers=new ArrayList<>();
            FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.TEACHER_DB)
                    .addListenerForSingleValueEvent(new ValueEventListener() {
                        @Override

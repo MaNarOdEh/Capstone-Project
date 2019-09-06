@@ -93,6 +93,19 @@
                 android:background="@drawable/button_border"
                 android:textColor="@color/colorApp"
                 android:layout_margin="15dp"/>
+
+            <Button
+                android:id="@+id/btn_add_new_student"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@string/add_new_students"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/colorApp"
+                android:textColor="@color/colorWhite"
+                android:layout_margin="15dp"/>
+
         </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -213,6 +226,42 @@
                 android:drawablePadding="15dp"/>
             <Button
                 android:id="@+id/btn_update_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="15dp"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorApp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/add_student_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/warning_text"
+                android:textColor="#cccc"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                />
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/student_user_name"
+                android:paddingLeft="8dp"
+                android:drawableTint="@color/colorAccent"/>
+            <Button
+                android:id="@+id/btn_add_student"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

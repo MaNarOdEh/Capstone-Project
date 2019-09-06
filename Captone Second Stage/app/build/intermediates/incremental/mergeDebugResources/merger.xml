@@ -5516,7 +5516,7 @@
         <item>Student</item>
         <item>Teacher</item>
         <item>Parents</item>
-    </string-array><string name="update_description">update description</string><string name="notest_course">Please, Separate each course with comma \',\' to make it easy to show them when any one visit your profile</string><string name="sign_out">Sign Out</string><string name="profile">Profile</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </string-array><string name="update_description">update description</string><string name="notest_course">Please, Separate each course with comma \',\' to make it easy to show them when any one visit your profile</string><string name="sign_out">Sign Out</string><string name="profile">Profile</string><string name="add_new_students">Add New Students</string><string name="student_user_name">Student User Name!</string><string name="warning_text">Note any Student you will add here can evaluate you! and you can\'t delete student after you adding them</string></file><file path="G:\Capstone Projects\Captone Second Stage\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

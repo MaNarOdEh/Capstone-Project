@@ -49,6 +49,9 @@
     <string name="notest_course">Please, Separate each course with comma \',\' to make it easy to show them when any one visit your profile</string>
     <string name="sign_out">Sign Out</string>
     <string name="profile">Profile</string>
+    <string name="add_new_students">Add New Students</string>
+    <string name="student_user_name">Student User Name!</string>
+    <string name="warning_text">Note any Student you will add here can evaluate you! and you can\'t delete student after you adding them</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

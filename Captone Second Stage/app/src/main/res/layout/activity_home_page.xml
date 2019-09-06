@@ -8,6 +8,7 @@
     tools:context=".ui.Activity.HomePageActivity">
     <include layout="@layout/toolbar_home_page"/>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"/>
         <ProgressBar
             android:visibility="gone"
             android:id="@+id/progress_profile"

@@ -1524,6 +1524,7 @@ id activity_chooser_view_content
 id adView
 id add
 id add_fav_img
+id add_student_layout
 id address_et
 id address_linear
 id adjust_height
@@ -1534,6 +1535,7 @@ id always
 id async
 id auto
 id autoCompleteTv_courses
+id auto_complete_student_name
 id barrier
 id beginning
 id blocking
@@ -1544,6 +1546,8 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_aboutUs
+id btn_add_new_student
+id btn_add_student
 id btn_back_to_setting
 id btn_call
 id btn_is_connect
@@ -1703,7 +1707,6 @@ id mulitple_courses
 id multiply
 id name_txt
 id navigation_bottom_container
-id navigation_favourite
 id navigation_header_container
 id navigation_home
 id navigation_notification
@@ -2046,6 +2049,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about_us
+string add_new_students
 string address
 string already_have_account
 string app_name
@@ -2159,6 +2163,7 @@ string setting
 string sign_out
 string signup
 string status_bar_notification_info_overflow
+string student_user_name
 string techapp
 string update_courses
 string update_description
@@ -2168,6 +2173,7 @@ string update_phone_number
 string update_user_name
 string user_name
 string user_name_or_email
+string warning_text
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

@@ -160,9 +160,6 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
                    case R.id.navigation_home:
                        showSearchPageFragments();
                        break;
-                   case R.id.navigation_favourite:
-                       showFavouriteFragments();
-                       break;
                    case R.id.navigation_settings:
                        showSettingsFragments();
                        break;

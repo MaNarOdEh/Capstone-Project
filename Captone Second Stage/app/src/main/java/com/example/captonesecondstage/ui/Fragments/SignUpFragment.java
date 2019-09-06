@@ -216,10 +216,11 @@ public class SignUpFragment extends Fragment {
                         public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
 
                             if(task.isSuccessful()){
-                                ((MainActivity)getActivity()).showSnackBar("May Be This email is already taken!!");
+                                ((MainActivity)getActivity()).showContinueSignUpFragment(mUserNameEt.getText().toString(),account.getEmail(),"");
+
 
                             }else{
-                                ((MainActivity)getActivity()).showContinueSignUpFragment(mUserNameEt.getText().toString(),account.getEmail(),"");
+                                ((MainActivity)getActivity()).showSnackBar("May Be This email is already taken!!");
 
                             }
                         }

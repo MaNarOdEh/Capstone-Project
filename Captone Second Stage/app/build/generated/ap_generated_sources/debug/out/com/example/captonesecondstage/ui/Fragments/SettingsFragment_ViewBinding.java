@@ -2,6 +2,7 @@
 package com.example.captonesecondstage.ui.Fragments;
 
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -25,6 +26,7 @@ public class SettingsFragment_ViewBinding implements Unbinder {
     target.mBtn_update_address = Utils.findOptionalViewAsType(source, R.id.btn_update_address, "field 'mBtn_update_address'", Button.class);
     target.mBtnUpdateCourses = Utils.findOptionalViewAsType(source, R.id.btn_update_courses, "field 'mBtnUpdateCourses'", Button.class);
     target.mBtnUpdatePhoneNumber = Utils.findOptionalViewAsType(source, R.id.btn_update_phone_number, "field 'mBtnUpdatePhoneNumber'", Button.class);
+    target.mBtnAddNewStudent = Utils.findRequiredViewAsType(source, R.id.btn_add_new_student, "field 'mBtnAddNewStudent'", Button.class);
     target.mMainLayout = Utils.findOptionalViewAsType(source, R.id.main_layout, "field 'mMainLayout'", LinearLayout.class);
     target.mAddressLinear = Utils.findOptionalViewAsType(source, R.id.address_linear, "field 'mAddressLinear'", LinearLayout.class);
     target.mBtnUpdateAdre = Utils.findOptionalViewAsType(source, R.id.btn_update_addre, "field 'mBtnUpdateAdre'", Button.class);
@@ -38,6 +40,9 @@ public class SettingsFragment_ViewBinding implements Unbinder {
     target.mDecriptionLayout = Utils.findOptionalViewAsType(source, R.id.description_layout, "field 'mDecriptionLayout'", LinearLayout.class);
     target.mDesciptionEt = Utils.findOptionalViewAsType(source, R.id.description_et, "field 'mDesciptionEt'", EditText.class);
     target.mBtnUpdateDesc = Utils.findOptionalViewAsType(source, R.id.btn_update_desc, "field 'mBtnUpdateDesc'", Button.class);
+    target.mAddStudentLayout = Utils.findOptionalViewAsType(source, R.id.add_student_layout, "field 'mAddStudentLayout'", LinearLayout.class);
+    target.mBtnAddStudent = Utils.findOptionalViewAsType(source, R.id.btn_add_student, "field 'mBtnAddStudent'", Button.class);
+    target.mAutoComleterStudnetName = Utils.findOptionalViewAsType(source, R.id.auto_complete_student_name, "field 'mAutoComleterStudnetName'", AutoCompleteTextView.class);
     target.mBbtBackToSetting = Utils.findOptionalViewAsType(source, R.id.btn_back_to_setting, "field 'mBbtBackToSetting'", Button.class);
   }
 
@@ -52,6 +57,7 @@ public class SettingsFragment_ViewBinding implements Unbinder {
     target.mBtn_update_address = null;
     target.mBtnUpdateCourses = null;
     target.mBtnUpdatePhoneNumber = null;
+    target.mBtnAddNewStudent = null;
     target.mMainLayout = null;
     target.mAddressLinear = null;
     target.mBtnUpdateAdre = null;
@@ -65,6 +71,9 @@ public class SettingsFragment_ViewBinding implements Unbinder {
     target.mDecriptionLayout = null;
     target.mDesciptionEt = null;
     target.mBtnUpdateDesc = null;
+    target.mAddStudentLayout = null;
+    target.mBtnAddStudent = null;
+    target.mAutoComleterStudnetName = null;
     target.mBbtBackToSetting = null;
   }
 }
