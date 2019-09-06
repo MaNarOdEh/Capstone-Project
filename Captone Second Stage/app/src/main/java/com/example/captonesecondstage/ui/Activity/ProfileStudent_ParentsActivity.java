@@ -70,15 +70,17 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         setAdapterRecycle();
 
     }
-    private  void showInfo(){
-        mNameTxt.setText(mStudents.getmUserName());
-        mPhoneTxt.setText(mStudents.getmPhone());
-        mAboutUsTxt.setText(mStudents.getmDescritption()+"\n"+
-                mStudents.getmAdress());
-        Picasso.get().load(mStudents.getmImageUrl())
-                .placeholder(R.drawable.graduate)
-                .error(R.drawable.graduate)
-                .into(mcircleImgProfile);
+    private  void showInfo() {
+        if (mStudents != null) {
+            mNameTxt.setText(mStudents.getmUserName());
+            mPhoneTxt.setText(mStudents.getmPhone());
+            mAboutUsTxt.setText(mStudents.getmDescritption() + "\n" +
+                    mStudents.getmAdress());
+            Picasso.get().load(mStudents.getmImageUrl())
+                    .placeholder(R.drawable.graduate)
+                    .error(R.drawable.graduate)
+                    .into(mcircleImgProfile);
+        }
     }
 
     private void initializeEvent() {

@@ -79,14 +79,15 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         setAdapterRecycle();
     }
     private  void initialize(){
-        mNameTxt.setText(mTeachers.getmUserName());
-        mPhoneTxt.setText(mTeachers.getmPhone());
-        mAboutUsTxt.setText(mTeachers.getmDescritption()+"\n"+mTeachers.getmAdress());
-        Picasso.get().load(mTeachers.getmImageUrl())
-                .placeholder(R.drawable.teachers)
-                .error(R.drawable.teachers)
-                .into(mcircleImgProfile);
-
+        if(mTeachers!=null) {
+            mNameTxt.setText(mTeachers.getmUserName());
+            mPhoneTxt.setText(mTeachers.getmPhone());
+            mAboutUsTxt.setText(mTeachers.getmDescritption() + "\n" + mTeachers.getmAdress());
+            Picasso.get().load(mTeachers.getmImageUrl())
+                    .placeholder(R.drawable.teachers)
+                    .error(R.drawable.teachers)
+                    .into(mcircleImgProfile);
+        }
     }
 
     private void initializeEvent() {

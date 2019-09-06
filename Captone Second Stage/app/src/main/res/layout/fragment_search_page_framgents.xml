@@ -23,6 +23,8 @@
             android:paddingLeft="8dp"
             android:drawablePadding="10dp"
             android:hint="search.."
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
             />
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"

@@ -3,7 +3,9 @@ package com.example.captonesecondstage.ui.Fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -183,6 +185,9 @@ public class ContinueSignUp extends Fragment {
             mProgressCircular.setVisibility(View.VISIBLE);
             if (((MainActivity) getActivity()).checkConnection()) {
                 if (type.equals("Teacher")) {
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "1");
+                    editor.apply();
                     Teachers teachers = new Teachers(data.get(0), data.get(1), data.get(2), phone, description, cources, address);
                     if(data.get(2).isEmpty()){
                         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -198,6 +203,9 @@ public class ContinueSignUp extends Fragment {
                 } else {
                     Students students = new Students(data.get(0), data.get(1), data.get(2)
                             , phone, description, cources, address);
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "2");
+                    editor.apply();
                     if(data.get(2).isEmpty()){
                         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                                 .requestEmail()

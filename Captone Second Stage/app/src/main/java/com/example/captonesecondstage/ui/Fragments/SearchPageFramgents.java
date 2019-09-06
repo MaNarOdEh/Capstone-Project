@@ -10,10 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapter;
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
@@ -67,12 +70,58 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
         ButterKnife.setDebug(true);
 
 
-
+        search();
         initiliaeAdb();
         initializeFireBase();
         initializeEvent();
 
         return root;
+    }
+
+    private void search() {
+        mSearchEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_SEARCH) {
+                    performSearch();
+                    return true;
+                }
+                return false;
+            }
+        });
+        mSearchEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+             performSearch();
+            }
+        });
+    }
+    public void performSearch(){
+
+        if(mStudents.size()!=0){
+            ArrayList<Students>students=new ArrayList<>();
+            for(int i=0;i<mStudents.size();i++){
+                if(mStudents.get(i).getmUserName().equals(mSearchEdit.getText().toString())){
+                    students.add(mStudents.get(i));
+                }
+            }
+            ProfileStudentAdapter profileAdapter = new ProfileStudentAdapter(students, SearchPageFramgents.this);
+            mRandomSuggestionProfile.setAdapter(profileAdapter);
+
+        }if(mTeachers.size()!=0){
+            ArrayList<Teachers>teachers=new ArrayList<>();
+            for(int i=0;i<mTeachers.size();i++){
+                if(mTeachers.get(i).getmUserName().equals(mSearchEdit.getText().toString())){
+                    teachers.add(mTeachers.get(i));
+                }
+            }
+            ProfileTeacherAdapter profileAdapter = new ProfileTeacherAdapter(mTeachers, SearchPageFramgents.this);
+            mRandomSuggestionProfile.setAdapter(profileAdapter);
+
+
+        }
+
     }
 
 

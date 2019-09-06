@@ -62,6 +62,7 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
             onProfileClicked.onProfileClicked(getAdapterPosition());
         }
     }
+    //تجسيل الدخول باستحدام الجميل لازم نتأكد من وجود الحسابة بالاول!!
     public ProfileTeacherAdapter(ArrayList<Teachers> teachers, OnProfileClicked onProfileClicked) {
         this.mtTeachersList=teachers;
         this.onProfileClicked=onProfileClicked;
