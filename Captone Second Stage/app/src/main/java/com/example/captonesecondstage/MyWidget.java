@@ -7,10 +7,12 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.RemoteViews;
 
 
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
 
 import io.paperdb.Paper;
@@ -31,10 +33,12 @@ public class MyWidget extends AppWidgetProvider  {
         String user_name=Paper.book().read("NAME_WIDGET");
         String phone_txt=Paper.book().read("PHONE");
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.my_widget);
+        Intent intent2= new Intent(Intent.ACTION_DIAL, Uri.fromParts(CommnuicationBetweenActivities.CALL, phone_txt, null));
+        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2,0);
 
         views.setTextViewText(R.id.name_widget_txt,user_name);
         views.setTextViewText(R.id.phone_widget_txt,phone_txt);
-        views.setOnClickPendingIntent(R.id.btn_call_widget,pendingIntent);
+        views.setOnClickPendingIntent(R.id.btn_call_widget,pendingIntent2);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
@@ -52,9 +56,11 @@ public class MyWidget extends AppWidgetProvider  {
             String phone_txt=Paper.book().read("PHONE");
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.my_widget);
 
+            Intent intent2= new Intent(Intent.ACTION_DIAL, Uri.fromParts(CommnuicationBetweenActivities.CALL, phone_txt, null));
+            PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2,0);
             views.setTextViewText(R.id.name_widget_txt,user_name);
             views.setTextViewText(R.id.phone_widget_txt,phone_txt);
-            views.setOnClickPendingIntent(R.id.btn_call_widget,pendingIntent);
+            views.setOnClickPendingIntent(R.id.btn_call_widget,pendingIntent2);
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds);
