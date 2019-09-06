@@ -12,10 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.squareup.picasso.Picasso;
 
@@ -53,6 +54,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
     @BindView(R.id.recycle_courses)@Nullable()
     RecyclerView mRecycleCourses;
     Teachers mTeachers;
+    int val;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +65,8 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         if(intent==null){
             finish();
         }else{
-            mTeachers=intent.getParcelableExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT);
+            mTeachers=intent.getParcelableExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT);
+            val=intent.getIntExtra(CommnuicationBetweenActivities.WATCH_MODE,0);
         }
         if(mTeachers==null){
             finish();
@@ -105,17 +108,26 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         mBtnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phone = mTeachers.getmPhone();
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(AddingReadingData.CALL, phone, null));
-                startActivity(intent);
+                if(val==1){
+                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                }else {
+                    String phone = mTeachers.getmPhone();
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(CommnuicationBetweenActivities.CALL, phone, null));
+                    startActivity(intent);
+                }
             }
         });
         mBtnSMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String number = mTeachers.getmPhone();  // The number on which you want to send SMS
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(AddingReadingData.SMS, number, null)));
+                if(val==1) {
+                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+
+                }else{
+                    String number = mTeachers.getmPhone();  // The number on which you want to send SMS
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(CommnuicationBetweenActivities.SMS, number, null)));
+                }
 
             }
         });

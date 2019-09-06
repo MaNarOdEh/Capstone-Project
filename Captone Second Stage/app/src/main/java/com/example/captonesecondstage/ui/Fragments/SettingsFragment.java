@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
@@ -205,11 +205,11 @@ public class SettingsFragment extends Fragment {
     private void chechIntenetConnection(String child,String values){
         if(((HomePageActivity)getActivity()).checkConnection()){
             if(((HomePageActivity)(getActivity())).userType.equals("2")) {
-                FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB).
+                FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.STUDENT_DB).
                         child(mAuth.getUid()).child(child).setValue(values);
             }
             else{
-                FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB).
+                FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.TEACHER_DB).
                         child(mAuth.getUid()).child(child).setValue(values);
             }
 

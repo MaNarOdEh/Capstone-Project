@@ -19,7 +19,7 @@ import com.example.captonesecondstage.Class.Internet_connection.MyApplication;
 import com.example.captonesecondstage.Class.Students;
 
 import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Fragments.FavoriteFragments;
 import com.example.captonesecondstage.ui.Fragments.NoInternetConnectionFragment;
@@ -62,8 +62,8 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
 
         MyApplication.getInstance().setConnectivityListener(this);
 
-        SharedPreferences prefs = getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE);
-         userType = prefs.getString(AddingReadingData.SHARED_PREF_USERTYPES, "");//""-Empty String is the default value.
+        SharedPreferences prefs = getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE);
+         userType = prefs.getString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "");//""-Empty String is the default value.
 
         //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
@@ -127,15 +127,17 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(userType.equals("2")){
-                           Students students=dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).getValue(Students.class);
+                           Students students=dataSnapshot.child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid()).getValue(Students.class);
                             Intent intent=new Intent(HomePageActivity.this,ProfileStudent_ParentsActivity.class);
-                            intent.putExtra(AddingReadingData.PROFILE_STUDENTS_ACTVITVITY_INTENT,students);
+                            intent.putExtra(CommnuicationBetweenActivities.PROFILE_STUDENTS_ACTVITVITY_INTENT,students);
+                            intent.putExtra(CommnuicationBetweenActivities.WATCH_MODE,1);
                             startActivity(intent);
 
                         }else{
-                            Teachers teachers=dataSnapshot.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid()).getValue(Teachers.class);
+                            Teachers teachers=dataSnapshot.child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).getValue(Teachers.class);
                             Intent intent=new Intent(HomePageActivity.this,ProfileTeacherActivity.class);
-                            intent.putExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT,teachers);
+                            intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,teachers);
+                            intent.putExtra(CommnuicationBetweenActivities.WATCH_MODE,1);
                             startActivity(intent);
 
                         }

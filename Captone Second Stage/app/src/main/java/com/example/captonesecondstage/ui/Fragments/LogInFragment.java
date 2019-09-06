@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +18,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.captonesecondstage.Class.Students;
-import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -82,9 +79,9 @@ public class LogInFragment extends Fragment {
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
 
-        SharedPreferences prefs = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_MY_PREFS_NAME, Context.MODE_PRIVATE);
-        String email = prefs.getString(AddingReadingData.SHARED_PREF_EMAIL, "");//""-Empty String is the default value.
-        String pass = prefs.getString(AddingReadingData.SHARED_PREF_PASS, ""); //""-Empty String is the default value.
+        SharedPreferences prefs = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_MY_PREFS_NAME, Context.MODE_PRIVATE);
+        String email = prefs.getString(CommnuicationBetweenActivities.SHARED_PREF_EMAIL, "");//""-Empty String is the default value.
+        String pass = prefs.getString(CommnuicationBetweenActivities.SHARED_PREF_PASS, ""); //""-Empty String is the default value.
 
         if(!email.isEmpty()){
             mRemmeberCb.setChecked(true);
@@ -182,9 +179,9 @@ public class LogInFragment extends Fragment {
 
     }
     private  void editSharedPreference(String email,String pass){
-        SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_MY_PREFS_NAME,Context.MODE_PRIVATE).edit();
-        editor.putString(AddingReadingData.SHARED_PREF_EMAIL, email);
-        editor.putString(AddingReadingData.SHARED_PREF_PASS, pass);
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_MY_PREFS_NAME,Context.MODE_PRIVATE).edit();
+        editor.putString(CommnuicationBetweenActivities.SHARED_PREF_EMAIL, email);
+        editor.putString(CommnuicationBetweenActivities.SHARED_PREF_PASS, pass);
         editor.apply();
     }
     @Override
@@ -245,14 +242,14 @@ public class LogInFragment extends Fragment {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid()).exists()){
+                if(dataSnapshot.child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid()).exists()){
                   //  SharedPreferences prefs = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
-                    editor.putString(AddingReadingData.SHARED_PREF_USERTYPES, "2");
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "2");
                     editor.apply();
                 }else{
-                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(AddingReadingData.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
-                    editor.putString(AddingReadingData.SHARED_PREF_USERTYPES, "1");
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
+                    editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "1");
                     editor.apply();
 
                 }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +19,7 @@ import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileStudentAdapte
 import com.example.captonesecondstage.Class.RecycleAdpaters.ProfileTeacherAdapter;
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
@@ -116,7 +115,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     public void onProfileClicked(int position) {
         Log.e("ERROROR","MUSTGOOO");
         Intent intent=new Intent(getActivity(),ProfileTeacherActivity.class);
-        intent.putExtra(AddingReadingData.PROFILE_TEACHER_ACTIVITY_INTENT,mTeachers.get(position));
+        intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,mTeachers.get(position));
         startActivity(intent);
 
     }
@@ -124,12 +123,12 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     @Override
     public void onProfileStudentClicked(int position) {
         Intent intent=new Intent(getActivity(),ProfileStudent_ParentsActivity.class);
-        intent.putExtra(AddingReadingData.PROFILE_STUDENTS_ACTVITVITY_INTENT,mStudents.get(position));
+        intent.putExtra(CommnuicationBetweenActivities.PROFILE_STUDENTS_ACTVITVITY_INTENT,mStudents.get(position));
         startActivity(intent);
     }
     private void getAllStudents(){
         if(((HomePageActivity) getActivity()).checkConnection()) {
-            FirebaseDatabase.getInstance().getReference().child(AddingReadingData.STUDENT_DB)
+            FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.STUDENT_DB)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -166,7 +165,7 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
     }
     private void getAllTeachers(){
        if( ((HomePageActivity) getActivity()).checkConnection()) {
-           FirebaseDatabase.getInstance().getReference().child(AddingReadingData.TEACHER_DB)
+           FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.TEACHER_DB)
                    .addListenerForSingleValueEvent(new ValueEventListener() {
                        @Override
                        public void onDataChange(DataSnapshot dataSnapshot) {

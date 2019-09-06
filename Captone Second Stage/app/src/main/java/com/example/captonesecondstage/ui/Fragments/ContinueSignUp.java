@@ -31,7 +31,7 @@ import android.widget.TextView;
 
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Class.Teachers;
-import com.example.captonesecondstage.DataBase.AddingReadingData;
+import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.MainActivity;
@@ -96,7 +96,7 @@ public class ContinueSignUp extends Fragment {
         ButterKnife.setDebug(true);
         Bundle bundle = this.getArguments();
         if(bundle!=null){
-            data=bundle.getStringArrayList(AddingReadingData.DATACREATEACCOUNTS_MAIN_ACTIVITY);
+            data=bundle.getStringArrayList(CommnuicationBetweenActivities.DATACREATEACCOUNTS_MAIN_ACTIVITY);
             mUserNameTv.setText(data.get(0));
         }else{
             ((MainActivity)getActivity()).showSignUpFragment();
@@ -304,12 +304,12 @@ public class ContinueSignUp extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            rootRef.child(AddingReadingData.TEACHER_DB).child(mAuth.getUid())
+                            rootRef.child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid())
                                     .setValue(teachers).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("1");
+                                        rootRef.child(CommnuicationBetweenActivities.ALL_TECH).child(teachers.getmUserName()).setValue("1");
                                         storeImage(teachers.getmEmail());
                                     }else{
                                         ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
@@ -331,12 +331,12 @@ public class ContinueSignUp extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                            rootRef.child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid())
                                     .setValue(students).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
+                                        rootRef.child(CommnuicationBetweenActivities.ALL_TECH).child(students.getmUserName()).setValue("2");
                                         storeImage(students.getmEmail());
                                     }else{
                                         ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
@@ -359,12 +359,12 @@ public class ContinueSignUp extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                    rootRef.child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid())
                             .setValue(students).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                rootRef.child(AddingReadingData.ALL_TECH).child(students.getmUserName()).setValue("2");
+                                rootRef.child(CommnuicationBetweenActivities.ALL_TECH).child(students.getmUserName()).setValue("2");
                                // acct.getPhotoUrl();
                                 storeImage(students.getmEmail());
                             }else{
@@ -387,12 +387,12 @@ public class ContinueSignUp extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    rootRef.child(AddingReadingData.STUDENT_DB).child(mAuth.getUid())
+                    rootRef.child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid())
                             .setValue(teachers).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                rootRef.child(AddingReadingData.ALL_TECH).child(teachers.getmUserName()).setValue("2");
+                                rootRef.child(CommnuicationBetweenActivities.ALL_TECH).child(teachers.getmUserName()).setValue("2");
                               storeImage(teachers.getmEmail());
                             }else{
                                 ( (MainActivity) getActivity()). showSnackBar(task.getException()+" ");
