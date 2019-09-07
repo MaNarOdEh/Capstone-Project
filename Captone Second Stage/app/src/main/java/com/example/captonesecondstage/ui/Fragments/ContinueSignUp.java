@@ -161,22 +161,22 @@ public class ContinueSignUp extends Fragment {
         type=mUserTypeSpinner.getItemAtPosition(mUserTypeSpinner.getSelectedItemPosition()).toString();
         boolean correct=true;
         if(!ValidationData.isCorrectPhone(phone)){
-            mUserPhoneEt.setError("Your Phone number must be between 6 numbers and 10 ");
+            mUserPhoneEt.setError(getString(R.string.phone_number_error));
             correct=false;
         }else{
             mUserPhoneEt.setError(null);
         }if(!ValidationData.isCorrectAddress(address)){
-            mAdressEt.setError("Please, it should be at least 3 letters or digits");
+            mAdressEt.setError(getString(R.string.name_error));
             correct=false;
         }else{
             mAdressEt.setError(null);
         }if(!ValidationData.isCorrectDesciption(description)){
-            mDescriptionEt.setError("your description must be at least 8 character");
+            mDescriptionEt.setError(getString(R.string.desc_error));
             correct=false;
         }else{
             mDescriptionEt.setError(null);
         }if(!ValidationData.isCorrectCources(cources)){
-            mCoursesAutoComplete.setError("Input at least one courses!");
+            mCoursesAutoComplete.setError(getString(R.string.course_error));
             correct=false;
         }else{
             mCoursesAutoComplete.setError(null);

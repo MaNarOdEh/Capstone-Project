@@ -73,7 +73,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         if(val==0){
             SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
             Date date = new Date(System.currentTimeMillis());
-            Notification notification=new Notification(HomePageActivity.userName+" visit your profile",mStudents.getmUserName(),formatter.format(date)+"  ");
+            Notification notification=new Notification(HomePageActivity.userName+getString(R.string.visit_profile_notifcation),mStudents.getmUserName(),formatter.format(date)+"  ");
             FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
                     .child(mStudents.getmUserName()).push().setValue(notification);
         }
@@ -118,7 +118,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
                 }else {
                     String phone = mStudents.getmPhone();
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(CommnuicationBetweenActivities.CALL, phone, null));
@@ -130,7 +130,7 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
                 }else {
                     String number = mStudents.getmPhone();  // The number on which you want to send SMS
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(CommnuicationBetweenActivities.SMS, number, null)));
@@ -141,16 +141,17 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
                 }else{
                     SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
                     Date date = new Date(System.currentTimeMillis());
                     //System.out.println(formatter.format(date));
-                    Notification notification=new Notification(HomePageActivity.userName+": Send You a request to teach you " +
-                            "Please check his profile and call him if you accept!!",mStudents.getmUserName(),formatter.format(date)+" ");
+                    Notification notification=new Notification(HomePageActivity.userName+ getString(R.string.notification_sending_request_text)
+                            ,mStudents.getmUserName(),formatter.format(date)+" ");
                     FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
                             .child(mStudents.getmUserName()).push().setValue(notification);
-                    NotificationHelper.display_Notification(getApplicationContext(),"Done Notification","Successfully you send him a request");
+                    NotificationHelper.display_Notification(getApplicationContext(),getString(R.string.succesffully_request_title),
+                            getString(R.string.succesffully_request_title));
 
 
                 }
@@ -160,10 +161,10 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
 
                 }else{
-                    Toast.makeText(ProfileStudent_ParentsActivity.this, "Added Successfully in your Widget", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileStudent_ParentsActivity.this, getString(R.string.widget_added), Toast.LENGTH_SHORT).show();
                     Paper.init(getApplicationContext());
                     Paper.book().write("NAME_WIDGET",mNameTxt.getText().toString());
                     Paper.book().write("PHONE",mPhoneTxt.getText().toString());

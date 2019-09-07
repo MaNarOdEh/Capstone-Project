@@ -42,7 +42,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
-import java.util.Timer;
 
 
 import butterknife.BindView;
@@ -51,8 +50,7 @@ import butterknife.ButterKnife;
 public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapter.OnProfileClicked, ProfileStudentAdapter.OnProfileStudentClicked {
     @BindView(R.id.random_suggestion_profile)@Nullable()
     RecyclerView mRandomSuggestionProfile;
-   /* @BindView(R.id.search_edit)@Nullable()
-    EditText mSearchEdit;*/
+
     @BindView(R.id.adView)
     @Nullable
     AdView mAdView;

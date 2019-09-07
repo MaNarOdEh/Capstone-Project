@@ -1,6 +1,5 @@
 package com.example.captonesecondstage.ui.Fragments;
 
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,19 +17,16 @@ import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
 
-import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.Validation.ValidationData;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+
 
 import java.util.ArrayList;
 
@@ -186,9 +182,9 @@ public class SettingsFragment extends Fragment {
                 if(ValidationData.isCorrectAddress(address)){
                     mAdressEt.setError(null);
                     chechIntenetConnection("mAdress",address);
-                    Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), getString(R.string.updated_succesfully), Toast.LENGTH_LONG).show();
                 }else{
-                    mAdressEt.setError("Input Valid adress Please!");
+                    mAdressEt.setError(getString(R.string.valid_data));
                 }
 
             }
@@ -202,9 +198,9 @@ public class SettingsFragment extends Fragment {
                     mPohneEt.setError(null);
                     chechIntenetConnection("mPhone",phone);
 
-                    Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), getString(R.string.updated_succesfully), Toast.LENGTH_LONG).show();
                 }else{
-                    mPohneEt.setError("Input Valid phone number Please!");
+                    mPohneEt.setError(getString(R.string.valid_data));
                 }
             }
         });
@@ -215,9 +211,9 @@ public class SettingsFragment extends Fragment {
                 if(ValidationData.isCorrectCources(courser)){
                     mMutluplecourses.setError(null);
                     chechIntenetConnection("mCources",courser);
-                    Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), getString(R.string.updated_succesfully), Toast.LENGTH_LONG).show();
                 }else{
-                    mMutluplecourses.setError("Input Valid courses Please!");
+                    mMutluplecourses.setError(getString(R.string.valid_data));
                 }
             }
 
@@ -229,9 +225,9 @@ public class SettingsFragment extends Fragment {
                 if(ValidationData.isCorrectDesciption(courser)){
                     mMutluplecourses.setError(null);
                     chechIntenetConnection("mDescritption",courser);
-                    Toast.makeText(getActivity(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), getString(R.string.updated_succesfully), Toast.LENGTH_LONG).show();
                 }else{
-                    mDesciptionEt.setError("Input Valid Description Please!");
+                    mDesciptionEt.setError(getString(R.string.valid_data));
                 }
             }
 
@@ -245,7 +241,7 @@ public class SettingsFragment extends Fragment {
                     mAutoComleterStudnetName.setError(null);
 
                 }else{
-                    mAutoComleterStudnetName.setError("Input Valid Name Please");
+                    mAutoComleterStudnetName.setError(getString(R.string.valid_data));
                 }
             }
         });
@@ -257,7 +253,7 @@ public class SettingsFragment extends Fragment {
                             FirebaseDatabase.getInstance().getReference()
                                     .child(CommnuicationBetweenActivities.STUDENTTEACH)
                                     .child(userName).child(((HomePageActivity)getActivity()).userName).setValue("1");
-            Toast.makeText(getActivity(), "Added Successfully", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), getString(R.string.successfully_done), Toast.LENGTH_LONG).show();
 
         }else{
             ((HomePageActivity)getActivity()).ShowNoInternetConnection();

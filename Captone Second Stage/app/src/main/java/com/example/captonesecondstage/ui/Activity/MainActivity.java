@@ -143,18 +143,18 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
         catch (FirebaseAuthWeakPasswordException weakPassword)
         {
 
-             showSnackBar("Weak password,Try Input Stronger password!");
+             showSnackBar(getString(R.string.weak_password));
 
         }
         // if user enters wrong password.
         catch (FirebaseAuthInvalidCredentialsException malformedEmail)
         {
-          showSnackBar("malformed_email!");
+          showSnackBar(getString(R.string.malformed_email));
 
         }
         catch (FirebaseAuthUserCollisionException existEmail)
         {
-           showSnackBar("Exist email! The Input Email is already taken");
+           showSnackBar(getString(R.string.exist_email));
 
         }
         catch (Exception e)

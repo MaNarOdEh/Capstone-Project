@@ -35,7 +35,6 @@
     <string name="description_profile">My Name Manar Odeh,I can teach in my spare time at times that suit you. I have good programming experience and I like building stuff</string>
     <string name="request_teach_the_student">Request Teach the student</string>
     <string name="notification_example">Manar Odeh Visit Your Profile!</string>
-    <string name="techapp">TechApp</string>
     <string name="update_user_name">Update User Name</string>
     <string name="update_email">Update Email</string>
     <string name="update_courses">Update Courses</string>
@@ -77,6 +76,36 @@
     <string name="no_internet">No Internet Logo</string>
     <string name="update">Update</string>
     <string name="techapp">TechApp</string>
+    <string name="successfully_done">Successfully Done</string>
+    <string name="wrong_message">Something Wrong Happen</string>
+    <string name="welcome_notification">Welcome Notification</string>
+    <string name="welcome_notifcation_body">Hope You Enjoy!!</string>
+    <string name="weak_password">Weak password,Try Input Stronger password!</string>
+    <string name="malformed_email">malformed_email!</string>
+    <string name="exist_email">Exist email! The Input Email is already taken</string>
+    <string name="watch_mode">Can\'t do that you are in Watch Mode!!</string>
+    <string name="widget_added">Added Successfully in your Widget</string>
+    <string name="succesffully_request_title">Done Notification</string>
+    <string name="successfully_requet_body">Successfully you send him a request</string>
+    <string name="notification_sending_request_text">Send You a request to teach you Please check his profile and call him if you accept!!</string>
+    <string name="visit_profile_notifcation">visit your profile</string>
+    <string name="cant_evaluate_message">You cant Evaluate That Teacher!! the teacher does not adding you</string>
+    <string name="evaluated_done_before">You Already  Evaluate That Teacher!!</string>
+    <string name="valid_number">Input Number Between 1 and 5 Please!!</string>
+    <string name="visit_profile"> visit your profile</string>
+    <string name="phone_number_error">Your Phone number must be between 6 numbers and 10 </string>
+    <string name="name_error">Please, it should be at least 3 letters or digits</string>
+    <string name="desc_error">your description must be at least 8 character</string>
+    <string name="password_eworng">Your password should at least 6 letters with 2 Capital Letter</string>
+    <string name="not_equal">Your Password not Equals</string>
+    <string name="user_name_taken_before">Your name must be unique this name is already taken before!!</string>
+    <string name="course_error">Input at least one courses!</string>
+    <string name="email_error">"Please Input Valid Email!</string>
+    <string name="password_error">Input Your Password Please!!</string>
+    <string name="account_issues">You Don\'t have accounts create one instead!</string>
+    <string name="updated_succesfully">Updated Successfully</string>
+    <string name="valid_data">Input Valid data Please</string>
+    <string name="name_wrong">Your name must al least have 3 char at the beginning</string>
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher</item>

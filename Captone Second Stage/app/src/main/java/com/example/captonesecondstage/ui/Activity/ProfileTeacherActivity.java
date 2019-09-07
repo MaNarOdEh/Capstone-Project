@@ -33,8 +33,6 @@ import com.squareup.picasso.Picasso;
 
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -98,7 +96,8 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
             Date date = new Date(System.currentTimeMillis());
             //System.out.println(formatter.format(date));
-            Notification notification=new Notification(HomePageActivity.userName+" visit your profile",mTeachers.getmUserName(),formatter.format(date)+" ");
+            Notification notification=new Notification(HomePageActivity.userName+getString(R.string.visit_profile),mTeachers.getmUserName(),
+                    formatter.format(date)+" ");
             FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
                     .child(mTeachers.getmUserName()).push().setValue(notification);
         }
@@ -142,7 +141,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileTeacherActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
                 }else {
                     String phone = mTeachers.getmPhone();
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(CommnuicationBetweenActivities.CALL, phone, null));
@@ -155,7 +154,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(val==1) {
-                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileTeacherActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
 
                 }else{
                     String number = mTeachers.getmPhone();  // The number on which you want to send SMS
@@ -168,10 +167,10 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1) {
-                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileTeacherActivity.this,getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
 
                 }else{
-                    Toast.makeText(ProfileTeacherActivity.this, "Added Successfully in your Widget", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileTeacherActivity.this, getString(R.string.widget_added), Toast.LENGTH_SHORT).show();
                     Paper.init(getApplicationContext());
                     Paper.book().write("NAME_WIDGET",mNameTxt.getText().toString());
                     Paper.book().write("PHONE",mPhoneTxt.getText().toString());
@@ -185,7 +184,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(val==1){
-                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileTeacherActivity.this, getString(R.string.watch_mode), Toast.LENGTH_LONG).show();
                 }else{
                     checkCanYouEvaluate();
                 }
@@ -205,7 +204,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                     dialog.dismiss();
                     setEvaluate(Integer.parseInt(evaluate));
                 }else{
-                    editText.setError("Input Number Between 1 and 5 Please!!");
+                    editText.setError(getString(R.string.valid_number));
                 }
 
 
@@ -233,10 +232,10 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                     dialog.show();
 
                 }else if(dataSnapshot!=null&&dataSnapshot.getValue()!=null&&dataSnapshot.getValue().equals("0")){
-                    Toast.makeText(ProfileTeacherActivity.this, "You Already  Evaluate That Teacher!! ",
+                    Toast.makeText(ProfileTeacherActivity.this,  getString(R.string.evaluated_done_before),
                             Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(ProfileTeacherActivity.this, "You cant Evaluate That Teacher!! the teacher does not adding you",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileTeacherActivity.this,getString(R.string.cant_evaluate_message),Toast.LENGTH_LONG).show();
 
                 }
             }

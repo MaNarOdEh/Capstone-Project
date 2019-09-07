@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
@@ -311,9 +310,9 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(HomePageActivity.this, "Successfully Done", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomePageActivity.this, getString(R.string.successfully_done), Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(HomePageActivity.this, "Something Wrong Happen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomePageActivity.this, getString(R.string.wrong_message), Toast.LENGTH_SHORT).show();
                 }
             }
         });

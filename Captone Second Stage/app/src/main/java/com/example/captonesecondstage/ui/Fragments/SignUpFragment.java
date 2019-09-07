@@ -145,21 +145,21 @@ public class SignUpFragment extends Fragment {
                 cpassword=mcfPasswordEt.getText().toString();
         boolean correct=true;
         if(!ValidationData.isCorrectName(userName)){
-            mUserNameEt.setError("Your name must al least have 3 char at the beginning");
+            mUserNameEt.setError(getString(R.string.name_wrong));
             correct=false;
         }else{
             mUserNameEt.setError(null);
         }if(!ValidationData.isCorrectEmail(userEmail)){
-            mUserEmailEt.setError("Input Valid Email Please!");
+            mUserEmailEt.setError(getString(R.string.email_error));
             correct=false;
         }else{
             mUserNameEt.setError(null);
         }if(!ValidationData.isCorrectPassword(password)){
-            mPasswordEd.setError("Your password should at least 6 letters with 2 Capital Letter");
+            mPasswordEd.setError(getString(R.string.password_eworng));
         }else{
             mPasswordEd.setError(null);
             if(!password.equals(cpassword)){
-                mcfPasswordEt.setError("Your Password not Equals");
+                mcfPasswordEt.setError(getString(R.string.not_equal));
                 correct=false;
             }else{
                 mcfPasswordEt.setError(null);
@@ -173,8 +173,8 @@ public class SignUpFragment extends Fragment {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.child(CommnuicationBetweenActivities.ALL_TECH).hasChild(userName)) {
                             // run some code..this user name already taken before!!
-                            mUserNameEt.setError("Your name must be unique this name is already taken before!!");
-                            ((MainActivity) getActivity()).showSnackBar("your name must be unique this name is already taken before!!");
+                            mUserNameEt.setError(getString(R.string.user_name_taken_before));
+                            ((MainActivity) getActivity()).showSnackBar(getString(R.string.user_name_taken_before));
 
                         } else {
                             mUserNameEt.setError(null);
@@ -220,7 +220,7 @@ public class SignUpFragment extends Fragment {
 
 
                             }else{
-                                ((MainActivity)getActivity()).showSnackBar("May Be This email is already taken!!");
+                                ((MainActivity)getActivity()).showSnackBar(getString(R.string.account_issues));
 
                             }
                         }

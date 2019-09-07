@@ -62,7 +62,7 @@ public class FavoriteFragments extends Fragment implements ProfileStudentAdapter
     }
     @Override
     public void onProfileClicked(int position) {
-        Log.e("ERROROR","MUSTGOOO");
+     //   Log.e("ERROROR","MUSTGOOO");
         startActivity(new Intent(getActivity(), ProfileTeacherActivity.class));
 
     }

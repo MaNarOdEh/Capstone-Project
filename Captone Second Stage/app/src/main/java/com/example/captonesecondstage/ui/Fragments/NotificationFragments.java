@@ -60,12 +60,6 @@ public class NotificationFragments extends Fragment implements NotificationAdapt
 
     private void setNotificationAdapter() {
         mNotificationList=new ArrayList<>();
-       /* mNotificationList.add(new Notification());
-        mNotificationList.add(new Notification());
-        mNotificationList.add(new Notification());
-        mNotificationList.add(new Notification());*/
-
-       // mNotificationAdapter=new NotificationAdapter(mNotificationList,this,this);
         mRecycleNotification.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecycleNotification.setAdapter(mNotificationAdapter);
 

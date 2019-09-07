@@ -141,13 +141,13 @@ public class LogInFragment extends Fragment {
                 password=mPasswordEd.getText().toString();
         boolean correct=true;
         if(email==null||email.isEmpty()){
-            mUserNameEt.setError("Input Your Email Please!!");
+            mUserNameEt.setError(getString(R.string.email_error));
             mProgressCircular.setVisibility(View.GONE);
             correct=false;
         }else{
             mUserNameEt.setError(null);
         }if(password==null||password.isEmpty()){
-            mPasswordEd.setError("Input Your Password Please!!");
+            mPasswordEd.setError(getString(R.string.password_error));
             mProgressCircular.setVisibility(View.GONE);
             correct=false;
         }else{
@@ -223,7 +223,7 @@ public class LogInFragment extends Fragment {
                                         }
                                     });
                                 }else{
-                                    ((MainActivity)getActivity()).showSnackBar("You Don't have accounts create one instead!");
+                                    ((MainActivity)getActivity()).showSnackBar(getString(R.string.account_issues));
 
                                 }
                             }
@@ -248,21 +248,21 @@ public class LogInFragment extends Fragment {
                   //  SharedPreferences prefs = getActivity().getSharedPreferences(USER_TYPE, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
                     editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "2");
-                    Toast.makeText(getActivity(), "Student-parents", Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(getActivity(), "Student-parents", Toast.LENGTH_SHORT).show();
                     editor.apply();
                     mProgressCircular.setVisibility(View.GONE);
                     ((MainActivity)getActivity()).goToTheHomePage();
                 }else if(dataSnapshot.child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).exists()){
                     SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
                     editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "1");
-                    Toast.makeText(getActivity(), "teacher", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getActivity(), "teacher", Toast.LENGTH_SHORT).show();
 
                     editor.apply();
                     ((MainActivity)getActivity()).goToTheHomePage();
                 }else{
-                    Toast.makeText(getContext(), "You Don't Have Accounts Try Sign In Instead!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), getString(R.string.account_issues), Toast.LENGTH_SHORT).show();
                     mAuth.getCurrentUser().delete();
-                    ((MainActivity)getActivity()).showSnackBar("You Don't have Accounts Try sign In Instead!!");
+                    ((MainActivity)getActivity()).showSnackBar(getString(R.string.account_issues));
                 }
                 mProgressCircular.setVisibility(View.GONE);
 

@@ -81,7 +81,7 @@
             android:drawableLeft="@drawable/telephone"
             android:drawableTint="@color/colorApp"
             android:drawablePadding="15dp"
-            android:inputType="number"/>
+            android:inputType="phone"/>
         <EditText
             android:id="@+id/address_et"
             android:layout_width="match_parent"

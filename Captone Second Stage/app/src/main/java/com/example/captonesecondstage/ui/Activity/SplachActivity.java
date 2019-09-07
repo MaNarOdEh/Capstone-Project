@@ -40,7 +40,6 @@ public class SplachActivity extends AppCompatActivity {
         createNotificationChannel();
         mAuth=FirebaseAuth.getInstance();
         initializeEvents();
-        //NotificationHelper.display_Notification(getApplicationContext(),"Welcome Notification","Hope You Enjoy!! :) Manar Odeh:)");
 
     }
 
@@ -49,8 +48,7 @@ public class SplachActivity extends AppCompatActivity {
         mBtnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Toast.makeText(SplachActivity.this, "WHHHHHHHAAAATTTTSSS", Toast.LENGTH_SHORT).show();
-                NotificationHelper.display_Notification(getApplicationContext(),"Welcome Notification","Hope You Enjoy!!");
+                NotificationHelper.display_Notification(getApplicationContext(),getString(R.string.welcome_notification),getString(R.string.welcome_notifcation_body));
 
             }
         });
