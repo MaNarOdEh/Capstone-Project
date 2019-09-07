@@ -14,12 +14,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.captonesecondstage.Class.Notification;
+import com.example.captonesecondstage.Class.NotificationHelper;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Students;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,6 +69,13 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
         }
         if(mStudents==null){
             finish();
+        }
+        if(val==0){
+            SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
+            Date date = new Date(System.currentTimeMillis());
+            Notification notification=new Notification(HomePageActivity.userName+" visit your profile",mStudents.getmUserName(),formatter.format(date)+"  ");
+            FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
+                    .child(mStudents.getmUserName()).push().setValue(notification);
         }
         //show Student Info
         showInfo();
@@ -130,6 +143,15 @@ public class ProfileStudent_ParentsActivity extends AppCompatActivity {
                 if(val==1){
                     Toast.makeText(ProfileStudent_ParentsActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
                 }else{
+                    SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
+                    Date date = new Date(System.currentTimeMillis());
+                    //System.out.println(formatter.format(date));
+                    Notification notification=new Notification(HomePageActivity.userName+": Send You a request to teach you " +
+                            "Please check his profile and call him if you accept!!",mStudents.getmUserName(),formatter.format(date)+" ");
+                    FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
+                            .child(mStudents.getmUserName()).push().setValue(notification);
+                    NotificationHelper.display_Notification(getApplicationContext(),"Done Notification","Successfully you send him a request");
+
 
                 }
             }

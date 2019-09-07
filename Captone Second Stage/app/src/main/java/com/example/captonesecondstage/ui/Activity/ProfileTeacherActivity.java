@@ -14,13 +14,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.captonesecondstage.Class.Notification;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -72,6 +79,14 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         }
         if(mTeachers==null){
             finish();
+        }
+        if(val==0){
+            SimpleDateFormat formatter= new SimpleDateFormat("HH:mm");
+            Date date = new Date(System.currentTimeMillis());
+            //System.out.println(formatter.format(date));
+            Notification notification=new Notification(HomePageActivity.userName+" visit your profile",mTeachers.getmUserName(),formatter.format(date)+" ");
+            FirebaseDatabase.getInstance().getReference().child(CommnuicationBetweenActivities.NOTIFICATIONST)
+                    .child(mTeachers.getmUserName()).push().setValue(notification);
         }
         //initialize Values
         initialize();

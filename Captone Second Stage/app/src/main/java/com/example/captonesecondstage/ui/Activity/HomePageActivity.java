@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
@@ -54,7 +55,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     FirebaseAuth mAuth;
-   public String userType="";
+    public static String userType="";
     @BindView(R.id.float_profile) @NonNull FloatingActionButton  mFloatProfile;
     @BindView(R.id.progress_profile)@NonNull
     ProgressBar mProgressProfile;
@@ -67,7 +68,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         ButterKnife.setDebug(true);
         mAuth=FirebaseAuth.getInstance();
         initializeEvent();
-        getUserName();
+
 
         MyApplication.getInstance().setConnectivityListener(this);
 
@@ -77,7 +78,7 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
 
         SharedPreferences prefs = getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE);
          userType = prefs.getString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "");//""-Empty String is the default value.
-
+        getUserName();
         //set My Toolbar as aSupport ActionBar
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
@@ -86,17 +87,54 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
         setTitle("");
         setSupportActionBar(mToolbar);
     }
+    private  void getUserNamee(){
+        FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(CommnuicationBetweenActivities.TEACHER_DB).child(FirebaseAuth.getInstance().getUid()).exists()) {
+                    userName = dataSnapshot.child(CommnuicationBetweenActivities.TEACHER_DB).child(FirebaseAuth.getInstance().getUid())
+                            .child("mUserName").getValue().toString();
+                }else{
+                    userName = dataSnapshot.child(CommnuicationBetweenActivities.STUDENT_DB).child(FirebaseAuth.getInstance().getUid())
+                            .child("mUserName").getValue().toString();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
     private void getUserName() {
         //in this case we check if the user is already have an accounts or not!!
         if (userType.equals("1")) {
             FirebaseDatabase.getInstance().getReference().
-                    child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).child("mUserName").addListenerForSingleValueEvent(
+                    child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).addListenerForSingleValueEvent(
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                Teachers teachers=dataSnapshot.getValue(Teachers.class);
+                                userName=teachers.getmUserName();
+                         //   getToken();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    }
+            );
+        }else if(userType.equals("2")){
+            FirebaseDatabase.getInstance().getReference().
+                    child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid()).child("mUserName").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot!=null)
                             userName = dataSnapshot.getValue().toString();
-                            getToken();
+                          //  getToken();
 
                         }
 
@@ -107,22 +145,8 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
                     }
             );
         }else{
-            FirebaseDatabase.getInstance().getReference().
-                    child(CommnuicationBetweenActivities.STUDENT_DB).child(mAuth.getUid()).child("mUserName").addListenerForSingleValueEvent(
-                    new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            userName = dataSnapshot.getValue().toString();
-                            getToken();
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    }
-            );
+            Toast.makeText(this, userType+":", Toast.LENGTH_SHORT).show();
+           // finish();
         }
     }
 

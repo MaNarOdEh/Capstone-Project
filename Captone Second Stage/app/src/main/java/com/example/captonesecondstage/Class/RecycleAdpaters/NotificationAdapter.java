@@ -43,8 +43,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         // each data item is just a string in this case
-        @BindView(R.id.img_delete_click)@Nullable()
-        ImageView mImgDeleteClick;
+
         @BindView(R.id.card_view_notification)@Nullable()
         CardView mCardViewnotification;
         @BindView(R.id.txt_notification_status)@Nullable()
@@ -64,7 +63,6 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             ButterKnife.bind(this, viewItems);
             this.onNotificationClicked=onProfileClicked;
             this.onDeleteClicked=onDeleteClicked;
-            mImgDeleteClick.setOnClickListener(this);
             mCardViewnotification.setOnLongClickListener(this);
         }
 
@@ -97,6 +95,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public void onBindViewHolder(@NonNull NotificationAdapter.MyViewHolder holder, int position) {
+        holder.mTimeTxt.setText(mNotificationList.get(position).getmTime());
+        holder.mTxtnotificationStatus.setText(mNotificationList.get(position).getmText());
 
     }
 

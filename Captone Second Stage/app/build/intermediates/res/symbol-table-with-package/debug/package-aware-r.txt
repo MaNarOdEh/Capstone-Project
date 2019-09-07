@@ -1652,7 +1652,6 @@ id ifRoom
 id image
 id image_profile_circle
 id image_upload
-id img_delete_click
 id img_star_fifth
 id img_star_first
 id img_star_fourth

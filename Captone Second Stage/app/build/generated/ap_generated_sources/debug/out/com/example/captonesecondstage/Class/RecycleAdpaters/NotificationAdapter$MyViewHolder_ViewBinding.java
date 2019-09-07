@@ -2,7 +2,6 @@
 package com.example.captonesecondstage.Class.RecycleAdpaters;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
@@ -22,7 +21,6 @@ public class NotificationAdapter$MyViewHolder_ViewBinding implements Unbinder {
       View source) {
     this.target = target;
 
-    target.mImgDeleteClick = Utils.findOptionalViewAsType(source, R.id.img_delete_click, "field 'mImgDeleteClick'", ImageView.class);
     target.mCardViewnotification = Utils.findOptionalViewAsType(source, R.id.card_view_notification, "field 'mCardViewnotification'", CardView.class);
     target.mTxtnotificationStatus = Utils.findOptionalViewAsType(source, R.id.txt_notification_status, "field 'mTxtnotificationStatus'", TextView.class);
     target.mCircleNotificationStatus = Utils.findOptionalViewAsType(source, R.id.circleImg_profile, "field 'mCircleNotificationStatus'", CircleImageView.class);
@@ -36,7 +34,6 @@ public class NotificationAdapter$MyViewHolder_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.mImgDeleteClick = null;
     target.mCardViewnotification = null;
     target.mTxtnotificationStatus = null;
     target.mCircleNotificationStatus = null;
