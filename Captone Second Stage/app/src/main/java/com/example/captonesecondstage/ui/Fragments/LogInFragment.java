@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.R;
@@ -247,14 +248,20 @@ public class LogInFragment extends Fragment {
                     SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
                     editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "2");
                     editor.apply();
-                }else{
+                    mProgressCircular.setVisibility(View.GONE);
+                    ((MainActivity)getActivity()).goToTheHomePage();
+                }else if(dataSnapshot.child(CommnuicationBetweenActivities.TEACHER_DB).child(mAuth.getUid()).exists()){
                     SharedPreferences.Editor editor = getActivity().getSharedPreferences(CommnuicationBetweenActivities.SHARED_PREF_USER_TYPE, Context.MODE_PRIVATE).edit();
                     editor.putString(CommnuicationBetweenActivities.SHARED_PREF_USERTYPES, "1");
                     editor.apply();
-
+                    mProgressCircular.setVisibility(View.GONE);
+                    ((MainActivity)getActivity()).goToTheHomePage();
+                }else{
+                    Toast.makeText(getContext(), "You Don't Have Accounts Try Sign In Instead!!", Toast.LENGTH_SHORT).show();
+                    mAuth.getCurrentUser().delete();
+                    ((MainActivity)getActivity()).showSnackBar("You Don't have Accounts Try sign In Instead!!");
                 }
-                mProgressCircular.setVisibility(View.GONE);
-                ((MainActivity)getActivity()).goToTheHomePage();
+
 
             }
 

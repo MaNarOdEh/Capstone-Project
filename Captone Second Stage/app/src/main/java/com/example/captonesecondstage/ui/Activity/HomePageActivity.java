@@ -274,9 +274,9 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    //    Toast.makeText(Main_Activity.this,"done",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Main_Activity.this,"done",Toast.LENGTH_LONG).show();
                 }else{
-                    //  Toast.makeText(Main_Activity.this,"Some thing wrong",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Main_Activity.this,"Some thing wrong",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -294,4 +294,5 @@ public class HomePageActivity extends AppCompatActivity implements ConnectivityR
             }
         });
     }
+    //there is no delete notifications MANAR??:::
 }
