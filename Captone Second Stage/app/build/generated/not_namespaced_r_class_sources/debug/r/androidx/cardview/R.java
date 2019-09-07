@@ -44,9 +44,9 @@ public final class R {
         private style() {}
 
         public static final int Base_CardView = 0x7f11000d;
-        public static final int CardView = 0x7f1100d9;
-        public static final int CardView_Dark = 0x7f1100da;
-        public static final int CardView_Light = 0x7f1100db;
+        public static final int CardView = 0x7f1100da;
+        public static final int CardView_Dark = 0x7f1100db;
+        public static final int CardView_Light = 0x7f1100dc;
     }
     public static final class styleable {
         private styleable() {}

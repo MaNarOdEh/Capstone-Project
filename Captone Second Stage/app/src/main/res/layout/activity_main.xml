@@ -10,12 +10,20 @@
     android:fillViewport="true"
     android:background="@drawable/background"
     >
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        <ImageView
+            android:id="@+id/shared_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/app_logo"
+            android:layout_margin="25dp"
+            android:contentDescription="@string/logo_images"/>
         <FrameLayout
             android:id="@+id/loginSignUp_frame"
             android:layout_width="match_parent"

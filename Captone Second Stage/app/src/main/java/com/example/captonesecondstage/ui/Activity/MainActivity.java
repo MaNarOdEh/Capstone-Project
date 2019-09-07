@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.transition.Explode;
 import android.widget.ScrollView;
 
 import com.example.captonesecondstage.Class.Internet_connection.ConnectivityReceiver;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
         ButterKnife.setDebug(true);
         mAuth= FirebaseAuth.getInstance();
         MyApplication.getInstance().setConnectivityListener(this);
-
+// set an exit transition
+        getWindow().setExitTransition(new Explode());
         Intent intent=getIntent();
         if(intent!=null){
            String res= intent.getStringExtra(SplachActivity.KEY_RESULT);

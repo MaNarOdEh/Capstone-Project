@@ -1,7 +1,9 @@
 package com.example.captonesecondstage.ui.Fragments;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -27,6 +29,7 @@ import com.example.captonesecondstage.R;
 import com.example.captonesecondstage.ui.Activity.HomePageActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileStudent_ParentsActivity;
 import com.example.captonesecondstage.ui.Activity.ProfileTeacherActivity;
+import com.example.captonesecondstage.ui.Activity.SplachActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -138,9 +141,23 @@ public class SearchPageFramgents extends Fragment implements ProfileTeacherAdapt
 
     @Override
     public void onProfileClicked(int position) {
+        // Check if we're running on Android 5.0 or higher
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Apply activity transition
+        } else {
+            // Swap without transition
+        }
+// inside your activity (if you did not enable transitions in your theme)
         Intent intent=new Intent(getActivity(),ProfileTeacherActivity.class);
         intent.putExtra(CommnuicationBetweenActivities.PROFILE_TEACHER_ACTIVITY_INTENT,profileAdapter_teace.getList().get(position));
-        startActivity(intent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Apply activity transition
+            startActivity(intent,
+                    ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+        } else {
+            startActivity(intent);
+            // Swap without transition
+        }
     }
 
     @Override

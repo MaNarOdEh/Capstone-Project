@@ -102,7 +102,7 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
             onProfileClicked.onProfileClicked(getAdapterPosition());
         }
     }
-    //تجسيل الدخول باستحدام الجميل لازم نتأكد من وجود الحسابة بالاول!!
+
     public ProfileTeacherAdapter(ArrayList<Teachers> teachers, OnProfileClicked onProfileClicked) {
         this.mtTeachersList=teachers;
         this.mCopyTeachersList=teachers;
@@ -122,6 +122,7 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
                 .inflate(R.layout.card_teacher_short_info, parent, false);
         return new ProfileTeacherAdapter.MyViewHolder(v,onProfileClicked);
     }
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ProfileTeacherAdapter.MyViewHolder holder, int position) {
@@ -140,6 +141,5 @@ public class ProfileTeacherAdapter extends RecyclerView.Adapter<ProfileTeacherAd
     public int getItemCount() {
         return mtTeachersList.size();
     }
-
 }
 

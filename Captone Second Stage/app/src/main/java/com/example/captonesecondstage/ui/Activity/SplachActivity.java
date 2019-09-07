@@ -2,13 +2,17 @@ package com.example.captonesecondstage.ui.Activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 
+import android.app.ActivityOptions;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -34,6 +38,7 @@ public class SplachActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_splach);
         ButterKnife.bind(this);
         ButterKnife.setDebug(true);
@@ -57,7 +62,17 @@ public class SplachActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(SplachActivity.this,MainActivity.class);
                 intent.putExtra(KEY_RESULT,"0");
-                startActivity(intent);
+                // Check if we're running on Android 5.0 or higher
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    View v=findViewById(R.id.shared_image);
+                    ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation(SplachActivity.this, v, "profile");
+                    startActivity(intent, options.toBundle());
+                } else {
+                    startActivity(intent);
+                    // Swap without transition
+                }
             }
         });
         mBtnLogIn.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +80,16 @@ public class SplachActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(SplachActivity.this,MainActivity.class);
                 intent.putExtra(KEY_RESULT,"1");
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    View v=findViewById(R.id.shared_image);
+                    ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation(SplachActivity.this, v, "profile");
+                    startActivity(intent, options.toBundle());
+                } else {
+                    startActivity(intent);
+                    // Swap without transition
+                }
             }
         });
     }

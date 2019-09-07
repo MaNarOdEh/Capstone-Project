@@ -8,11 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="popupTheme">@style/PopupTheme</item>
         <item name="android:navigationBarColor">@color/colorApp</item>
+
     </style>
 
     <style name="PopupTheme" parent="Theme.AppCompat.Light">
         <item name="android:background">@color/colorApp</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
+    <style name="BaseAppTheme" parent="android:Theme.Material">
+        <!-- enable window content transitions -->
+        <item name="android:windowActivityTransitions">true</item>
+
+    </style>
+
 
 </resources>
