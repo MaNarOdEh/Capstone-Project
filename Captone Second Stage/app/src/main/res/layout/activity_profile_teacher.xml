@@ -35,7 +35,8 @@
                     android:src="@drawable/heart"
                     android:layout_marginLeft="15dp"
                     android:tint="@color/colorWhite"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    android:contentDescription="@string/add_widget_hint"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -49,31 +50,40 @@
                          android:layout_width="25dp"
                          android:layout_height="25dp"
                          android:src="@drawable/star"
+                        android:contentDescription="@string/evaluation_star"
                         />
                     <ImageView
                         android:id="@+id/star_img_s"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/star"
-                       />
+                        android:contentDescription="@string/evaluation_star"
+
+                        />
                     <ImageView
                         android:id="@+id/star_img_t"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/star"
-                     />
+                        android:contentDescription="@string/evaluation_star"
+
+                        />
                     <ImageView
                         android:id="@+id/star_img_fourth"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/star"
-                      />
+                        android:contentDescription="@string/evaluation_star"
+
+                        />
                     <ImageView
                         android:id="@+id/star_img_fifth"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/star"
-                     />
+                        android:contentDescription="@string/evaluation_star"
+
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -81,7 +91,8 @@
                 android:id="@+id/circleImg_profile"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/graduate"/>
+                android:src="@drawable/graduate"
+                android:contentDescription="@string/profile_images"/>
             <TextView
                 android:id="@+id/name_txt"
                 android:layout_width="wrap_content"

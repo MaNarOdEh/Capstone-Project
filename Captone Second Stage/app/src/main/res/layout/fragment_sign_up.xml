@@ -118,6 +118,7 @@
                     android:tint="@android:color/white"
                     app:maxImageSize="20dp"
                     android:clickable="true"
+                    android:contentDescription="@string/gmail_login"
 
                     />
                 <com.google.android.gms.common.SignInButton
@@ -143,6 +144,7 @@
                     android:src="@drawable/facebook_logo"
                     android:tint="@android:color/white"
                     app:maxImageSize="20dp"
+                    android:contentDescription="@string/face_book_login"
                     />
         </LinearLayout>
 

@@ -19,7 +19,8 @@
             android:id="@+id/circleImg_profile"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/notification"/>
+            android:src="@drawable/notification"
+            android:contentDescription="@string/notification"/>
         <TextView
             android:id="@+id/txt_notification_status"
             android:layout_width="match_parent"
