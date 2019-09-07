@@ -206,6 +206,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
         });
     }
     private  void setEvaluate(){
+        //increase the number  // adding the totals
         //get the prevouis evalution  and editing it
         FirebaseDatabase.getInstance().getReference()
                 .child("Evaluation").child(mTeachers.getmUserName()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -242,5 +243,8 @@ public class ProfileTeacherActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private void getTheAverageEvalution(){
+        //numbers //totals // divide them
     }
 }
