@@ -39,6 +39,7 @@ public class ProfileTeacherActivity_ViewBinding implements Unbinder {
     target.mAboutUsTxt = Utils.findOptionalViewAsType(source, R.id.aboutUs_txt, "field 'mAboutUsTxt'", TextView.class);
     target.mBtnCall = Utils.findOptionalViewAsType(source, R.id.btn_call, "field 'mBtnCall'", Button.class);
     target.mBtnSMS = Utils.findOptionalViewAsType(source, R.id.btn_sms, "field 'mBtnSMS'", Button.class);
+    target.mBtnEvaluate = Utils.findOptionalViewAsType(source, R.id.btn_evaluate, "field 'mBtnEvaluate'", Button.class);
     target.mRecycleCourses = Utils.findOptionalViewAsType(source, R.id.recycle_courses, "field 'mRecycleCourses'", RecyclerView.class);
   }
 
@@ -61,6 +62,7 @@ public class ProfileTeacherActivity_ViewBinding implements Unbinder {
     target.mAboutUsTxt = null;
     target.mBtnCall = null;
     target.mBtnSMS = null;
+    target.mBtnEvaluate = null;
     target.mRecycleCourses = null;
   }
 }

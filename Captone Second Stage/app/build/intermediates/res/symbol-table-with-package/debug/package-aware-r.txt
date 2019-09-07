@@ -1553,6 +1553,7 @@ id btn_add_student
 id btn_back_to_setting
 id btn_call
 id btn_call_widget
+id btn_evaluate
 id btn_is_connect
 id btn_login
 id btn_send_request
@@ -1659,6 +1660,7 @@ id img_star_second
 id img_star_third
 id info
 id info_layout
+id input_dialog_et
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1949,6 +1951,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_evaluation
 layout dialog_upload_capture_image
 layout forget_password_fragments
 layout fragment_continue_sign_up

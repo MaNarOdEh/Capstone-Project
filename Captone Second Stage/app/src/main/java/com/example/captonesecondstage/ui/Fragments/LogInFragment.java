@@ -137,7 +137,7 @@ public class LogInFragment extends Fragment {
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     private void checkValidData(){
-        String email=mUserNameEt.getText().toString(),
+        String email=mUserNameEt.getText().toString().trim(),
                 password=mPasswordEd.getText().toString();
         boolean correct=true;
         if(email==null||email.isEmpty()){
@@ -154,6 +154,7 @@ public class LogInFragment extends Fragment {
             mPasswordEd.setError(null);
         }
         if(correct) {
+         //   email=email.trim();
             if (((MainActivity) getActivity()).checkConnection()) {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

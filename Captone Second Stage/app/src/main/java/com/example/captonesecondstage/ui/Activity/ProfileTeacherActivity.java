@@ -1,15 +1,18 @@
 package com.example.captonesecondstage.ui.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +23,10 @@ import com.example.captonesecondstage.Class.Teachers;
 import com.example.captonesecondstage.Communication.CommnuicationBetweenActivities;
 import com.example.captonesecondstage.MyWidget;
 import com.example.captonesecondstage.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 
@@ -60,9 +66,12 @@ public class ProfileTeacherActivity extends AppCompatActivity {
     Button mBtnCall;
     @BindView(R.id.btn_sms)@Nullable()
     Button mBtnSMS;
+    @BindView(R.id.btn_evaluate)@Nullable
+    Button mBtnEvaluate;
     @BindView(R.id.recycle_courses)@Nullable()
     RecyclerView mRecycleCourses;
     Teachers mTeachers;
+    Dialog dialog;
     int val;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,9 +172,73 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                     Intent intent_meeting_update=new  Intent(ProfileTeacherActivity.this, MyWidget.class);
                     intent_meeting_update.setAction(MyWidget.UPDATE_MEETING_ACTION);
                     sendBroadcast(intent_meeting_update);
-                   //make the widget...
+                }
+            }
+        });
+        mBtnEvaluate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(val==1){
+                    Toast.makeText(ProfileTeacherActivity.this, "Can't do that you are in Watch Mode!!", Toast.LENGTH_LONG).show();
+                }else{
+                    checkCanYouEvaluate();
+                }
+            }
+        });
+        dialog  = new Dialog(this);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.dialog_evaluation);
+
+        dialog.findViewById(R.id.btn_evaluate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              //  checkPremissionTakePhotoAndCaptureImage();
+                EditText editText=dialog.findViewById(R.id.input_dialog_et);
+                String evaluate=editText.getText().toString().trim();
+                if(evaluate.equals("1")||evaluate.equals("2")||evaluate.equals("3")||evaluate.equals("4")||evaluate.equals("5")){
+                    dialog.dismiss();
+                }else{
+                    editText.setError("Input Number Between 1 and 5 Please!!");
                 }
 
+
+            }
+        });
+    }
+    private  void setEvaluate(){
+        //get the prevouis evalution  and editing it
+        FirebaseDatabase.getInstance().getReference()
+                .child("Evaluation").child(mTeachers.getmUserName()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        FirebaseDatabase.getInstance().getReference()
+                .child(CommnuicationBetweenActivities.STUDENTTEACH).child((HomePageActivity.userName)).child(mTeachers.getmUserName()).setValue("0");
+    }
+    private void checkCanYouEvaluate(){
+        FirebaseDatabase.getInstance().getReference()
+                .child(CommnuicationBetweenActivities.STUDENTTEACH).child((HomePageActivity.userName)).child(mTeachers.getmUserName()).
+                addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null&&dataSnapshot.getValue()!=null&&dataSnapshot.getValue().equals("1")){
+                    dialog.show();
+
+                }else{
+                    Toast.makeText(ProfileTeacherActivity.this, "You cant Evaluate That Teacher!! the teacher does not adding you",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });

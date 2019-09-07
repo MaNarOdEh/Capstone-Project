@@ -247,7 +247,6 @@ public class SettingsFragment extends Fragment {
                 }else{
                     mAutoComleterStudnetName.setError("Input Valid Name Please");
                 }
-                //mAutoComleterStudnetName
             }
         });
 
@@ -257,7 +256,7 @@ public class SettingsFragment extends Fragment {
 
                             FirebaseDatabase.getInstance().getReference()
                                     .child(CommnuicationBetweenActivities.STUDENTTEACH)
-                                    .child(userName).push().setValue(((HomePageActivity)getActivity()).userName);
+                                    .child(userName).child(((HomePageActivity)getActivity()).userName).setValue("1");
             Toast.makeText(getActivity(), "Added Successfully", Toast.LENGTH_LONG).show();
 
         }else{
