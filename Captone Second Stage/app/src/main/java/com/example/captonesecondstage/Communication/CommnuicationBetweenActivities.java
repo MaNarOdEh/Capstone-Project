@@ -8,6 +8,7 @@ public class CommnuicationBetweenActivities {
     public final static String STUDENT_DB="Students_Parents";
     public final static String STUDENTTEACH="Student_Teacher";
     public final  static  String NOTIFICATIONST="Notifications";
+    public final static String RESULTEVALUATION="TEACHER_EVALUATION";
     public final static String PROFILE_STUDENTS_ACTVITVITY_INTENT="STUDENTS";
     public final static String PROFILE_TEACHER_ACTIVITY_INTENT="TEACHERINFO";
     public final static String SHARED_PREF_USERTYPES="USERTYPES";

@@ -40,7 +40,7 @@ public class SplachActivity extends AppCompatActivity {
         createNotificationChannel();
         mAuth=FirebaseAuth.getInstance();
         initializeEvents();
-        NotificationHelper.display_Notification(getApplicationContext(),"Welcome Notification","Hope You Enjoy!! :) Manar Odeh:)");
+        //NotificationHelper.display_Notification(getApplicationContext(),"Welcome Notification","Hope You Enjoy!! :) Manar Odeh:)");
 
     }
 

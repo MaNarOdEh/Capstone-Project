@@ -3,6 +3,7 @@ package com.example.captonesecondstage.ui.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.captonesecondstage.Class.Evaluation;
 import com.example.captonesecondstage.Class.Notification;
 import com.example.captonesecondstage.Class.RecycleAdpaters.CoursesAdapter;
 import com.example.captonesecondstage.Class.Teachers;
@@ -70,9 +72,12 @@ public class ProfileTeacherActivity extends AppCompatActivity {
     Button mBtnEvaluate;
     @BindView(R.id.recycle_courses)@Nullable()
     RecyclerView mRecycleCourses;
+    @BindView(R.id.evaluation_txt)@Nullable TextView mEvalutionTxt;
     Teachers mTeachers;
     Dialog dialog;
+    String total;
     int val;
+    Evaluation evaluation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +119,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                     .error(R.drawable.teachers)
                     .into(mcircleImgProfile);
         }
+        getTheAverageEvalution();
     }
 
     private void initializeEvent() {
@@ -197,6 +203,7 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                 String evaluate=editText.getText().toString().trim();
                 if(evaluate.equals("1")||evaluate.equals("2")||evaluate.equals("3")||evaluate.equals("4")||evaluate.equals("5")){
                     dialog.dismiss();
+                    setEvaluate(Integer.parseInt(evaluate));
                 }else{
                     editText.setError("Input Number Between 1 and 5 Please!!");
                 }
@@ -205,21 +212,14 @@ public class ProfileTeacherActivity extends AppCompatActivity {
             }
         });
     }
-    private  void setEvaluate(){
+    private  void setEvaluate(int evl){
         //increase the number  // adding the totals
         //get the prevouis evalution  and editing it
+        evaluation.increase(evl);
         FirebaseDatabase.getInstance().getReference()
-                .child("Evaluation").child(mTeachers.getmUserName()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+                .child(CommnuicationBetweenActivities.RESULTEVALUATION).child(mTeachers.getmUserName())
+        .setValue(evaluation);
+        setNewValues();
         FirebaseDatabase.getInstance().getReference()
                 .child(CommnuicationBetweenActivities.STUDENTTEACH).child((HomePageActivity.userName)).child(mTeachers.getmUserName()).setValue("0");
     }
@@ -232,9 +232,12 @@ public class ProfileTeacherActivity extends AppCompatActivity {
                 if(dataSnapshot!=null&&dataSnapshot.getValue()!=null&&dataSnapshot.getValue().equals("1")){
                     dialog.show();
 
-                }else{
-                    Toast.makeText(ProfileTeacherActivity.this, "You cant Evaluate That Teacher!! the teacher does not adding you",
+                }else if(dataSnapshot!=null&&dataSnapshot.getValue()!=null&&dataSnapshot.getValue().equals("0")){
+                    Toast.makeText(ProfileTeacherActivity.this, "You Already  Evaluate That Teacher!! ",
                             Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(ProfileTeacherActivity.this, "You cant Evaluate That Teacher!! the teacher does not adding you",Toast.LENGTH_LONG).show();
+
                 }
             }
 
@@ -246,5 +249,57 @@ public class ProfileTeacherActivity extends AppCompatActivity {
     }
     private void getTheAverageEvalution(){
         //numbers //totals // divide them
+        FirebaseDatabase.getInstance().getReference()
+                .child(CommnuicationBetweenActivities.RESULTEVALUATION).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null&&dataSnapshot.child(mTeachers.getmUserName()).exists()){
+                     evaluation=dataSnapshot.child(mTeachers.getmUserName()).getValue(Evaluation.class);
+                    Toast.makeText(ProfileTeacherActivity.this, evaluation.getNumber()+"   "+evaluation.getTotal(), Toast.LENGTH_SHORT).show();
+                   total=""+Math.round(Double.parseDouble(evaluation.getTotal())/Double.parseDouble(evaluation.getNumber()));
+                    mEvalutionTxt.setText(total+"/5");
+                   setImages(Math.round(Double.parseDouble(evaluation.getTotal())/Double.parseDouble(evaluation.getNumber())));
+                }else{
+                    total="5";
+                    mEvalutionTxt.setText(total+"/5");
+                    evaluation=new Evaluation("5","1");
+                    setImages((long) 5);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    private void setNewValues(){
+        Long d=Math.round(Double.parseDouble(evaluation.getTotal())/Double.parseDouble(evaluation.getNumber()));
+        mEvalutionTxt.setText(d+"/5");
+        setImages(d);
+    }
+    public void setImages(Long number){
+        Toast.makeText(this, number+"   ", Toast.LENGTH_SHORT).show();
+        if(number>=5){
+
+        }else if(number>=4){
+       //     mStartImageFifith.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+        }else if(number>=3){
+          //  mStartImageFour.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+           // mStartImageFifith.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+        }else if(number>=2){
+
+            //mStartImageT.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+            //mStartImageFour.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+            //mStartImageFifith.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+        }else{
+            //mStartImageS.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+            //mStartImageT.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+            //mStartImageFour.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+            //mStartImageFifith.setBackgroundTintList(ContextCompat.getColorStateList(ProfileTeacherActivity.this, R.color.colorWhite));
+        }
+
     }
 }

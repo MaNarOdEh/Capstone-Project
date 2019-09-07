@@ -24,11 +24,6 @@ public class MyWidget extends AppWidgetProvider  {
 
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-
-        Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent,0);
-
-
         Paper.init(context);
         String user_name=Paper.book().read("NAME_WIDGET");
         String phone_txt=Paper.book().read("PHONE");
@@ -49,8 +44,6 @@ public class MyWidget extends AppWidgetProvider  {
         // There may be multiple widgets active, so update all of them
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
-            Intent intent = new Intent(context, MainActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent,0);
             Paper.init(context);
             String user_name=Paper.book().read("NAME_WIDGET");
             String phone_txt=Paper.book().read("PHONE");
