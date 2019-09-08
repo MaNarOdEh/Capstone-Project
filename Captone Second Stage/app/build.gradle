@@ -3,10 +3,10 @@ apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle p
 android {
     signingConfigs {
         config {
-            keyAlias 'manar'
-            keyPassword 'manarPassword'
+            keyAlias 'keystore'
+            keyPassword 'AS123456'
             storeFile file('../keystore.jks')
-            storePassword 'manarPassword'
+            storePassword 'AS123456'
         }
     }
     compileSdkVersion 29
