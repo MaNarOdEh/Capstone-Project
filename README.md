@@ -3,6 +3,7 @@
 8th project of Android Developer Nanodegree (Udacity)
 
 You can see the idea from here https://github.com/MaNarOdEh/Capstone-Project/blob/master/Capstone_Stage1.pdf
+Youtube: https://www.youtube.com/watch?v=sMS0u_3q1uQ&t=14s
 
 This project uses Google service. You need your own google-services.json in order to track and store users information if you want to edit
 some data or store something else.
